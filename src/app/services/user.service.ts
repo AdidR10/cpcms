@@ -12,4 +12,7 @@ export class UserService {
   addUser(data: any): Observable<any>{
     return this._http.post('http://localhost:3000/users',data);
   }
+  getUserList():Observable<any>{
+    return this._http.get('http://localhost:3000/onlineAPI');
+  }
 }

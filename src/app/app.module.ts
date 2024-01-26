@@ -15,11 +15,16 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 @NgModule({
   declarations: [
     AppComponent,
     CoderAddEditComponent,
     RegistrationComponent,
+    LeaderboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     MatRadioModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

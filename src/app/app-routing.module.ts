@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [];
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+const routes: Routes = [
+  {path: '', component: LeaderboardComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
