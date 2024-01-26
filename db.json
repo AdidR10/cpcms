@@ -1,0 +1,42 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "requests":[],
+  "users": [
+    {
+      "firstName": "Zerin ",
+      "lastName": "Shaima ",
+      "email": "abc@gmail.com",
+      "gender": "female",
+      "codeforcesHandle": "xxx",
+      "codechefHandle": "yyy",
+      "atcoderHandle": "zzz",
+      "id": 1
+    },
+    {
+      "firstName": "xacsdcs",
+      "lastName": "dcd",
+      "email": "cscsdc@gmail.com",
+      "gender": "female",
+      "codeforcesHandle": "sddf",
+      "codechefHandle": "wrfr",
+      "atcoderHandle": "fwrf",
+      "id": 2
+    }
+  ]
+}
