@@ -1,13 +1,21 @@
 table {
     width: 100%;
-  }
-  
-  .mat-mdc-form-field {
-    font-size: 14px;
-    width: 100%;
-  }
-  
-  td, th {
-    width: 25%;
-  }
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+
+.action-cell {
+  margin: 0.5%;
+  display: flex;
+  width: 70%;
+  justify-content: center;
+}
+
   
