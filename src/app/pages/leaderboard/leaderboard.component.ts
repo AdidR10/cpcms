@@ -70,8 +70,9 @@ export class LeaderboardComponent implements OnInit{
   openEditForm(id: number): void{
     this._userService.getUser(id).subscribe(
       (userData) => {
+        console.log("data fetched = "+userData)
         this._dialog.open(RegistrationComponent, {
-          data: userData
+          data: userData,
         });
       },
       (error) => {
