@@ -1,8 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, InjectionToken, OnInit, ViewChild } from '@angular/core';
 import { UserService } from '../services/user.service';
 import {MatPaginator } from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { RegistrationComponent } from '../registration/registration.component';
+import { MatDialog } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-leaderboard',
@@ -10,7 +13,7 @@ import {MatTableDataSource} from '@angular/material/table';
   styleUrls: ['./leaderboard.component.scss']
 })
 export class LeaderboardComponent implements OnInit{
- 
+  
   displayedColumns: string[] = [
     'rank', 
     'name', 
@@ -29,7 +32,10 @@ export class LeaderboardComponent implements OnInit{
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private _userService:UserService ){}
+  constructor(private _userService:UserService,
+    private _dialog: MatDialog,
+    ){}
+
   ngOnInit(): void {
     this.getUserList();
   }
@@ -59,6 +65,19 @@ export class LeaderboardComponent implements OnInit{
       },
       error: console.log
     })
+  }
+
+  openEditForm(id: number): void{
+    this._userService.getUser(id).subscribe(
+      (userData) => {
+        this._dialog.open(RegistrationComponent, {
+          data: userData
+        });
+      },
+      (error) => {
+        console.error('Error fetching user data:', error);
+      }
+    );
   }
 }
 

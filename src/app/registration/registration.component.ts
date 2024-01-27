@@ -1,16 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UserService } from '../services/user.service';
-import { DialogRef } from '@angular/cdk/dialog';
+import { MAT_DIALOG_DATA,MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.scss']
 })
-export class RegistrationComponent {
+export class RegistrationComponent implements OnInit{
   registerForm: FormGroup;
-  constructor(private _fb: FormBuilder, private _userService: UserService, private _dialogRef: DialogRef<RegistrationComponent> ){
+  constructor(
+    private _fb: FormBuilder, 
+    private _userService: UserService, 
+    private _dialogRef: MatDialogRef<RegistrationComponent>,
+    @Inject(MAT_DIALOG_DATA) public data:any 
+    ){
     this.registerForm = this._fb.group({
       firstName:'',
       lastName:'',
@@ -22,18 +27,34 @@ export class RegistrationComponent {
     })
   }
 
+  ngOnInit(): void {
+    this.registerForm.patchValue(this.data);
+  }
   onFormSubmit(){
     if(this.registerForm.valid){
       
-      this._userService.addUser(this.registerForm.value).subscribe({
-        next: ()=>{
-          alert('User Registration Request Sent');
-          this._dialogRef.close();
-        },
-        error: (err: any)=>{
-          console.log(err);
-        }
-      });
+      if(this.data){
+        this._userService.updateUser(this.data.id, this.registerForm.value).subscribe({
+          next: (val:any)=>{
+            alert('User Updated Successfully');
+            this._dialogRef.close(true);
+          },
+          error: (err: any)=>{
+            console.log(err);
+          }
+        });
+      }
+      else{
+        this._userService.addUser(this.registerForm.value).subscribe({
+          next: (val:any)=>{
+            alert('User Registration Request Sent');
+            this._dialogRef.close(true);
+          },
+          error: (err: any)=>{
+            console.log(err);
+          }
+        });
+      }
     }
   }
 }
