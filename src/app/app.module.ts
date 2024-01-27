@@ -14,15 +14,24 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { LeaderboardComponent } from './pages/leaderboard/leaderboard.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { SidenavbarComponent } from './sidenavbar/sidenavbar.component';
+import {MatListModule} from '@angular/material/list';
+import { AnnouncementsComponent } from './pages/announcements/announcements.component';
+import { ContestsComponent } from './pages/contests/contests.component';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
     LeaderboardComponent,
+    SidenavbarComponent,
+    AnnouncementsComponent,
+    ContestsComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +49,10 @@ import { MatSortModule } from '@angular/material/sort';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatTableModule
+    MatTableModule,
+    MatSidenavModule,
+    MatListModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

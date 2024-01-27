@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { RegistrationComponent } from './registration/registration.component';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -15,5 +15,8 @@ export class AppComponent {
   openAddEditForm(){
     this._dialog.open(RegistrationComponent);
   }
+
+  collapsed = signal(false);
+  sidenavWidth = computed(()=>this.collapsed()? '65px':'250px');
 }
 
