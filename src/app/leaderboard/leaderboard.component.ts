@@ -11,7 +11,19 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class LeaderboardComponent implements OnInit{
  
-  displayedColumns: string[] = ['id', 'name', 'batch', 'overallRating','codeforcesRating','codechefRating','atcoderRating','solveCount','lastContestDate','lastContestDelta'];
+  displayedColumns: string[] = [
+    'rank', 
+    'name', 
+    'batch', 
+    'overallRating',
+    'codeforcesRating',
+    'codechefRating',
+    'atcoderRating',
+    'solveCount',
+    'lastContestDate',
+    'lastContestDelta',
+    'action'
+  ];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -38,6 +50,15 @@ export class LeaderboardComponent implements OnInit{
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+  deleteUser(id: number){
+    this._userService.deleteUser(id).subscribe({
+      next:(res)=>{
+        alert('User Deleted!');
+        this.getUserList();
+      },
+      error: console.log
+    })
   }
 }
 

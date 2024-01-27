@@ -16,7 +16,7 @@
   "profile": {
     "name": "typicode"
   },
-  "requests":[],
+  "requests": [],
   "users": [
     {
       "firstName": "Zerin ",
@@ -39,68 +39,54 @@
       "id": 2
     }
   ],
-  "onlineAPI":[
+  "onlineAPI": [
     {
-      "id":1, 
-      "name":"Zerin Shaima Meem", 
-      "batch":18, 
+      "id": 1,
+      "name": "Zerin Shaima Meem",
+      "batch": 18,
       "overallRating": 1000,
       "codeforcesRating": 1420,
       "codechefRating": 1600,
       "atcoderRating": 500,
-      "solveCount":3500,
+      "solveCount": 3500,
       "lastContestDate": "10-01-2024",
       "lastContestDelta": 100
     },
     {
-      "id":2, 
-      "name":"Ashfaqur Rahman", 
-      "batch":18, 
+      "id": 2,
+      "name": "Ashfaqur Rahman",
+      "batch": 18,
       "overallRating": 2000,
       "codeforcesRating": 1620,
       "codechefRating": 2600,
       "atcoderRating": 800,
-      "solveCount":300,
+      "solveCount": 300,
       "lastContestDate": "02-01-2024",
       "lastContestDelta": 10
     },
     {
-      "id":3, 
-      "name":"Md. Tawsiful Islam", 
-      "batch":18, 
+      "id": 3,
+      "name": "Md. Tawsiful Islam",
+      "batch": 18,
       "overallRating": 1500,
       "codeforcesRating": 1500,
       "codechefRating": 1500,
       "atcoderRating": 500,
-      "solveCount":3050,
+      "solveCount": 3050,
       "lastContestDate": "10-05-2024",
       "lastContestDelta": 45
     },
     {
-      "id":4, 
-      "name":"Ahasan Kabir", 
-      "batch":17, 
+      "id": 4,
+      "name": "Ahasan Kabir",
+      "batch": 17,
       "overallRating": 2000,
       "codeforcesRating": 1900,
       "codechefRating": 1800,
       "atcoderRating": 800,
-      "solveCount":6050,
+      "solveCount": 6050,
       "lastContestDate": "06-02-2023",
       "lastContestDelta": 25
-    },
-    {
-      "id":5, 
-      "name":"Shawly Ahsan", 
-      "batch":17, 
-      "overallRating": 1900,
-      "codeforcesRating": 2000,
-      "codechefRating": 1600,
-      "atcoderRating": 750,
-      "solveCount":600,
-      "lastContestDate": "12-06-2023",
-      "lastContestDelta": -48
     }
-
-
   ]
 }

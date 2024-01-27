@@ -7,7 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
-import { CoderAddEditComponent } from './coder-add-edit/coder-add-edit.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { RegistrationComponent } from './registration/registration.component';
 import {MatInputModule} from '@angular/material/input';
@@ -22,7 +21,6 @@ import { MatSortModule } from '@angular/material/sort';
 @NgModule({
   declarations: [
     AppComponent,
-    CoderAddEditComponent,
     RegistrationComponent,
     LeaderboardComponent,
   ],
