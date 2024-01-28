@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdmiPostComponent } from './admi-post.component';
+import { AdmiPostComponent } from './admin-post.component';
 
 describe('AdmiPostComponent', () => {
   let component: AdmiPostComponent;

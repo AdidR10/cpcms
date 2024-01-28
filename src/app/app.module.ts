@@ -27,7 +27,7 @@ import { LeaderboardComponent } from './pages/leaderboard/leaderboard.component'
 
 import { RegistrationComponent } from './components/registration/registration.component';
 import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
-import { AdmiPostComponent } from './components/admin-post/admi-post.component';
+import { AdmiPostComponent } from './components/admin-post/admin-post.component';
 @NgModule({
   declarations: [
     AppComponent,

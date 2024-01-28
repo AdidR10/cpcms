@@ -30,7 +30,7 @@ export class SidenavbarComponent {
       route:'contests',
     },
     {
-      icon: 'comment',  
+      icon: 'campaign',  
       label:'Announcements',
       route:'announcements',
     }

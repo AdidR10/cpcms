@@ -17,5 +17,12 @@ td, th {
   width: 70%;
   justify-content: center;
 }
-
+.search-bar{
+  display: flex;
+  justify-content: center;
+}
+.search-field{
+  width: 50%;
+  // border-radius: 100px !important;
+}
   
