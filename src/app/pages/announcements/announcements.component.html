@@ -1,1 +1,4 @@
 <app-admin-post [page]="pagename" (click)="openAnnouncementForm()"></app-admin-post>
+<div *ngFor="let announcement of announcements">
+    <app-announcement-card [announcement]="announcement"></app-announcement-card>
+</div>
