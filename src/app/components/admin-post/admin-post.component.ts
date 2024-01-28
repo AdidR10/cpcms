@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-admin-post',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-post.component.scss']
 })
 export class AdmiPostComponent {
-
+  @Input() page!: string;
 }

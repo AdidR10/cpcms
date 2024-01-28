@@ -25,13 +25,9 @@ export class UserService {
   getUserList():Observable<any>{
     return this._http.get('http://localhost:3000/onlineAPI');
   }
-  deleteUser(id: number):Observable<any>{
-    return this._http.delete(`http://localhost:3000/onlineAPI/${id}`);
-  }
+ 
   getUser(id: number):Observable<any>{
     return this._http.get<any>(`http://localhost:3000/users/${id}`);
   }
-  updateUser(id: number, data: any): Observable<any> {
-    return this._http.put(`http://localhost:3000/users/${id}`, data);
-  }
+  
 }

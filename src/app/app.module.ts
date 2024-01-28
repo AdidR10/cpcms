@@ -28,6 +28,8 @@ import { LeaderboardComponent } from './pages/leaderboard/leaderboard.component'
 import { RegistrationComponent } from './components/registration/registration.component';
 import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
 import { AdmiPostComponent } from './components/admin-post/admin-post.component';
+import { AnnouncementFormComponent } from './components/announcement-form/announcement-form.component';
+import { ContestFormComponent } from './components/contest-form/contest-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +39,8 @@ import { AdmiPostComponent } from './components/admin-post/admin-post.component'
     AnnouncementsComponent,
     ContestsComponent,
     AdmiPostComponent,
+    AnnouncementFormComponent,
+    ContestFormComponent,
   ],
   imports: [
     BrowserModule,

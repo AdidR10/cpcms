@@ -7,6 +7,8 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { RegistrationComponent } from '../../components/registration/registration.component';
 import { UserService } from '../../services/user.service';
+import { AdminService } from 'src/app/services/admin.service';
+
 
 @Component({
   selector: 'app-leaderboard',
@@ -34,6 +36,7 @@ export class LeaderboardComponent implements OnInit{
   @ViewChild(MatSort) sort!: MatSort;
 
   constructor(private _userService:UserService,
+    private _adminService:AdminService,
     private _dialog: MatDialog,
     ){}
 
@@ -59,7 +62,7 @@ export class LeaderboardComponent implements OnInit{
     }
   }
   deleteUser(id: number){
-    this._userService.deleteUser(id).subscribe({
+    this._adminService.deleteUser(id).subscribe({
       next:(res)=>{
         alert('User Deleted!');
         this.getUserList();

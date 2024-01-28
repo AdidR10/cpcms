@@ -16,7 +16,6 @@
   "profile": {
     "name": "typicode"
   },
-  
   "requests": [
     {
       "firstName": "Zerin",
@@ -113,14 +112,14 @@
   ],
   "onlineAPI": [
     {
-      "id":1804057, 
-      "name":"Zerin Shaima Meem", 
-      "batch":18, 
+      "id": 1804057,
+      "name": "Zerin Shaima Meem",
+      "batch": 18,
       "overallRating": 1000,
       "codeforcesRating": 1420,
       "codechefRating": 1600,
       "atcoderRating": 500,
-      "solveCount":3500,
+      "solveCount": 3500,
       "lastContestDate": "10-01-2024",
       "lastContestDelta": 100
     },
@@ -171,6 +170,12 @@
       "solveCount": 600,
       "lastContestDate": "12-06-2023",
       "lastContestDelta": -48
+    }
+  ],
+  "announcements": [
+    {
+      "post": "",
+      "id": 1
     }
   ]
 }

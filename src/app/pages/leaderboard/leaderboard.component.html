@@ -1,12 +1,10 @@
-<app-admin-post></app-admin-post>
+<!-- <app-admin-post></app-admin-post> -->
 
-<div class="search-bar">
-    <mat-form-field class="search-field" appearance="fill">
-        <mat-label>Search</mat-label>
-        <mat-icon matPrefix>search</mat-icon>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Meem" #input>
-    </mat-form-field>
-</div>
+<mat-form-field appearance="fill">
+    <mat-label>Search</mat-label>
+    <mat-icon matPrefix>search</mat-icon>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Meem" #input>
+</mat-form-field>
 
 <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort>
