@@ -13,12 +13,9 @@ export class AnnouncementFormComponent {
   announcementForm: FormGroup;
   constructor(private _fb:FormBuilder,
     private _adminService: AdminService,
-    private _dialogRef:MatDialogRef<AnnouncementFormComponent>,
+    private _dialogRef:MatDialogRef<AnnouncementFormComponent>
     ){
       this.announcementForm=this._fb.group({
-        admin_id:1804057,
-        down_vote:0,
-        upvote:0,
         post:''
       })
     };

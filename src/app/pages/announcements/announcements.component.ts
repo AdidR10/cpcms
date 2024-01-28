@@ -1,41 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AnnouncementFormComponent } from 'src/app/components/announcement-form/announcement-form.component';
-import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-announcements',
   templateUrl: './announcements.component.html',
   styleUrls: ['./announcements.component.scss']
 })
-export class AnnouncementsComponent implements OnInit{
+export class AnnouncementsComponent {
   pagename='Announcements';
-  announcements!:any[];
-  constructor(private _dialog:MatDialog,
-    private _adminService: AdminService
-    ){}
+  constructor(private _dialog:MatDialog){}
 
-    ngOnInit(): void{
-      this.getAnnouncementList();
-    }
   openAnnouncementForm(){
-    const dialogRef = this._dialog.open(AnnouncementFormComponent);
-    dialogRef.afterClosed().subscribe({
-      next:(val)=>{
-        if(val){
-          this.getAnnouncementList();
-        }
-      }
-    }) 
+    this._dialog.open(AnnouncementFormComponent);
   }
-
-  getAnnouncementList(){
-    this._adminService.getAnnouncementList().subscribe({
-      next:(res)=>{
-        this.announcements = res;
-      },
-      error: console.log
-    })
-  }
-
 }

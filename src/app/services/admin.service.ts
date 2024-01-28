@@ -19,7 +19,4 @@ export class AdminService {
   addAnnouncement(data: any): Observable<any>{
     return this._http.post('http://localhost:3000/announcements',data);
   }
-  getAnnouncementList():Observable<any>{
-    return this._http.get('http://localhost:3000/announcements');
-  }
 }
