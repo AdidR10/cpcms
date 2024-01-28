@@ -19,6 +19,7 @@ import { MatSortModule } from '@angular/material/sort';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { RouterModule } from '@angular/router';
+import {MatSelectModule} from '@angular/material/select';
 
 import { AnnouncementsComponent } from './pages/announcements/announcements.component';
 import { ContestsComponent } from './pages/contests/contests.component';
@@ -30,6 +31,7 @@ import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.componen
 import { AdmiPostComponent } from './components/admin-post/admin-post.component';
 import { AnnouncementFormComponent } from './components/announcement-form/announcement-form.component';
 import { ContestFormComponent } from './components/contest-form/contest-form.component';
+import { AnnouncementCardComponent } from './components/announcement-card/announcement-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +43,7 @@ import { ContestFormComponent } from './components/contest-form/contest-form.com
     AdmiPostComponent,
     AnnouncementFormComponent,
     ContestFormComponent,
+    AnnouncementCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,8 @@ import { ContestFormComponent } from './components/contest-form/contest-form.com
     MatTableModule,
     MatSidenavModule,
     MatListModule,
-    RouterModule
+    RouterModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
