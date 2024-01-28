@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { UserService } from '../services/user.service';
 import { MAT_DIALOG_DATA,MatDialogRef } from '@angular/material/dialog';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-registration',

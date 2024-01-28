@@ -1,11 +1,12 @@
 import { Component, Inject, InjectionToken, OnInit, ViewChild } from '@angular/core';
-import { UserService } from '../../services/user.service';
 import {MatPaginator } from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
-import { RegistrationComponent } from '../../registration/registration.component';
 import { MatDialog } from '@angular/material/dialog';
-import { Observable } from 'rxjs';
+
+
+import { RegistrationComponent } from '../../components/registration/registration.component';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-leaderboard',
