@@ -173,5 +173,12 @@
     }
   ],
   "announcements": [
+<<<<<<< HEAD
+=======
+    {
+      "post": "",
+      "id": 1
+    }
+>>>>>>> parent of 70aed16 (announcement fetched and edti/dlt dropdown button added, non functionally)
   ]
 }
