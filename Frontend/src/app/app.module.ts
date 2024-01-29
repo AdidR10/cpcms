@@ -20,11 +20,14 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import {MatSelectModule} from '@angular/material/select';
+import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+import { MatCardModule } from '@angular/material/card';
+
+
 
 import { AnnouncementsComponent } from './pages/announcements/announcements.component';
 import { ContestsComponent } from './pages/contests/contests.component';
 import { LeaderboardComponent } from './pages/leaderboard/leaderboard.component';
-
 
 import { RegistrationComponent } from './components/registration/registration.component';
 import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
@@ -33,6 +36,9 @@ import { AnnouncementFormComponent } from './components/announcement-form/announ
 import { ContestFormComponent } from './components/contest-form/contest-form.component';
 import { AnnouncementCardComponent } from './components/announcement-card/announcement-card.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { UpcomingContestComponent } from './components/upcoming-contest/upcoming-contest.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +52,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
     ContestFormComponent,
     AnnouncementCardComponent,
     ProfileComponent,
+    UpcomingContestComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +74,9 @@ import { ProfileComponent } from './pages/profile/profile.component';
     MatSidenavModule,
     MatListModule,
     RouterModule,
-    MatSelectModule
+    MatSelectModule,
+    NgxPaginationModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
