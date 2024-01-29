@@ -1,4 +1,3 @@
-
 ## Users
 
 ### Get all users
@@ -9,6 +8,55 @@
 ### Get a user
 - Method: GET
 - Path: /api/v1/users/:userId
+- Body: {
+    "name": string,
+    "universityId": string,
+    "email": string,
+    "gender": string,
+    "codeforces": {
+        "handle": string,
+        "data": {
+            "lastName": string,
+            "lastOnlineTimeSeconds": number,
+            "rating": number,
+            "friendOfCount": number,
+            "titlePhoto": string,
+            "avatar": string,
+            "firstName": string,
+            "contribution": number,
+            "organization": string,
+            "rank": string,
+            "maxRating": number,
+            "registrationTimeSeconds": number,
+            "maxRank": string
+        }
+    },
+    "codechef": {
+        "handle": string,
+        "data": {
+            "profile": string,
+            "name": string,
+            "currentRating": number,
+            "highestRating": number,
+            "countryFlag": string,
+            "countryName": string,
+            "globalRank": number,
+            "countryRank": number,
+            "stars": number
+        }
+    },
+    "atcoder": {
+        "handle": string,
+        "data": {
+            "birthYear": string,
+            "country": string,
+            "rank": string,
+            "rating": string,
+            "highestRating": string,
+            "ratedMatches": string
+        }
+    }
+}
 
 
 ### Delete a user
@@ -22,6 +70,15 @@
 ### Signup user requests
 - Method: POST
 - Path: /api/v1/userRequests/signup
+- Body: {
+    "name": string,
+    "universityId": string,
+    "email": string,
+    "gender": ["male","female"]
+    "CodeforcesID": string,
+    "CodechefID": string,
+    "AtcoderID": string
+}
 
 
 ### Get all user requests
@@ -50,6 +107,16 @@
 ### Create a contest
 - Method: POST
 - Path: /api/v1/contests
+- Body: {
+    "link": string,
+    "name": string,
+    "password": string,
+    "date": date,
+    "time": string,
+    "duration": string,
+    "description": string,
+    "type": ["team","individual"]
+}
 
 
 ### Get a contest
@@ -78,6 +145,11 @@
 ### Create an announcement
 - Method: POST
 - Path: /api/v1/announcements
+- Body: {
+    "date": date,
+    "body": string,
+    "userId": string
+    }
 
 
 ### Get an announcement
@@ -93,4 +165,3 @@
 ### Update an announcement
 - Method: PUT
 - Path: /api/v1/announcements/:announcementId
-
