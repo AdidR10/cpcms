@@ -26,3 +26,13 @@ td, th {
   // border-radius: 100px !important;
 }
   
+.custom-link {
+  font-size:medium;
+  color: cornflowerblue;
+  font-weight: 500;
+>a{
+  color:inherit; /* Use the default text color */
+  text-decoration: none; /* Remove underline */
+  cursor: pointer; /* Show cursor as pointer on hover */
+}
+}

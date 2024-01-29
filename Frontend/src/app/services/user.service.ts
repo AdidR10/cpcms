@@ -25,7 +25,9 @@ export class UserService {
   getUserList():Observable<any>{
     return this._http.get('http://localhost:3000/onlineAPI');
   }
- 
+  getUserProfile(id:number):Observable<any>{
+    return this._http.get(`http://localhost:3000/onlineAPI/${id}`);
+  }
   getUser(id: number):Observable<any>{
     return this._http.get<any>(`http://localhost:3000/users/${id}`);
   }
