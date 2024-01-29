@@ -1,0 +1,29 @@
+
+<table border="1">
+    <tr class="front-row">
+        <td> Id</td>
+        <td> Title</td>
+        <td> User Id</td>
+    </tr>
+    <tr *ngFor="let i of data | paginate: { itemsPerPage: 5, currentPage: p }" >
+        <td>
+            <mat-card>
+                <mat-card-content> {{i.id}}</mat-card-content>
+            </mat-card> 
+        </td>   
+        <td>
+            <mat-card>
+                <mat-card-content> {{i.name}}</mat-card-content>
+            </mat-card> 
+        </td>    
+
+        <td>
+            <mat-card>
+                <mat-card-content> {{i.email}}</mat-card-content>
+            </mat-card> 
+        </td>       
+        
+    </tr>
+</table>
+<pagination-controls (pageChange)="p = $event">
+</pagination-controls>
