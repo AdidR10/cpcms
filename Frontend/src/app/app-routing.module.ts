@@ -6,6 +6,7 @@ import { AnnouncementsComponent } from './pages/announcements/announcements.comp
 import { ProfileComponent } from './pages/profile/profile.component';
 import { UpcomingContestComponent } from './components/upcoming-contest/upcoming-contest.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { UserRequestsComponent } from './components/user-requests/user-requests.component';
 
 const routes: Routes = [
   {path: '', component: LeaderboardComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'announcements', component: AnnouncementsComponent},
   {path: 'profile/:id', component: ProfileComponent},
   {path: 'upcoming-contest', component: UpcomingContestComponent},
-  {path: 'sign-in', component: SignInComponent}
+  {path: 'sign-in', component: SignInComponent},
+  {path: 'user-requests', component: UserRequestsComponent}
 ];
 
 @NgModule({

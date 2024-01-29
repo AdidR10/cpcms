@@ -39,6 +39,7 @@ import { AnnouncementCardComponent } from './components/announcement-card/announ
 import { ProfileComponent } from './pages/profile/profile.component';
 import { UpcomingContestComponent } from './components/upcoming-contest/upcoming-contest.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { UserRequestsComponent } from './components/user-requests/user-requests.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +54,8 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
     AnnouncementCardComponent,
     ProfileComponent,
     UpcomingContestComponent,
-    SignInComponent
+    SignInComponent,
+    UserRequestsComponent
   ],
   imports: [
     BrowserModule,
