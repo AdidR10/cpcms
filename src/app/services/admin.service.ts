@@ -22,4 +22,13 @@ export class AdminService {
   getAnnouncementList():Observable<any>{
     return this._http.get('http://localhost:3000/announcements');
   }
+  deleteAnnouncement(id: number):Observable<any>{
+    return this._http.delete(`http://localhost:3000/announcements/${id}`);
+  }
+  updateAnnouncement(id: number, data: any): Observable<any> {
+    return this._http.put(`http://localhost:3000/announcements/${id}`, data);
+  }
+  getAnnouncement(id: number):Observable<any>{
+    return this._http.get<any>(`http://localhost:3000/announcements/${id}`);
+  }
 }

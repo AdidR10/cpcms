@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { AnnouncementCardComponent } from 'src/app/components/announcement-card/announcement-card.component';
 import { AnnouncementFormComponent } from 'src/app/components/announcement-form/announcement-form.component';
 import { AdminService } from 'src/app/services/admin.service';
 
@@ -33,6 +34,30 @@ export class AnnouncementsComponent implements OnInit{
     this._adminService.getAnnouncementList().subscribe({
       next:(res)=>{
         this.announcements = res;
+      },
+      error: console.log
+    })
+  }
+
+  handleEdit(id: number): void {
+    this._adminService.getAnnouncement(id).subscribe(
+      (data) => {
+        console.log("data fetched = "+data)
+        this._dialog.open(AnnouncementFormComponent, {
+          data,
+        });
+      },
+      (error) => {
+        console.error('Error fetching user data:', error);
+      }
+    );
+  }
+
+  handleDelete(id: number): void {
+    this._adminService.deleteAnnouncement(id).subscribe({
+      next:(res)=>{
+        alert('Announcement Deleted!');
+        this.getAnnouncementList();
       },
       error: console.log
     })

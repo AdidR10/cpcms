@@ -171,42 +171,8 @@
       "lastContestDate": "12-06-2023",
       "lastContestDelta": -48
     }
-  ],"announcements": [
-    {
-      "admin_id": 1804057,
-      "down_vote": 0,
-      "upvote": 0,
-      "post": "I am a frog!",
-      "id": 1
-    },
-    {
-      "admin_id": 1804057,
-      "down_vote": 0,
-      "upvote": 0,
-      "post": "Zannatul is also a frog!",
-      "id": 2
-    },
-    {
-      "admin_id": 1804057,
-      "down_vote": 0,
-      "upvote": 0,
-      "post": "Nahian is a frog\n",
-      "id": 4
-    },
-    {
-      "admin_id": 1804057,
-      "down_vote": 0,
-      "upvote": 0,
-      "post": "Mumu is a frog!",
-      "id": 5
-    },
-    {
-      "admin_id": 1804057,
-      "down_vote": 0,
-      "upvote": 0,
-      "post": "adiba is a frog\n",
-      "id": 6
-    },
+  ],
+  "announcements": [
     {
       "admin_id": 1804057,
       "down_vote": 0,

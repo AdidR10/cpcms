@@ -12,11 +12,11 @@
         <button mat-icon-button (click)="toggleDropdown()">
             <mat-icon>more_horizon</mat-icon>
             <div *ngIf="isDropdownOpen" class="dropdown">
-                <button>
+                <button (click)="edit(announcement.id)">
                     <mat-icon>edit</mat-icon>
                     <span>Edit</span>
                 </button>
-                <button>
+                <button (click)="delete(announcement.id)">
                     <mat-icon>delete</mat-icon>
                     <span>Delete</span>
                 </button>
