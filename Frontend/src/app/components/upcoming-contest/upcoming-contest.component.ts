@@ -18,7 +18,7 @@ export class UpcomingContestComponent {
 
 
   constructor(private user:ContestsService){
-    this.user.getdata().subscribe((data: any)=>{
+    this.user.getContestList().subscribe((data: any)=>{
       console.log(this.data);
       this.data=data;
     });

@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import { ContestsService } from 'src/app/services/contests.service'
+import { UserService } from 'src/app/services/user.service';
 
 
 
@@ -17,8 +18,8 @@ export class UserRequestsComponent {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
 
-  constructor(private user:ContestsService){
-    this.user.getdata().subscribe((data: any)=>{
+  constructor(private user:UserService){
+    this.user.getRequestList().subscribe((data: any)=>{
       console.log(this.data);
       this.data=data;
     });
