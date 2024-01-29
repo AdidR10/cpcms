@@ -6,7 +6,8 @@
                 <img src="../../../assets/cp-logo.png" alt="Admin Image">
             </div>
             <div class="admin-name">
-                Admin Name <!-- Replace with the admin's name -->
+                <h4>Admin Name</h4>
+                <h5>date</h5>
             </div>
         </div>
         <button mat-icon-button (click)="toggleDropdown()">
@@ -23,9 +24,5 @@
             </div>
         </button>
     </div>
-    <p class="post-content">{{announcement.post}}</p>
-    <div class="actions">
-        <button class="upvote-button">Upvote</button>
-        <button class="downvote-button">Downvote</button>
-    </div>
+    <mat-card-content class="post-content">{{announcement.post}}</mat-card-content>
 </div>
