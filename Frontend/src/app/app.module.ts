@@ -20,12 +20,18 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import {MatSelectModule} from '@angular/material/select';
+<<<<<<< HEAD
+import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+import { MatCardModule } from '@angular/material/card';
+
+
+=======
 import {MatCardModule} from '@angular/material/card';
+>>>>>>> 1a8c10b026288d0b99776b589f774fc807e48d0d
 
 import { AnnouncementsComponent } from './pages/announcements/announcements.component';
 import { ContestsComponent } from './pages/contests/contests.component';
 import { LeaderboardComponent } from './pages/leaderboard/leaderboard.component';
-
 
 import { RegistrationComponent } from './components/registration/registration.component';
 import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
@@ -34,6 +40,7 @@ import { AnnouncementFormComponent } from './components/announcement-form/announ
 import { ContestFormComponent } from './components/contest-form/contest-form.component';
 import { AnnouncementCardComponent } from './components/announcement-card/announcement-card.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { RoundedButtonComponent } from './components/rounded-button/rounded-button.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +53,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     AnnouncementFormComponent,
     ContestFormComponent,
     AnnouncementCardComponent,
-    ProfileComponent
+    ProfileComponent,
+    RoundedButtonComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,6 +77,10 @@ import { ProfileComponent } from './pages/profile/profile.component';
     MatListModule,
     RouterModule,
     MatSelectModule,
+<<<<<<< HEAD
+    NgxPaginationModule,
+=======
+>>>>>>> 1a8c10b026288d0b99776b589f774fc807e48d0d
     MatCardModule
   ],
   providers: [],
