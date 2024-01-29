@@ -1,4 +1,4 @@
-const { get } = require('mongoose');
+
 const Contest = require('../models/contest');
 const { contestValidation } = require('../validators/contestValidation');
 
@@ -39,18 +39,20 @@ exports.getAllContests = async (req, res) => {
       .limit(limit);
     res.send(contests);
   } catch (err) {
-    res.status(500).send(err);
+    res.status(500).send({ message: 'Server problem: Unable to retrieve contests.' });
   }
 };
 
 exports.getContest = async (req, res) => {
   try {
     const contest = await Contest.findById(req.params.contestId);
+    if (!contest) return res.status(404).send({ message: 'Contest not found.' });
     res.send(contest);
   } catch (err) {
-    res.status(404).send({ message: 'Contest not found.' });
+    res.status(500).send({ message: 'Server problem: Unable to retrieve contest.' });
   }
 }
+
 exports.deleteContest = async (req, res) => {
     try {
       const contest = await Contest.findById(req.params.contestId);

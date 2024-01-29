@@ -5,7 +5,7 @@ const userRequestController = require('../controllers/userRequestController');
 router.post('/signup', userRequestController.signupUserRequests);
 
 router.get('/', userRequestController.getAllUserRequests);
-router.post('/:userRequestId', userRequestController.approveUserRequest);
+router.get('/:userRequestId', userRequestController.approveUserRequest);
 router.delete('/:userRequestId', userRequestController.deleteUserRequest);
 
 module.exports = router;

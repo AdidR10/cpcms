@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const announcementController = require('../controllers/announcementController');
 
-router.get('/announcements', announcementController.getAllAnnouncements);
-router.post('/announcements', announcementController.createAnnouncement);
-router.get('/announcements/:announcementId', announcementController.getAnnouncement);
-router.delete('/announcements/:announcementId', announcementController.deleteAnnouncement);
-router.put('/announcements/:announcementId', announcementController.updateAnnouncement);
+router.get('/', announcementController.getAllAnnouncements);
+router.post('/', announcementController.createAnnouncement);
+router.get('/:announcementId', announcementController.getAnnouncement);
+router.delete('/:announcementId', announcementController.deleteAnnouncement);
+router.put('/:announcementId', announcementController.updateAnnouncement);
 
 module.exports = router;
