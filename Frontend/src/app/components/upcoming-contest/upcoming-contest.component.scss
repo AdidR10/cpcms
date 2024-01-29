@@ -1,4 +1,21 @@
 .paginator{
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: center; // Center the pagination controls
+    margin-top: 20px; // Add some space between the cards and pagination
+}
+.contest-container{
+    background-color: rgb(166, 225, 225);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    padding: 0;
+}
+.contest-card{
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+    width: calc(100% - 5px); // Adjust width to fit two cards per row with a gap of 20px
+    min-width: 350px;
+    margin-bottom: 20px;
 }

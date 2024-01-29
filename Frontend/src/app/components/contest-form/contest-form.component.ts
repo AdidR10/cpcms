@@ -16,13 +16,13 @@ export class ContestFormComponent {
     private _dialogRef:MatDialogRef<ContestFormComponent>,
     ){
     this.contestForm = this._fb.group({
-      contestName:'',
-      contestLink: '',
-      contestPassWord: '',
-      contestDate: '',
-      contestTime: '',
-      contestDuration: '',
-      contestType: ''
+      name:'',
+      link: '',
+      password: '',
+      date: '',
+      time: '',
+      duration: '',
+      type: ''
     })
   }
   onContestSubmit(){

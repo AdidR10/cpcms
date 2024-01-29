@@ -9,11 +9,10 @@ import { Observable } from 'rxjs';
 export class ContestsService {
 
   constructor(private _http:HttpClient) { }
-  getdata(){
-    let url='https://jsonplaceholder.typicode.com/users/';
-    return this._http.get(url);
+  getContestList(): Observable<any>{
+    return this._http.get('http://localhost:3010/api/v1/contests');
   }
   addContest(data: any): Observable<any>{
-    return this._http.post('http://localhost:3000/upcoming-contests',data);
+    return this._http.post('http://localhost:3010/api/v1/contests',data);
   }
 }

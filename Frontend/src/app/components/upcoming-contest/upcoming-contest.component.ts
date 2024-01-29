@@ -17,8 +17,8 @@ export class UpcomingContestComponent {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
 
-  constructor(private user:ContestsService){
-    this.user.getdata().subscribe((data: any)=>{
+  constructor(private _contestService:ContestsService){
+    this._contestService.getContestList().subscribe((data: any)=>{
       console.log(this.data);
       this.data=data;
     });

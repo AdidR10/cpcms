@@ -79,7 +79,9 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
     MatCardModule,
     NgxPaginationModule,
     MatPaginatorModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    FlexLayoutModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
