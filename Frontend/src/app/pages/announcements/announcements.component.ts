@@ -19,16 +19,7 @@ export class AnnouncementsComponent implements OnInit{
     ngOnInit(): void{
       this.getAnnouncementList();
     }
-  openAnnouncementForm(){
-    const dialogRef = this._dialog.open(AnnouncementFormComponent);
-    dialogRef.afterClosed().subscribe({
-      next:(val)=>{
-        if(val){
-          this.getAnnouncementList();
-        }
-      }
-    }) 
-  }
+  
 
   getAnnouncementList(){
     this._adminService.getAnnouncementList().subscribe({
@@ -39,18 +30,35 @@ export class AnnouncementsComponent implements OnInit{
     })
   }
 
+  openAnnouncementForm(){
+    const dialogRef = this._dialog.open(AnnouncementFormComponent);
+    dialogRef.afterClosed().subscribe({
+      next:(val)=>{
+        if(val){
+          this.getAnnouncementList();
+        }
+      }
+    }) 
+  }
   handleEdit(id: number): void {
     this._adminService.getAnnouncement(id).subscribe(
-      (data) => {
-        console.log("data fetched = "+data)
-        this._dialog.open(AnnouncementFormComponent, {
-          data,
+      (announcementData) => {
+        const dialogRef = this._dialog.open(AnnouncementFormComponent, {
+          data :announcementData
         });
+        dialogRef.afterClosed().subscribe({
+          next:(val)=>{
+            if(val){
+              this.getAnnouncementList();
+            }
+          }
+        })
       },
       (error) => {
         console.error('Error fetching user data:', error);
       }
     );
+    this.getAnnouncementList();
   }
 
   handleDelete(id: number): void {
