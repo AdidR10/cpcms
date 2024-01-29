@@ -1,0 +1,41 @@
+/* Add some basic styling for the container */
+.contest-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center; /* Align text to the left */
+    padding: 20px;
+    background-color: #b9b9b9;
+    margin: 0 auto; /* Center the container horizontally */
+
+}
+  
+.front-row{
+    background-color: #3babe2;
+}
+.card-list{
+    background-color: #f1f5f7;
+}
+/* Style for each contest row */
+.contest-list {
+    width: 100%;
+}
+
+/* Style for each contest item */
+.mat-list-item {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* Style for contest information */
+.contest-info {
+    margin-bottom: 8px;
+}
+
+/* Style for the header row */
+.header-row {
+    font-weight: bold;
+    background-color: rgb(37, 150, 190);
+    color: #fff;
+}

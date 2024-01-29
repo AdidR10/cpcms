@@ -1,35 +1,29 @@
-<!-- Add some basic styling for the container -->
-<div class="contest-container">
-    <div>
-        <mat-list *ngFor="let i of data | paginate: { itemsPerPage: 5, currentPage: p }" class="contest-row">
-            <mat-card class="card-list">
-                <mat-card-content *ngIf="i.title">
-                    <b>Contest Name: </b>{{ i.title }}
-                </mat-card-content>
-                <mat-card-content *ngIf="i.name">
-                    <b>Contest Link: </b>{{ i.name }}
-                </mat-card-content>
-                <mat-card-content *ngIf="i.id">
-                    <b>Contest PassWord: </b>{{ i.id }}
-                </mat-card-content>
-                <mat-card-content *ngIf="i.username">
-                    <b>Contest Date: </b>{{ i.username }}
-                </mat-card-content>
-                <mat-card-content *ngIf="i.email">
-                    <b>Contest Time: </b>{{ i.email }}
-                </mat-card-content>
-                <mat-card-content *ngIf="i.phone">
-                    <b>Contest Duration: </b>{{ i.phone }}
-                </mat-card-content>
-                <mat-card-content *ngIf="i.website">
-                    <b>Contest Type: </b>{{ i.website }}
-                </mat-card-content>
-            </mat-card>
 
-        </mat-list>
+<table border="1">
+    <tr class="front-row">
+        <td> Id</td>
+        <td> Title</td>
+        <td> User Id</td>
+    </tr>
+    <tr *ngFor="let i of data | paginate: { itemsPerPage: 5, currentPage: p }" >
+        <td>
+            <mat-card>
+                <mat-card-content> {{i.id}}</mat-card-content>
+            </mat-card> 
+        </td>   
+        <td>
+            <mat-card>
+                <mat-card-content> {{i.name}}</mat-card-content>
+            </mat-card> 
+        </td>    
 
-
-    </div>
-
-</div>
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
+        <td>
+            <mat-card>
+                <mat-card-content> {{i.email}}</mat-card-content>
+            </mat-card> 
+        </td>       
+        
+    </tr>
+</table>
+<pagination-controls (pageChange)="p = $event">
+</pagination-controls>
