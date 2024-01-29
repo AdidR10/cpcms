@@ -1,2 +1,37 @@
 <p>profile works!</p>
 <p *ngIf="user">{{user.name}}</p>
+<div class="profile-container">
+    <div class="user-details">
+        <mat-card class="user-card">
+            <img src="../../assets/cp-logo.png" />
+            <div class="user-info">
+                <h1>{{user.name}}</h1>
+                <div class="user-data">
+                    <div class="data-label" matListItemIcon>Email :</div>
+                    <span>abc.gmail.com</span>
+                </div>
+                <div class="user-data">
+                    <div class="data-label" matListItemIcon>Batch :</div>
+                    <span>'18</span>
+                </div>
+                <div class="user-data">
+                    <div class="data-label" matListItemIcon>ID :</div>
+                    <span>{{user.id}}</span>
+                </div>
+                <div class="user-data">
+                    <div class="data-label" matListItemIcon>Gender :</div>
+                    <span>Female</span>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+    <div class="oj-details">
+        <div class="handles">
+            handles
+            <app-rounded-button [imageUrl]="'path/to/image.png'" [buttonText]="'Click Me'"></app-rounded-button>
+        </div>
+        <div class="solve-count">
+            solve count
+        </div>
+    </div>
+</div>
