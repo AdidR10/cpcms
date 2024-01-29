@@ -1,7 +1,19 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="mat-elevation-z3">
+  <button mat-icon-button (click)="collapsed.set(!collapsed())">
+    <mat-icon>menu</mat-icon>
+  </button>
   <span>CUET CPCMS</span>
   <span class="example-spacer"></span>
-  <button mat-raised-button>
-    Register
+  <button mat-raised-button (click)="openAddEditForm()">
+
+    Add Student
   </button>
 </mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
+    <app-sidenavbar [collapsed]="collapsed()"></app-sidenavbar>
+  </mat-sidenav>
+  <mat-sidenav-content class="main-body" [style.margin-left]="sidenavWidth()">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

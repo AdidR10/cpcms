@@ -1,0 +1,212 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "requests": [
+    {
+      "firstName": "Zerin",
+      "lastName": "Meem",
+      "email": "abc@gmail.com",
+      "gender": "female",
+      "codeforcesHandle": "meem",
+      "codechefHandle": "mnbnm",
+      "atcoderHandle": "hi",
+      "id": 1
+    },
+    {
+      "firstName": "aSdf",
+      "lastName": "ABC",
+      "email": "asdas@gmail.com",
+      "gender": "female",
+      "codeforcesHandle": "fsfsf",
+      "codechefHandle": "wwr",
+      "atcoderHandle": "klklj",
+      "id": 2
+    },
+    {
+      "firstName": "Zerin Shaima",
+      "lastName": "Meem",
+      "email": "abc@gmail.com",
+      "gender": "female",
+      "codeforcesHandle": "Raven__78",
+      "codechefHandle": "zerin_shaima",
+      "atcoderHandle": "Meem",
+      "id": 3
+    },
+    {
+      "firstName": "sdffd",
+      "lastName": "efg",
+      "email": "wge@gmail.com",
+      "gender": "female",
+      "codeforcesHandle": "bjhbj",
+      "codechefHandle": "nbnbjm",
+      "atcoderHandle": "mnm",
+      "id": 4
+    },
+    {
+      "firstName": "zannatul",
+      "lastName": "tripti",
+      "email": "asd@gmail.com",
+      "gender": "female",
+      "codeforcesHandle": "knkj",
+      "codechefHandle": "lkjl",
+      "atcoderHandle": "nm",
+      "id": 5
+    }
+  ],
+  "users": [
+    {
+      "id": 1804057,
+      "firstName": "Zerin Shaima",
+      "lastName": "Meem",
+      "email": "abc@gmail.com",
+      "gender": "female",
+      "codeforcesHandle": "Raven__878",
+      "codechefHandle": "zerin_shaima",
+      "atcoderHandle": "Meem"
+    },
+    {
+      "id": 1804055,
+      "firstName": "Ashfaqur Rahman",
+      "lastName": "Adib",
+      "email": "abd@gmail.com",
+      "gender": "male",
+      "codeforcesHandle": "adibur6",
+      "codechefHandle": "adib",
+      "atcoderHandle": "adibur6"
+    },
+    {
+      "id": 1804041,
+      "firstName": "Tawsifur Rahman",
+      "lastName": "Akash",
+      "email": "axd@gmail.com",
+      "gender": "male",
+      "codeforcesHandle": "0manush",
+      "codechefHandle": "akash",
+      "atcoderHandle": "u1804041"
+    },
+    {
+      "id": 1704055,
+      "firstName": "Ahasan",
+      "lastName": "Kabir",
+      "email": "abo@gmail.com",
+      "gender": "male",
+      "codeforcesHandle": "AK",
+      "codechefHandle": "AK",
+      "atcoderHandle": "ahasan"
+    }
+  ],
+  "onlineAPI": [
+    {
+      "id": 1804057,
+      "name": "Zerin Shaima Meem",
+      "batch": 18,
+      "overallRating": 1000,
+      "codeforcesRating": 1420,
+      "codechefRating": 1600,
+      "atcoderRating": 500,
+      "solveCount": 3500,
+      "lastContestDate": "10-01-2024",
+      "lastContestDelta": 100
+    },
+    {
+      "id": 1804055,
+      "name": "Ashfaqur Rahman",
+      "batch": 18,
+      "overallRating": 2000,
+      "codeforcesRating": 1620,
+      "codechefRating": 2600,
+      "atcoderRating": 800,
+      "solveCount": 300,
+      "lastContestDate": "02-01-2024",
+      "lastContestDelta": 10
+    },
+    {
+      "id": 1804041,
+      "name": "Md. Tawsiful Islam",
+      "batch": 18,
+      "overallRating": 1500,
+      "codeforcesRating": 1500,
+      "codechefRating": 1500,
+      "atcoderRating": 500,
+      "solveCount": 3050,
+      "lastContestDate": "10-05-2024",
+      "lastContestDelta": 45
+    },
+    {
+      "id": 1704055,
+      "name": "Ahasan Kabir",
+      "batch": 17,
+      "overallRating": 2000,
+      "codeforcesRating": 1900,
+      "codechefRating": 1800,
+      "atcoderRating": 800,
+      "solveCount": 6050,
+      "lastContestDate": "06-02-2023",
+      "lastContestDelta": 25
+    },
+    {
+      "id": 1704057,
+      "name": "Shawly Ahsan",
+      "batch": 17,
+      "overallRating": 1900,
+      "codeforcesRating": 2000,
+      "codechefRating": 1600,
+      "atcoderRating": 750,
+      "solveCount": 600,
+      "lastContestDate": "12-06-2023",
+      "lastContestDelta": -48
+    }
+  ],
+  "announcements": [
+    {
+      "admin_id": 1804057,
+      "down_vote": 0,
+      "upvote": 0,
+      "post": "Nafisa is a frog :D",
+      "id": 7
+    },
+    {
+      "admin_id": 1804057,
+      "down_vote": 0,
+      "upvote": 0,
+      "post": "Shima is a frog",
+      "id": 8
+    },
+    {
+      "admin_id": 1804057,
+      "down_vote": 0,
+      "upvote": 0,
+      "post": "adib is a frog",
+      "id": 9
+    },
+    {
+      "admin_id": 1804057,
+      "down_vote": 0,
+      "upvote": 0,
+      "post": "Akash is a frog",
+      "id": 10
+    },
+    {
+      "admin_id": 1804057,
+      "down_vote": 0,
+      "upvote": 0,
+      "post": "Shima is afrog",
+      "id": 11
+    }
+  ]
+}

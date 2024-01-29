@@ -1,0 +1,5 @@
+<app-admin-post [page]="pagename" (click)="openAnnouncementForm()"></app-admin-post>
+<div *ngFor="let announcement of announcements">
+    <app-announcement-card [announcement]="announcement" (editClicked)="handleEdit($event)"
+        (deleteClicked)="handleDelete($event)"></app-announcement-card>
+</div>

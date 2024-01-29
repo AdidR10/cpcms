@@ -1,0 +1,25 @@
+<div class="dialog-box">
+    <div class="title">
+        <h2>Post Announcement</h2>
+        <mat-icon matSuffix [mat-dialog-close]="false">close</mat-icon>
+    </div>
+    <hr>
+    <form class="content" [formGroup]="announcementForm" (ngSubmit)="onAnnouncementSubmit()">
+        <div class="admin-details">
+            <div class="admin-image">
+                <img src="../../../assets/cp-logo.png" alt="Admin Image">
+            </div>
+            <div class="admin-name">
+                <h2>Admin Name</h2>
+            </div>
+        </div>
+        <div>
+            <textarea formControlName="post" class="post-text" placeholder="Write your post here..."
+                [(ngModel)]="postContent"></textarea>
+        </div>
+
+        <div mat-dialog-actions class="action">
+            <button mat-raised-button color="primary" type="submit" [disabled]="!postContent">Post</button>
+        </div>
+    </form>
+</div>

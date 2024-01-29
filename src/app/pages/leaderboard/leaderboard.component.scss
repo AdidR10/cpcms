@@ -1,0 +1,28 @@
+table {
+    width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width:fit-content;
+}
+
+.action-cell {
+  margin: 0.5%;
+  display: flex;
+  width: 70%;
+  justify-content: center;
+}
+.search-bar{
+  display: flex;
+  justify-content: center;
+}
+.search-field{
+  width: 50%;
+  // border-radius: 100px !important;
+}
+  
