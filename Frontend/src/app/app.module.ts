@@ -81,9 +81,7 @@ import { UserRequestsComponent } from './components/user-requests/user-requests.
     MatCardModule,
     NgxPaginationModule,
     MatPaginatorModule,
-    MatProgressBarModule,
-    FlexLayoutModule,
-    MatDatepickerModule
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
