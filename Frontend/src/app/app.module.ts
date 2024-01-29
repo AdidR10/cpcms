@@ -20,6 +20,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import {MatSelectModule} from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card';
 
 import { AnnouncementsComponent } from './pages/announcements/announcements.component';
 import { ContestsComponent } from './pages/contests/contests.component';
@@ -33,6 +34,7 @@ import { AnnouncementFormComponent } from './components/announcement-form/announ
 import { ContestFormComponent } from './components/contest-form/contest-form.component';
 import { AnnouncementCardComponent } from './components/announcement-card/announcement-card.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { RoundedButtonComponent } from './components/rounded-button/rounded-button.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +48,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
     ContestFormComponent,
     AnnouncementCardComponent,
     ProfileComponent,
+    RoundedButtonComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     MatSidenavModule,
     MatListModule,
     RouterModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
