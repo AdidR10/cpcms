@@ -32,6 +32,7 @@ import { AdmiPostComponent } from './components/admin-post/admin-post.component'
 import { AnnouncementFormComponent } from './components/announcement-form/announcement-form.component';
 import { ContestFormComponent } from './components/contest-form/contest-form.component';
 import { AnnouncementCardComponent } from './components/announcement-card/announcement-card.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { AnnouncementCardComponent } from './components/announcement-card/announ
     AnnouncementFormComponent,
     ContestFormComponent,
     AnnouncementCardComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

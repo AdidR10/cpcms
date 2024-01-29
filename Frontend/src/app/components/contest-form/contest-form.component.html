@@ -1,1 +1,24 @@
-<p>contest-form works!</p>
+<div class="dialog-box">
+    <div class="title">
+        <h2>Post Contest</h2>
+        <mat-icon matSuffix [mat-dialog-close]="false">close</mat-icon>
+    </div>
+    <hr>
+    <form class="content">
+        <div class="admin-details">
+            <div class="admin-image">
+                <img src="../../../assets/cp-logo.png" alt="Admin Image">
+            </div>
+            <div class="admin-name">
+                <h2>Admin Name</h2>
+            </div>
+        </div>
+        <div>
+            <textarea formControlName="post" class="post-text" placeholder="Write your post here..."></textarea>
+        </div>
+
+        <div mat-dialog-actions class="action">
+            <button mat-raised-button color="primary" type="submit">Post</button>
+        </div>
+    </form>
+</div>

@@ -70,14 +70,14 @@
   ],
   "users": [
     {
-      "id": 1804057,
       "firstName": "Zerin Shaima",
       "lastName": "Meem",
       "email": "abc@gmail.com",
       "gender": "female",
-      "codeforcesHandle": "Raven__878",
+      "codeforcesHandle": "Raven__87",
       "codechefHandle": "zerin_shaima",
-      "atcoderHandle": "Meem"
+      "atcoderHandle": "Meem",
+      "id": 1804057
     },
     {
       "id": 1804055,
@@ -177,7 +177,7 @@
       "admin_id": 1804057,
       "down_vote": 0,
       "upvote": 0,
-      "post": "Nafisa is a frog :D",
+      "post": "nahian is a big frog",
       "id": 7
     },
     {
