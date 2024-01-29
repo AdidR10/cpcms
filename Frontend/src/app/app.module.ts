@@ -23,6 +23,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 import { AnnouncementsComponent } from './pages/announcements/announcements.component';
 import { ContestsComponent } from './pages/contests/contests.component';
@@ -36,6 +38,7 @@ import { ContestFormComponent } from './components/contest-form/contest-form.com
 import { AnnouncementCardComponent } from './components/announcement-card/announcement-card.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { UpcomingContestComponent } from './components/upcoming-contest/upcoming-contest.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +52,8 @@ import { UpcomingContestComponent } from './components/upcoming-contest/upcoming
     ContestFormComponent,
     AnnouncementCardComponent,
     ProfileComponent,
-    UpcomingContestComponent
+    UpcomingContestComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +79,8 @@ import { UpcomingContestComponent } from './components/upcoming-contest/upcoming
     MatCardModule,
     NgxPaginationModule,
     MatPaginatorModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

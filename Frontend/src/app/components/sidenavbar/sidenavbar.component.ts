@@ -33,6 +33,11 @@ export class SidenavbarComponent {
       icon: 'campaign',  
       label:'Announcements',
       route:'announcements',
+    },
+    {
+      icon: 'verified_user',  
+      label:'LogIn as Admin',
+      route:'sign-in',
     }
   ]);
 
