@@ -34,7 +34,6 @@ import { AnnouncementFormComponent } from './components/announcement-form/announ
 import { ContestFormComponent } from './components/contest-form/contest-form.component';
 import { AnnouncementCardComponent } from './components/announcement-card/announcement-card.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { RoundedButtonComponent } from './components/rounded-button/rounded-button.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,8 +46,7 @@ import { RoundedButtonComponent } from './components/rounded-button/rounded-butt
     AnnouncementFormComponent,
     ContestFormComponent,
     AnnouncementCardComponent,
-    ProfileComponent,
-    RoundedButtonComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
