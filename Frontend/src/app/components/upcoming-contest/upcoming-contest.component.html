@@ -25,11 +25,9 @@
                     <b>Contest Type: </b>{{ i.website }}
                 </mat-card-content>
             </mat-card>
-
         </mat-list>
-
-
     </div>
 
 </div>
-<pagination-controls (pageChange)="p = $event"></pagination-controls>
+<div class="paginator"><pagination-controls (pageChange)="p = $event"></pagination-controls>
+    <div>

@@ -31,4 +31,5 @@ export class AdminService {
   getAnnouncement(id: number):Observable<any>{
     return this._http.get<any>(`http://localhost:3000/announcements/${id}`);
   }
+ 
 }

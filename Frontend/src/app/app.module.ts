@@ -23,6 +23,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { AnnouncementsComponent } from './pages/announcements/announcements.component';
 import { ContestsComponent } from './pages/contests/contests.component';
@@ -75,7 +76,8 @@ import { UpcomingContestComponent } from './components/upcoming-contest/upcoming
     MatCardModule,
     NgxPaginationModule,
     MatPaginatorModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -125,7 +125,7 @@
       "codeforcesHandle": "Raven__87",
       "codechefHandle": "zerin_shaima",
       "atcoderHandle": "Meem",
-      "vjudgeHandle":"Meem"
+      "vjudgeHandle": "Meem"
     },
     {
       "id": 1804055,
@@ -218,6 +218,18 @@
       "upvote": 0,
       "post": "I am a frog",
       "id": 12
+    }
+  ],
+  "upcoming-contests": [
+    {
+      "contestName": "rrrrrrrrrrrr",
+      "contestLink": "dddddddddddddd",
+      "contestPassWord": "",
+      "contestDate": "2024-01-27",
+      "contestTime": "01:59",
+      "contestDuration": "sssssssss",
+      "contestType": "",
+      "id": 1
     }
   ]
 }
