@@ -1,0 +1,58 @@
+/* Basic styling for the container */
+.contest-container {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    background-color: #f8f9fa; /* Add your desired background color */
+  
+    @media screen and (max-width: 768px) {
+      width: 100%; /* Adjust for smaller screens */
+      padding: 10px;
+    }
+  }
+  
+  /* Style for contest rows */
+  .contest-row {
+    margin-bottom: 20px;
+  
+    @media screen and (max-width: 768px) {
+      display: block; /* Stack rows on smaller screens */
+    }
+  }
+  
+  /* Style for mat-card in the list */
+  .card-list {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    background-color: #bbb5b5; /* Add your desired background color */
+  
+    @media screen and (max-width: 768px) {
+      margin-bottom: 10px; /* Adjust spacing on smaller screens */
+    }
+  
+    &:hover {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+  }
+  
+  /* Style for mat-card-content */
+  mat-card-content {
+    padding: 10px;
+  }
+  
+  /* Style for pagination controls */
+  .pagination-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    @media screen and (max-width: 768px) {
+      flex-direction: column; /* Stack pagination controls on smaller screens */
+    }
+  }
+  

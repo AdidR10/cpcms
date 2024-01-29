@@ -18,7 +18,7 @@ export class UserRequestsComponent {
 
 
   constructor(private user:ContestsService){
-    this.user.getdata().subscribe((data: any)=>{
+    this.user.getContestData().subscribe((data: any)=>{
       console.log(this.data);
       this.data=data;
     });

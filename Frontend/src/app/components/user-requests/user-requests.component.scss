@@ -1,41 +1,43 @@
-/* Add some basic styling for the container */
-.contest-container {
-    display: flex;
-    flex-direction: column;
-    text-align: center; /* Align text to the left */
-    padding: 20px;
-    background-color: #b9b9b9;
-    margin: 0 auto; /* Center the container horizontally */
-
-}
-  
-.front-row{
-    background-color: #3babe2;
-}
-.card-list{
-    background-color: #f1f5f7;
-}
-/* Style for each contest row */
-.contest-list {
+/* Add some basic styling to the table */
+table {
     width: 100%;
-}
-
-/* Style for each contest item */
-.mat-list-item {
-    display: flex;
-    flex-direction: column;
-    border-bottom: 1px solid #ccc;
-    padding: 10px;
-}
-
-/* Style for contest information */
-.contest-info {
-    margin-bottom: 8px;
-}
-
-/* Style for the header row */
-.header-row {
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  /* Style for the header row */
+  .front-row {
+    background-color: #007bff;
+    color: white;
     font-weight: bold;
-    background-color: rgb(37, 150, 190);
-    color: #fff;
-}
+  }
+  
+  /* Style for the data rows */
+  tr:not(.front-row) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Style for cells in the data rows */
+  td {
+    padding: 10px;
+  }
+  
+  /* Style for mat-card content */
+  mat-card-content {
+    padding: 8px;
+    text-align: center;
+  }
+  
+  /* Style for pagination controls */
+  .pagination-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Add hover effect to data rows */
+  tr:not(.front-row):hover {
+    background-color: #d9edf7;
+  }
+  

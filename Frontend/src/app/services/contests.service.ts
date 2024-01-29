@@ -1,15 +1,17 @@
-import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { Injectable } from '@angular/core';
+// contests.service.ts
 
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContestsService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http:HttpClient) { }
-  getdata(){
-    let url='https://jsonplaceholder.typicode.com/users/';
-    return this.http.get(url);
+  getContestData(): Observable<any[]> {
+    let url = 'https://codeforces.com/api/contest.list';
+    return this.http.get<any[]>(url).pipe(map((response: any) => response.result));
   }
 }
