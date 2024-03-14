@@ -20,20 +20,20 @@ export class UserService {
   constructor(private _http: HttpClient) { }
 
   addUser(data: any): Observable<any>{
-    return this._http.post('http://localhost:3000/requests',data);
+    return this._http.post('http://localhost:3010/api/v1/requests',data);
   }
 
   getRequestList():Observable<any>{
-    return this._http.get('http://localhost:3000/requests');
+    return this._http.get('http://localhost:3010/api/v1/requests');
   }
   getUserList():Observable<any>{
-    return this._http.get('http://localhost:3000/onlineAPI');
+    return this._http.get('http://localhost:3010/api/v1/users');
   }
   getUserProfile(id:number):Observable<any>{
-    return this._http.get(`http://localhost:3000/onlineAPI/${id}`);
+    return this._http.get(`http://localhost:3010/api/v1/onlineAPI/${id}`);
   }
   getUser(id: number):Observable<any>{
-    return this._http.get<any>(`http://localhost:3000/users/${id}`);
+    return this._http.get<any>(`http://localhost:3010/api/v1/users/${id}`);
   }
   
 }

@@ -49,6 +49,7 @@ export class LeaderboardComponent implements OnInit{
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
+        console.log(this.dataSource)
       },
       error: console.log
     })
