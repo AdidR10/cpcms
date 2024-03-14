@@ -25,6 +25,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import {CdkAccordionModule} from '@angular/cdk/accordion';
+
 
 import { AnnouncementsComponent } from './pages/announcements/announcements.component';
 import { ContestsComponent } from './pages/contests/contests.component';
@@ -40,6 +42,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { UpcomingContestComponent } from './components/upcoming-contest/upcoming-contest.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { UserRequestsComponent } from './components/user-requests/user-requests.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,7 +85,8 @@ import { UserRequestsComponent } from './components/user-requests/user-requests.
     MatCardModule,
     NgxPaginationModule,
     MatPaginatorModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    CdkAccordionModule
   ],
   providers: [],
   bootstrap: [AppComponent]
