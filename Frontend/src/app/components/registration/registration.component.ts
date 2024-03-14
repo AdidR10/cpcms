@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA,MatDialogRef } from '@angular/material/dialog';
 import { UserService } from '../../services/user.service';
 import { AdminService } from 'src/app/services/admin.service';
-
+import { User } from 'src/app/models/userModel';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -58,57 +58,5 @@ export class RegistrationComponent implements OnInit{
         });
       }
     }
-  }
-
-  createRegisterForm(): FormGroup {
-    return this._fb.group({
-      name: '',
-      universityId: '',
-      email: '',
-      gender: '',
-      codeforces: this._fb.group({
-        handle: [''],
-        data: this._fb.group({
-          lastName: [''],
-          lastOnlineTimeSeconds: [''],
-          rating: [''],
-          friendOfCount: [''],
-          titlePhoto: [''],
-          avatar: [''],
-          firstName: [''],
-          contribution: [''],
-          organization: [''],
-          rank: [''],
-          maxRating: [''],
-          registrationTimeSeconds: [''],
-          maxRank: ['']
-        })
-      }),
-      codechef: this._fb.group({
-        handle: [''],
-        data: this._fb.group({
-          profile: [''],
-          name: [''],
-          currentRating: [''],
-          highestRating: [''],
-          countryFlag: [''],
-          countryName: [''],
-          globalRank: [''],
-          countryRank: [''],
-          stars: ['']
-        })
-      }),
-      atcoder: this._fb.group({
-        handle: [''],
-        data: this._fb.group({
-          birthYear: [''],
-          country: [''],
-          rank: [''],
-          rating: [''],
-          highestRating: [''],
-          ratedMatches: ['']
-        })
-      })
-    });
   }
 }

@@ -72,7 +72,7 @@ export class LeaderboardComponent implements OnInit{
     })
   }
 
-  openEditForm(id: number): void{
+  openEditForm(id: string): void{
     this._userService.getUser(id).subscribe(
       (userData) => {
         console.log("data fetched = "+userData)

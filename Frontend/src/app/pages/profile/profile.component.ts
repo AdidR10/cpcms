@@ -1,28 +1,32 @@
-import { Component } from '@angular/core';
+import { Component , OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
-
+import {User} from 'src/app/models/userModel';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent {
-  user:any
-  constructor(private _route: ActivatedRoute,
+export class ProfileComponent implements OnInit {
+  user:User | undefined;
+  constructor(
+    private _route: ActivatedRoute,
     private _userService: UserService
     ){}
   
     ngOnInit(): void {
-      const id = Number(this._route.snapshot.paramMap.get('id'));
+      const id = String(this._route.snapshot.paramMap.get('id'));
       this.getUser(id);
     }
-    getUser(id:number){
-      this._userService.getUserProfile(id).subscribe({
+    getUser(id:string){
+      this._userService.getUser(id).subscribe({
         next:(res)=>{
           this.user=res;
+          console.log("user = ", res)
         },
-        error: console.log
+        error:(error)=>{
+          console.log("Found error ", error)
+        }
       })
     }
     navigateToExternalProfile(handle: string, site: string) {
