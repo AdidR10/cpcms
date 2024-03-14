@@ -26,6 +26,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
+import {MatGridListModule} from '@angular/material/grid-list';
+
 
 
 import { AnnouncementsComponent } from './pages/announcements/announcements.component';
@@ -86,7 +88,8 @@ import { UserRequestsComponent } from './components/user-requests/user-requests.
     NgxPaginationModule,
     MatPaginatorModule,
     MatProgressBarModule,
-    CdkAccordionModule
+    CdkAccordionModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

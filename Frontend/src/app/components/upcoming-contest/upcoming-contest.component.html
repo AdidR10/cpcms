@@ -1,54 +1,85 @@
 <cdk-accordion class="example-accordion">
-    <cdk-accordion-item
-      *ngFor="let contest of contestList | paginate: { itemsPerPage: 5, currentPage: p }; let index = index;"
-      #accordionItem="cdkAccordionItem"
-      class="example-accordion-item"
-      role="button"
-      tabindex="0"
-      [attr.id]="'accordion-header-' + index"
-      [attr.aria-expanded]="accordionItem.expanded"
-      [attr.aria-controls]="'accordion-body-' + index">
-      <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
-        <p>
-          <strong>Contest:</strong> {{ contest.name }} <br>
-          <strong>Start:</strong> {{ contest.startTimeSeconds }}
-        </p>
-        <span class="example-accordion-item-description">
-          Click to {{ accordionItem.expanded ? 'close' : 'open' }}
-        </span>
-      </div>
-      <div
-        class="example-accordion-item-body"
-        role="region"
-        [style.display]="accordionItem.expanded ? '' : 'none'"
-        [attr.id]="'accordion-body-' + index"
-        [attr.aria-labelledby]="'accordion-header-' + index">
-        <mat-card class="card-list">
-          <mat-card-content>
-            <b>ID: </b>{{ contest.id }}
-          </mat-card-content>
-          <mat-card-content>
-            <b>Type: </b>{{ contest.type }}
-          </mat-card-content>
-          <mat-card-content>
-            <b>Phase: </b>{{ contest.phase }}
-          </mat-card-content>
-          <mat-card-content>
-            <b>Frozen: </b>{{ contest.frozen }}
-          </mat-card-content>
-          <mat-card-content>
-            <b>Duration (seconds): </b>{{ contest.durationSeconds }}
-          </mat-card-content>
-          <mat-card-content>
-            <b>Start Time (seconds): </b>{{ contest.startTimeSeconds }}
-          </mat-card-content>
-          <mat-card-content>
-            <b>Relative Time (seconds): </b>{{ contest.relativeTimeSeconds }}
-          </mat-card-content>
-        </mat-card>
-      </div>
-    </cdk-accordion-item>
-  </cdk-accordion>
+  <cdk-accordion-item
+    *ngFor="let contest of contestList | paginate: { itemsPerPage: 5, currentPage: p }; let index = index;"
+    #accordionItem="cdkAccordionItem"
+    class="example-accordion-item"
+    role="button"
+    tabindex="0"
+    [attr.id]="'accordion-header-' + index"
+    [attr.aria-expanded]="accordionItem.expanded"
+    [attr.aria-controls]="'accordion-body-' + index">
 
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
-  
+    <!-- Header -->
+    <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+      <p>
+        <strong>Contest:</strong> {{ contest.name }} <br>
+        <strong>Start:</strong> {{ contest.startTimeSeconds }}
+      </p>
+      <span class="example-accordion-item-description">
+        Click to {{ accordionItem.expanded ? 'close' : 'open' }}
+      </span>
+    </div>
+
+    <!-- Body -->
+    <div
+      class="example-accordion-item-body"
+      role="region"
+      [style.display]="accordionItem.expanded ? '' : 'none'"
+      [attr.id]="'accordion-body-' + index"
+      [attr.aria-labelledby]="'accordion-header-' + index">
+
+      <mat-card class="card-list">
+        
+        <mat-grid-list cols="4" rowHeight="100px">
+          <mat-grid-tile
+              *ngFor="let tile of tiles"
+              [colspan]="tile.cols"
+              [rowspan]="tile.rows">
+
+              <div *ngIf="tile.text === 'One'">
+                <div class="image-container">
+                  <img [src]="imageUrl" alt="Image description">
+                  <p class="caption">{{ imageCaption }}</p>
+                </div>
+                
+              </div>     
+
+              <div *ngIf="tile.text === 'Two'" class="horizontal-list-container">
+                <div class="horizontal-list-row">
+                  <ul class="horizontal-list">
+                    <li><b>ID:</b> {{ contest.id }}</li>
+                    <li><b>Type:</b> {{ contest.type }}</li>
+                  </ul>
+                </div>
+                <div class="horizontal-list-row">
+                  <ul class="horizontal-list">
+                    <li><b>Phase:</b> {{ contest.phase }}</li>
+                    <li><b>Frozen:</b> {{ contest.frozen }}</li>
+                  </ul>
+                </div>
+                <div class="horizontal-list-row">
+                  <ul class="horizontal-list">
+                    <li><b>Duration (seconds):</b> {{ contest.durationSeconds }}</li>
+                    <li><b>Start Time (seconds):</b> {{ contest.startTimeSeconds }}</li>
+                  </ul>
+                </div>
+                <div class="horizontal-list-row">
+                  <ul class="horizontal-list">
+                    <li><b>Relative Time (seconds):</b> {{ contest.relativeTimeSeconds }}</li>
+                  </ul>
+                </div>
+              </div>
+              
+              
+                  
+            
+          </mat-grid-tile>
+        </mat-grid-list>
+        
+        
+      </mat-card>
+    </div>
+  </cdk-accordion-item>
+</cdk-accordion>
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

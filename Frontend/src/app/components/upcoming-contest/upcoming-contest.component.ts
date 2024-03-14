@@ -4,6 +4,11 @@ import { ContestsService } from 'src/app/services/contests.service';
 import { PageEvent } from '@angular/material/paginator';
 
 
+export interface Tile {
+  cols: number;
+  rows: number;
+  text: string;
+}
 
 @Component({
   selector: 'app-upcoming-contest',
@@ -16,6 +21,8 @@ export class UpcomingContestComponent {
   currentpage = 0;
   pageSize = 10;
   contestList: any[] = [];
+  imageUrl= 'ss';
+  imageCaption = 'Codeforces';
 
   p:any;
   
@@ -57,5 +64,10 @@ export class UpcomingContestComponent {
     const date = new Date(seconds * 1000); // Convert seconds to milliseconds
     return date.toLocaleString();
   }
+  tiles: Tile[] = [
+    {text: 'One', cols: 1, rows: 2},
+    {text: 'Two', cols: 3, rows: 2},
+  ];
+
 
 }
