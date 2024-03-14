@@ -70,55 +70,14 @@
   ],
   "users": [
     {
-      "codeforces": {
-        "data": {
-          "lastName": "Rahman",
-          "lastOnlineTimeSeconds": 1706517277,
-          "rating": 1640,
-          "friendOfCount": 325,
-          "titlePhoto": "https://userpic.codeforces.org/1148234/title/e84f85e982bd82fa.jpg",
-          "avatar": "https://userpic.codeforces.org/1148234/avatar/a5803a00cb5c42a7.jpg",
-          "firstName": "Ashfaqur",
-          "contribution": 0,
-          "organization": "Chittagong University of Eng and Tech",
-          "rank": "expert",
-          "maxRating": 1831,
-          "registrationTimeSeconds": 1555930572,
-          "maxRank": "expert"
-        },
-        "handle": "adibur6"
-      },
-      "codechef": {
-        "data": {
-          "profile": "https://cdn.codechef.com/sites/all/themes/abessive/images/user_default_thumb.jpg",
-          "name": "Ashfaqur Rahman",
-          "currentRating": 1948,
-          "highestRating": 2060,
-          "countryFlag": "https://cdn.codechef.com/download/flags/24/bd.png",
-          "countryName": "Bangladesh",
-          "globalRank": 2250,
-          "countryRank": 94,
-          "stars": 4
-        },
-        "handle": "adibur6"
-      },
-      "atcoder": {
-        "data": {
-          "birthYear": "1998",
-          "country": " Bangladesh",
-          "rank": "13646th",
-          "rating": "914",
-          "highestRating": "914",
-          "ratedMatches": "12"
-        },
-        "handle": "adibur6"
-      },
-      "id": "65b7a72e7f686d2de4e7b32d",
       "name": "Jane Smith",
-      "universityId": "60d6c7e1100f5c6c476fabc6",
+      "universityId": "1804057",
       "email": "janesmith@example.com",
       "gender": "female",
-      "__v": 0
+      "codeforcesHandle": "adibur6",
+      "codechefHandle": "adibur6",
+      "atcoderHandle": "adibur6",
+      "id": "65b7a72e7f686d2de4e7b32d"
     },
     {
       "codeforces": {

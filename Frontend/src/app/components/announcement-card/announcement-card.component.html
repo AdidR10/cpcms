@@ -7,22 +7,22 @@
             </div>
             <div class="admin-name">
                 <h4>Admin Name</h4>
-                <h5>date</h5>
+                <h5>{{announcement.date}}</h5>
             </div>
         </div>
         <button mat-icon-button (click)="toggleDropdown()">
             <mat-icon>more_horizon</mat-icon>
             <div *ngIf="isDropdownOpen" class="dropdown">
-                <button (click)="edit(announcement.id)">
+                <button (click)="edit(announcement._id)">
                     <mat-icon>edit</mat-icon>
                     <span>Edit</span>
                 </button>
-                <button (click)="delete(announcement.id)">
+                <button (click)="delete(announcement._id)">
                     <mat-icon>delete</mat-icon>
                     <span>Delete</span>
                 </button>
             </div>
         </button>
     </div>
-    <mat-card-content class="post-content">{{announcement.post}}</mat-card-content>
+    <mat-card-content class="post-content">{{announcement.body}}</mat-card-content>
 </div>

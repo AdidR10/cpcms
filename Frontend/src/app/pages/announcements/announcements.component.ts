@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AnnouncementCardComponent } from 'src/app/components/announcement-card/announcement-card.component';
 import { AnnouncementFormComponent } from 'src/app/components/announcement-form/announcement-form.component';
 import { AdminService } from 'src/app/services/admin.service';
+import { Announcement } from 'src/app/models/announcementModel';
 
 @Component({
   selector: 'app-announcements',
@@ -11,7 +12,8 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class AnnouncementsComponent implements OnInit{
   pagename='Announcements';
-  announcements!:any[];
+  announcements:Announcement[] = [];
+
   constructor(private _dialog:MatDialog,
     private _adminService: AdminService
     ){}
@@ -21,19 +23,19 @@ export class AnnouncementsComponent implements OnInit{
     }
   
 
-  getAnnouncementList(){
+  getAnnouncementList(): void{
     this._adminService.getAnnouncementList().subscribe({
-      next:(res)=>{
+      next:(res: Announcement[])=>{
         this.announcements = res;
       },
-      error: console.log
+      error: console.error
     })
   }
 
   openAnnouncementForm(){
     const dialogRef = this._dialog.open(AnnouncementFormComponent);
     dialogRef.afterClosed().subscribe({
-      next:(val)=>{
+      next:(val: any)=>{
         if(val){
           this.getAnnouncementList();
         }

@@ -16,11 +16,11 @@ export class RegistrationComponent implements OnInit{
     private _userService: UserService, 
     private _adminService:AdminService,
     private _dialogRef: MatDialogRef<RegistrationComponent>,
-    @Inject(MAT_DIALOG_DATA) public data:any 
+    @Inject(MAT_DIALOG_DATA) public data:User 
     ){
     this.registerForm = this._fb.group({
-      firstName:'',
-      lastName:'',
+      name:'',
+      universityId:'',
       email:'',
       gender:'',
       codeforcesHandle:'',
@@ -30,24 +30,56 @@ export class RegistrationComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.registerForm.patchValue(this.data);
+    if (this.data) {
+      console.log(this.data)
+      const userDataForForm = {
+        name: this.data.name,
+        email: this.data.email,
+        gender: this.data.gender,
+        codeforcesHandle: this.data.codeforces.handle,
+        codechefHandle: this.data.codechef.handle,
+        atcoderHandle: this.data.atcoder.handle,
+        universityId: this.data.universityId,
+      };
+      this.registerForm.patchValue(userDataForForm);
+    }
   }
   onFormSubmit(){
     if(this.registerForm.valid){
       
+      const formData = this.registerForm.value;
+      const postData = {
+        name: formData.name,
+        universityId: formData.universityId,
+        email: formData.email,
+        gender: formData.gender,
+        codeforces: {
+          handle: formData.codeforcesHandle,
+        },
+        codechef: {
+          handle: formData.codechefHandle,
+        },
+        atcoder: {
+          handle: formData.atcoderHandle,
+        }
+      };
+
+
       if(this.data){
-        this._adminService.updateUser(this.data.id, this.registerForm.value).subscribe({
+        this._adminService.updateUser(this.data._id, postData).subscribe({
           next: (val:any)=>{
             alert('User Updated Successfully');
             this._dialogRef.close(true);
           },
           error: (err: any)=>{
-            console.log(err);
+            console.log("my error",err);
+            console.log("id== ", this.data._id);
+            console.log("data = ", postData);
           }
         });
       }
       else{
-        this._userService.addUser(this.registerForm.value).subscribe({
+        this._userService.addUser(postData).subscribe({
           next: (val:any)=>{
             alert('User Registration Request Sent');
             this._dialogRef.close(true);

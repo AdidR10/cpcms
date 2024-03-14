@@ -12,15 +12,16 @@ export class AdminService {
   deleteUser(id: number):Observable<any>{
     return this._http.delete(`http://localhost:3000/onlineAPI/${id}`);
   }
-  updateUser(id: number, data: any): Observable<any> {
-    return this._http.put(`http://localhost:3000/users/${id}`, data);
+
+  updateUser(id: string, data: any): Observable<any> {
+    return this._http.patch(`http://localhost:3010/api/v1/users/${id}`, data);
   }
 
   addAnnouncement(data: any): Observable<any>{
     return this._http.post('http://localhost:3000/announcements',data);
   }
   getAnnouncementList():Observable<any>{
-    return this._http.get('http://localhost:3000/announcements');
+    return this._http.get('http://localhost:3010/api/v1/announcements');
   }
   deleteAnnouncement(id: number):Observable<any>{
     return this._http.delete(`http://localhost:3000/announcements/${id}`);
