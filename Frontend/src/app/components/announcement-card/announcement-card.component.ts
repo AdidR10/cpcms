@@ -8,14 +8,14 @@ import { AdminService } from 'src/app/services/admin.service';
   styleUrls: ['./announcement-card.component.scss']
 })
 export class AnnouncementCardComponent {
-  @Output() editClicked: EventEmitter<number> = new EventEmitter<number>();
-  @Output() deleteClicked: EventEmitter<number> = new EventEmitter<number>();
+  @Output() editClicked: EventEmitter<string> = new EventEmitter<string>();
+  @Output() deleteClicked: EventEmitter<string> = new EventEmitter<string>();
 
-  edit(id: number): void {
+  edit(id: string): void {
     this.editClicked.emit(id);
   }
 
-  delete(id:number): void {
+  delete(id:string): void {
     this.deleteClicked.emit(id);
   }
 

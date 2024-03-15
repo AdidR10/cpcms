@@ -18,7 +18,8 @@
         </div>
 
         <div mat-dialog-actions class="action">
-            <button mat-raised-button color="primary" type="submit" [disabled]="!postContent">{{data ?
+            <button mat-raised-button color="primary" type="submit"
+                [disabled]="!announcementForm.get('post')?.value">{{data ?
                 'Update':'Post'}}</button>
         </div>
     </form>

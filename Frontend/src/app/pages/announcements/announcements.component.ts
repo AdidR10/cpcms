@@ -42,7 +42,7 @@ export class AnnouncementsComponent implements OnInit{
       }
     }) 
   }
-  handleEdit(id: number): void {
+  handleEdit(id: string): void {
     this._adminService.getAnnouncement(id).subscribe(
       (announcementData) => {
         const dialogRef = this._dialog.open(AnnouncementFormComponent, {
@@ -63,7 +63,7 @@ export class AnnouncementsComponent implements OnInit{
     this.getAnnouncementList();
   }
 
-  handleDelete(id: number): void {
+  handleDelete(id: string): void {
     this._adminService.deleteAnnouncement(id).subscribe({
       next:(res)=>{
         alert('Announcement Deleted!');

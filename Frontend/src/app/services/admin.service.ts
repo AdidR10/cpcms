@@ -1,6 +1,7 @@
 import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Announcement } from '../models/announcementModel';
 
 @Injectable({
   providedIn: 'root'
@@ -18,19 +19,19 @@ export class AdminService {
   }
 
   addAnnouncement(data: any): Observable<any>{
-    return this._http.post('http://localhost:3000/announcements',data);
+    return this._http.post('http://localhost:3010/api/v1/announcements',data);
   }
   getAnnouncementList():Observable<any>{
     return this._http.get('http://localhost:3010/api/v1/announcements');
   }
-  deleteAnnouncement(id: number):Observable<any>{
-    return this._http.delete(`http://localhost:3000/announcements/${id}`);
+  deleteAnnouncement(id: string):Observable<any>{
+    return this._http.delete(`http://localhost:3010/api/v1/announcements/${id}`);
   }
-  updateAnnouncement(id: number, data: any): Observable<any> {
-    return this._http.put(`http://localhost:3000/announcements/${id}`, data);
+  updateAnnouncement(id: string, data: any): Observable<any> {
+    return this._http.put(`http://localhost:3010/ai/v1/announcements/${id}`, data);
   }
-  getAnnouncement(id: number):Observable<any>{
-    return this._http.get<any>(`http://localhost:3000/announcements/${id}`);
+  getAnnouncement(id: string):Observable<any>{
+    return this._http.get<any>(`http://localhost:3010/api/v1/announcements/${id}`);
   }
  
 }
