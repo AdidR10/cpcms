@@ -13,7 +13,7 @@
     <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
       <p>
         <strong>Contest:</strong> {{ contest.name }} <br>
-        <strong>Start:</strong> {{ contest.startTimeSeconds }}
+        <strong>Start:</strong> {{ contest.date }}
       </p>
       <span class="example-accordion-item-description">
         Click to {{ accordionItem.expanded ? 'close' : 'open' }}
@@ -36,39 +36,42 @@
               [colspan]="tile.cols"
               [rowspan]="tile.rows">
 
-              <div *ngIf="tile.text === 'One'">
-                <div class="image-container">
-                  <img [src]="imageUrl" alt="Image description">
-                  <p class="caption">{{ imageCaption }}</p>
-                </div>
-                
-              </div>     
+              <div *ngIf="tile.text === 'One'" class="image-container">
+                <!-- <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" class="large-icon"></mat-icon> -->
+                <img [src]="imageUrl" alt="Image description" class="rounded-image">
+                <!-- <p class="caption">{{ imageCaption }}</p> -->
+              </div>
+                  
 
               <div *ngIf="tile.text === 'Two'" class="horizontal-list-container">
                 <div class="horizontal-list-row">
                   <ul class="horizontal-list">
-                    <li><b>ID:</b> {{ contest.id }}</li>
+                    <li><b>Name:</b> {{ contest.name }}</li>
+                    <li><b>Time:</b> {{ contest.time }}</li>
+                  </ul>
+                </div>
+
+                <div class="horizontal-list-row">
+                  <ul class="horizontal-list">
+                    <li><b>Link:</b> {{ contest.link }}</li>
+                    <li><b>Password:</b> {{ contest.password }}</li>
+                  </ul>
+                </div>
+                <div class="horizontal-list-row">
+                  <ul class="horizontal-list">
+                    <li><b>Description:</b> {{ contest.description }}</li>
                     <li><b>Type:</b> {{ contest.type }}</li>
                   </ul>
                 </div>
+                
                 <div class="horizontal-list-row">
                   <ul class="horizontal-list">
-                    <li><b>Phase:</b> {{ contest.phase }}</li>
-                    <li><b>Frozen:</b> {{ contest.frozen }}</li>
-                  </ul>
-                </div>
-                <div class="horizontal-list-row">
-                  <ul class="horizontal-list">
-                    <li><b>Duration (seconds):</b> {{ contest.durationSeconds }}</li>
-                    <li><b>Start Time (seconds):</b> {{ contest.startTimeSeconds }}</li>
-                  </ul>
-                </div>
-                <div class="horizontal-list-row">
-                  <ul class="horizontal-list">
-                    <li><b>Relative Time (seconds):</b> {{ contest.relativeTimeSeconds }}</li>
+                    <li><b>Duration:</b> {{ contest.duration }}</li>
+                    <li><b>Type:</b> {{ contest.type }}</li>
                   </ul>
                 </div>
               </div>
+              
               
               
                   

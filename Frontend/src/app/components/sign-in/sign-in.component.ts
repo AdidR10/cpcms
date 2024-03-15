@@ -27,7 +27,7 @@ export class SignInComponent implements OnInit {
 
   loginProcess() {
     if (this.formGroup.valid) {
-      this.router.navigate(['/announcements']);
+      this.router.navigate(['/admin-dash-board']);
     } else {
       this.openDialog();
     }

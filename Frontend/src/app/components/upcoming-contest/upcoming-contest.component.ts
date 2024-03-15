@@ -21,7 +21,7 @@ export class UpcomingContestComponent {
   currentpage = 0;
   pageSize = 10;
   contestList: any[] = [];
-  imageUrl= 'ss';
+  imageUrl= '/assets/cf-logo.jpg';
   imageCaption = 'Codeforces';
 
   p:any;
@@ -41,7 +41,7 @@ export class UpcomingContestComponent {
     this.contestService.getContestList().subscribe(
       (data: any) => {
         // Assign the fetched contest list to the contestList property
-        this.contestList = data.result;
+        this.contestList = data;
       },
       (error: any) => {
         // Handle error if any
