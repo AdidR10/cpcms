@@ -46,6 +46,8 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { UserRequestsComponent } from './components/user-requests/user-requests.component';
 import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
 import { LoadingComponent } from './components/loading/loading.component';
+import { AdminDashBoardComponent } from './pages/admin-dash-board/admin-dash-board.component';
+import { RequestCardComponent } from './components/request-card/request-card.component';
 
 
 @NgModule({
@@ -64,7 +66,10 @@ import { LoadingComponent } from './components/loading/loading.component';
     UpcomingContestComponent,
     SignInComponent,
     UserRequestsComponent,
-    LoadingComponent
+    LoadingComponent,
+    AdminDashBoardComponent,
+    RequestCardComponent,
+    RequestCardComponent
   ],
   imports: [
     BrowserModule,

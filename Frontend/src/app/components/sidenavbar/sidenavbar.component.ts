@@ -38,6 +38,11 @@ export class SidenavbarComponent {
       icon: 'verified_user',  
       label:'LogIn as Admin',
       route:'sign-in',
+    },
+    {
+      icon: 'admin_panel_settings',  
+      label:'Admin Dashboard',
+      route:'admin-dash-board',
     }
   ]);
 
