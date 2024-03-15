@@ -12,7 +12,7 @@ import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
@@ -44,6 +44,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { UpcomingContestComponent } from './components/upcoming-contest/upcoming-contest.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { UserRequestsComponent } from './components/user-requests/user-requests.component';
+import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
+import { LoadingComponent } from './components/loading/loading.component';
 
 
 @NgModule({
@@ -61,7 +63,8 @@ import { UserRequestsComponent } from './components/user-requests/user-requests.
     ProfileComponent,
     UpcomingContestComponent,
     SignInComponent,
-    UserRequestsComponent
+    UserRequestsComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -91,7 +94,13 @@ import { UserRequestsComponent } from './components/user-requests/user-requests.
     CdkAccordionModule,
     MatGridListModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass:LoadingInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
