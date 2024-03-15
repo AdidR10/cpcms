@@ -1,6 +1,8 @@
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 
 @Component({
   selector: 'app-sign-in',
@@ -10,7 +12,7 @@ import { Router } from '@angular/router';
 export class SignInComponent implements OnInit {
   formGroup!: FormGroup;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private dialog: MatDialog) {}
 
   ngOnInit() {
     this.initForm();
@@ -23,10 +25,25 @@ export class SignInComponent implements OnInit {
     });
   }
 
-  loginProces() {
-    // Placeholder for any login process logic
-    
-    // For now, navigate to the announcement page
-    this.router.navigate(['/announcements']);
+  loginProcess() {
+    if (this.formGroup.valid) {
+      this.router.navigate(['/announcements']);
+    } else {
+      this.openDialog();
+    }
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(LoginDialogComponent, {
+      width: '250px', // Set the width as needed
+      disableClose: true, // Prevent closing by clicking outside or pressing Esc
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      // Handle dialog close event
+      if (result === true) {
+        // Proceed with login process (navigate to announcement page, for example)
+      }
+    });
   }
 }

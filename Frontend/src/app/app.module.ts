@@ -46,6 +46,7 @@ import { SignInComponent } from './components/sign-in/sign-in.component';
 import { UserRequestsComponent } from './components/user-requests/user-requests.component';
 import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
 import { LoadingComponent } from './components/loading/loading.component';
+import { LoginDialogComponent } from './components/login-dialog/login-dialog.component';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { LoadingComponent } from './components/loading/loading.component';
     UpcomingContestComponent,
     SignInComponent,
     UserRequestsComponent,
-    LoadingComponent
+    LoadingComponent,
+    LoginDialogComponent
   ],
   imports: [
     BrowserModule,

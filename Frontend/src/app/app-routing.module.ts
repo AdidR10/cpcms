@@ -7,6 +7,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { UpcomingContestComponent } from './components/upcoming-contest/upcoming-contest.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { UserRequestsComponent } from './components/user-requests/user-requests.component';
+import { LoginDialogComponent } from './components/login-dialog/login-dialog.component';
+
 
 const routes: Routes = [
   {path: '', component: LeaderboardComponent},
