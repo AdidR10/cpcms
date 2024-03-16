@@ -1,3 +1,6 @@
+const _ = require('lodash');
+const bcrypt = require('bcrypt');
+
 const Admin = require('../models/Admin');
 const { adminValidation } = require('../validators/adminValidation');
 
@@ -8,17 +11,16 @@ exports.createAdmin = async (req, res) => {
       const { error } = adminValidation(req.body);
       if (error) return res.status(400).send(error.details[0].message);
 
-      let admin = await Admin.findOne({ email: req.body.email });
-      if (admin) return res.status(400).send("Admin already exists");
+      let admin = await Admin.findOne({ username: req.body.username });
+      if (admin) return res.status(400).send("Calm down. You already registered.");
 
-      admin = new Admin({
-          username: req.body.username,
-          email: req.body.email,
-          password: req.body.password
-      });
+      admin = new Admin(_.pick(req.body, ['username', 'email', 'password']));
+
+      const salt = await bcrypt.genSalt(10);
+      admin.password = await bcrypt.hash(admin.password, salt);
       await admin.save();
 
-      res.send(admin);
+      res.send(_.pick(admin, ['username', 'email']));
   } catch (err) {
       console.error(err); // Log the error for debugging purposes
       res.status(500).send({ message: 'Error creating admin', error: err.message });
