@@ -15,7 +15,7 @@ export class AnnouncementFormComponent {
   constructor(private _fb:FormBuilder,
     private _adminService: AdminService,
     private _dialogRef:MatDialogRef<AnnouncementFormComponent>,
-    @Inject(MAT_DIALOG_DATA) public data:Announcement
+    @Inject(MAT_DIALOG_DATA) public data:any
     ){
       this.announcementForm=this._fb.group({
         admin_id:1804057,
@@ -44,7 +44,7 @@ export class AnnouncementFormComponent {
       const formData = this.announcementForm.value;
         const postData = {
           body: formData.post,
-          userId: "1804057",
+          userId: "60d6c7e1100f5c6c476fabc5",
           date: formData.date
         }
 

@@ -74,7 +74,7 @@
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
     z-index: 1000;
     width: 100px;
   }
@@ -84,9 +84,10 @@
     justify-content:flex-start;
     align-items: end;
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     background-color: transparent;
     border: none;
+
     cursor: pointer;
     >span{
       margin-left: 5px !important;

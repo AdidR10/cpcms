@@ -26,7 +26,9 @@ export class AnnouncementsComponent implements OnInit{
   getAnnouncementList(): void{
     this._adminService.getAnnouncementList().subscribe({
       next:(res: Announcement[])=>{
-        this.announcements = res;
+        this.announcements = res.sort((a, b) => {
+          return new Date(b.date).getTime() - new Date(a.date).getTime();
+        });
       },
       error: console.error
     })
