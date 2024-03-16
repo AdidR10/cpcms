@@ -21,7 +21,7 @@ async function getCodechefData(id) {
       throw new Error(data.error);
     }
   } catch (err) {
-    console.error(err);
+    console.error("Codechef API error.");
     throw err;
   }
 }

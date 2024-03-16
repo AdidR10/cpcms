@@ -18,16 +18,6 @@
   },
   "requests": [
     {
-      "name": "Meem",
-      "email": "abc@gmail.com",
-      "gender": "female",
-      "studentId": "1804057",
-      "codeforcesHandle": "Raven__78",
-      "codechefHandle": "zerin_shaima",
-      "atcoderHandle": "Meem",
-      "id": "3"
-    },
-    {
       "name": "tripti",
       "email": "asd@gmail.com",
       "gender": "female",
@@ -144,6 +134,21 @@
       },
       "atcoder": {
         "handle": "klklj"
+      }
+    },
+    {
+      "id": "1e1e",
+      "name": "Meem",
+      "email": "abc@gmail.com",
+      "gender": "female",
+      "codeforces": {
+        "handle": "Raven__78"
+      },
+      "codechef": {
+        "handle": "zerin_shaima"
+      },
+      "atcoder": {
+        "handle": "Meem"
       }
     }
   ],

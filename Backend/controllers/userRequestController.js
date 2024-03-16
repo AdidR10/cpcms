@@ -4,6 +4,7 @@ const User = require('../models/User');
 const  getCodeforcesData  = require('../services/codeforcesData');
 const  getCodechefData  = require('../services/codechefData');
 const  getAtcoderData  = require('../services/atcoderData');
+const { assert } = require('joi');
 
 
 exports.signupUserRequests = async (req, res) => {
@@ -62,11 +63,13 @@ exports.approveUserRequest = async (req, res) => {
     if (userRequest == null) {
       return res.status(404).json({ message: 'Cannot find user request' });
     }
-
-    const codeforcesData = await getCodeforcesData(userRequest.CodeforcesID);
+    
+    const codeforcesData =0;
+    // await getCodeforcesData(userRequest.CodeforcesID);
     const codechefData = await getCodechefData(userRequest.CodechefID);
     const atcoderData = await getAtcoderData(userRequest.AtcoderID);
-
+    console.log(userRequest);
+    
     const newUser = new User({
       name: userRequest.name,
       universityId: userRequest.universityId,

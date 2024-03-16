@@ -20,14 +20,10 @@ export class LeaderboardComponent implements OnInit{
   displayedColumns: string[] = [
     'rank', 
     'name', 
-    'batch', 
-    'overallRating',
     'codeforcesRating',
     'codechefRating',
     'atcoderRating',
-    'solveCount',
-    'lastContestDate',
-    'lastContestDelta',
+    'overallRating',
     'action'
   ];
   dataSource!: MatTableDataSource<any>;
@@ -62,7 +58,7 @@ export class LeaderboardComponent implements OnInit{
       this.dataSource.paginator.firstPage();
     }
   }
-  deleteUser(id: number){
+  deleteUser(id: string){
     this._adminService.deleteUser(id).subscribe({
       next:(res)=>{
         alert('User Deleted!');

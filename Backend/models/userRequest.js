@@ -6,7 +6,7 @@ const UserRequestSchema = new mongoose.Schema({
     required: true,
   },
   universityId: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: String,
     ref: 'University',
     required: true,
   },

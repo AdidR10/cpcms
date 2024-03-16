@@ -27,7 +27,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
 import {MatGridListModule} from '@angular/material/grid-list';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 import { AnnouncementsComponent } from './pages/announcements/announcements.component';
@@ -98,7 +98,8 @@ import { RequestCardComponent } from './components/request-card/request-card.com
     MatPaginatorModule,
     MatProgressBarModule,
     CdkAccordionModule,
-    MatGridListModule
+    MatGridListModule,
+    MatSnackBarModule
   ],
   providers: [
     {

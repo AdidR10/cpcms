@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AdminService } from 'src/app/services/admin.service';
 
@@ -24,9 +24,17 @@ export class AnnouncementCardComponent {
   toggleDropdown() {
     this.isDropdownOpen = !this.isDropdownOpen;
   }
-  constructor(private _adminService:AdminService,
-    private _dialog: MatDialog
+  constructor(
+    private _adminService:AdminService,
+    private _dialog: MatDialog,
+    private renderer: Renderer2, 
+    private elementRef: ElementRef
     ){};
-
+    @HostListener('document:click', ['$event'])
+    handleClick(event: Event): void {
+      if (!this.elementRef.nativeElement.contains(event.target)) {
+        this.isDropdownOpen = false;
+      }
+    }
     
 }

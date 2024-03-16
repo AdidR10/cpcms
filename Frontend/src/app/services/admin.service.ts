@@ -10,8 +10,8 @@ export class AdminService {
 
   constructor(private _http:HttpClient) { }
 
-  deleteUser(id: number):Observable<any>{
-    return this._http.delete(`http://localhost:3000/onlineAPI/${id}`);
+  deleteUser(id: string):Observable<any>{
+    return this._http.delete(`http://localhost:3010/api/v1/users/${id}`);
   }
 
   updateUser(id: string, data: any): Observable<any> {
@@ -28,7 +28,7 @@ export class AdminService {
     return this._http.delete(`http://localhost:3010/api/v1/announcements/${id}`);
   }
   updateAnnouncement(id: string, data: any): Observable<any> {
-    return this._http.put(`http://localhost:3010/ai/v1/announcements/${id}`, data);
+    return this._http.put(`http://localhost:3010/api/v1/announcements/${id}`, data);
   }
   getAnnouncement(id: string):Observable<any>{
     return this._http.get<any>(`http://localhost:3010/api/v1/announcements/${id}`);

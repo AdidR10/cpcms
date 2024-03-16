@@ -3,7 +3,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA,MatDialogRef } from '@angular/material/dialog';
 import { UserService } from '../../services/user.service';
 import { AdminService } from 'src/app/services/admin.service';
-import { User } from 'src/app/models/userModel';
+import { RequestsService } from 'src/app/services/requests.service';
+
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -15,17 +16,18 @@ export class RegistrationComponent implements OnInit{
     private _fb: FormBuilder, 
     private _userService: UserService, 
     private _adminService:AdminService,
+    private _requestService: RequestsService,
     private _dialogRef: MatDialogRef<RegistrationComponent>,
-    @Inject(MAT_DIALOG_DATA) public data:User 
+    @Inject(MAT_DIALOG_DATA) public data:any 
     ){
     this.registerForm = this._fb.group({
       name:'',
       universityId:'',
       email:'',
       gender:'',
-      codeforcesHandle:'',
-      codechefHandle:'',
-      atcoderHandle:''
+      CodeforcesID:'',
+      CodechefID:'',
+      AtcoderID:''
     })
   }
 
@@ -36,9 +38,9 @@ export class RegistrationComponent implements OnInit{
         name: this.data.name,
         email: this.data.email,
         gender: this.data.gender,
-        codeforcesHandle: this.data.codeforces.handle,
-        codechefHandle: this.data.codechef.handle,
-        atcoderHandle: this.data.atcoder.handle,
+        CodeforcesID: this.data.codeforces.handle,
+        CodechefID: this.data.codechef.handle,
+        AtcoderID: this.data.atcoder.handle,
         universityId: this.data.universityId,
       };
       this.registerForm.patchValue(userDataForForm);
@@ -54,13 +56,13 @@ export class RegistrationComponent implements OnInit{
         email: formData.email,
         gender: formData.gender,
         codeforces: {
-          handle: formData.codeforcesHandle,
+          handle: formData.CodeforcesID,
         },
         codechef: {
-          handle: formData.codechefHandle,
+          handle: formData.CodechefID,
         },
         atcoder: {
-          handle: formData.atcoderHandle,
+          handle: formData.AtcoderID,
         }
       };
 
@@ -79,13 +81,13 @@ export class RegistrationComponent implements OnInit{
         });
       }
       else{
-        this._userService.addUser(postData).subscribe({
+        this._requestService.sendRequest(formData).subscribe({
           next: (val:any)=>{
             alert('User Registration Request Sent');
             this._dialogRef.close(true);
           },
           error: (err: any)=>{
-            console.log(err);
+            console.log("very sad",err);
           }
         });
       }
