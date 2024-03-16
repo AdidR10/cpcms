@@ -1,5 +1,7 @@
 const _ = require('lodash');
 const bcrypt = require('bcrypt');
+const jwt = require("jsonwebtoken");
+const config = require("config");
 
 const Admin = require('../models/Admin');
 const { authValidation } = require('../validators/authValidation');
@@ -17,7 +19,9 @@ exports.authAdmin = async (req, res) => {
       const validPassword = await bcrypt.compare(req.body.password, admin.password);
       if (!validPassword) return res.status(400).send("Invalid request. Who are you?");
 
-      res.send(true);
+      const token = admin.generateAuthToken();
+
+      res.send(token);
   } catch (err) {
       console.error(err); // Log the error for debugging purposes
       res.status(500).send({ message: 'Error creating admin', error: err.message });

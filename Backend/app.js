@@ -2,6 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
+const config = require("config");
+
+
 const userRoutes = require('./routes/userRoutes');
 const contestRoutes = require('./routes/contestRoutes');
 const announcementRoutes = require('./routes/announcementRoutes');
@@ -11,8 +14,15 @@ const auth = require('./routes/auth');
 
 require('dotenv').config();
 
+
 const app = express();
 const port = process.env.PORT || 3010;
+// CPCMS_jwtPrivateKey=process.env.CPCMS_jwtPrivateKey
+
+// if(!config.get('jwtPrivateKey')){
+//   console.error("Fatal error: jwtPrivateKey is not defined!");
+//   process.exit(1);
+// }
 
 mongoose.connect(process.env.MONGODB_URI);
 

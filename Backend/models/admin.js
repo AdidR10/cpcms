@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
+const jwt = require("jsonwebtoken");
+const config = require("config");
 
-const AdminSchema = new mongoose.Schema({
+
+const adminSchema = new mongoose.Schema({
   username: {
     type: String,
     required: true,
@@ -23,4 +26,9 @@ const AdminSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('Admin', AdminSchema);
+adminSchema.methods.generateAuthToken = function() {
+  const token = jwt.sign({_id:this._id}, process.env.CPCMS_jwtPrivateKey);
+  return token;
+}
+
+module.exports = mongoose.model('Admin', adminSchema);

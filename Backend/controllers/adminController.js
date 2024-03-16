@@ -1,6 +1,7 @@
 const _ = require('lodash');
 const bcrypt = require('bcrypt');
 
+
 const Admin = require('../models/Admin');
 const { adminValidation } = require('../validators/adminValidation');
 
@@ -20,7 +21,10 @@ exports.createAdmin = async (req, res) => {
       admin.password = await bcrypt.hash(admin.password, salt);
       await admin.save();
 
-      res.send(_.pick(admin, ['username', 'email']));
+      const token = admin.generateAuthToken();
+
+      res.header('x-auth-token',token).send(_.pick(admin, ['username', 'email']));
+
   } catch (err) {
       console.error(err); // Log the error for debugging purposes
       res.status(500).send({ message: 'Error creating admin', error: err.message });
