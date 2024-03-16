@@ -8,12 +8,15 @@ export class RequestsService {
 
   constructor(private _http:HttpClient) { }
   getRequests():Observable<any>{
-    return this._http.get('http://localhost:3000/requests')
+    return this._http.get('http://localhost:3010/api/v1/userRequests')
   }
-  addUser(data: any):Observable<any>{
-    return this._http.post('http://localhost:3000/users/',data);
+  approveRequest(data: any):Observable<any>{
+    return this._http.post('http://localhost:3010/api/v1/users/',data);
   }
   deleteRequest(id: string):Observable<any>{
-    return this._http.delete(`http://localhost:3000/requests/${id}`);
+    return this._http.delete(`http://localhost:3010/api/v1/userRequests/${id}`);
+  }
+  sendRequest(data: any):Observable<any>{
+    return this._http.post('http://localhost:3010/api/v1/userRequests/signup',data);
   }
 }

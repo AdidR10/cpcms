@@ -62,7 +62,7 @@ export class LeaderboardComponent implements OnInit{
       this.dataSource.paginator.firstPage();
     }
   }
-  deleteUser(id: number){
+  deleteUser(id: string){
     this._adminService.deleteUser(id).subscribe({
       next:(res)=>{
         alert('User Deleted!');

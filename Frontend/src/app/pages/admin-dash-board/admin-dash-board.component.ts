@@ -1,4 +1,5 @@
 import { Component ,OnInit} from '@angular/core';
+import { UserRequest } from 'src/app/models/userRequest';
 import { RequestsService } from 'src/app/services/requests.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { RequestsService } from 'src/app/services/requests.service';
 })
 export class AdminDashBoardComponent {
   pagename = 'AdminDashboard';
-  requests: [] | undefined;
+  requests: any | undefined;
   constructor(
     private _requestService: RequestsService
   ){}
@@ -21,6 +22,7 @@ export class AdminDashBoardComponent {
     this._requestService.getRequests().subscribe({
       next: (res) => {
         this.requests = res;
+        console.log("requests= ",this.requests)
       },
       error: console.error
     })

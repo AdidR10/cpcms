@@ -1,19 +1,15 @@
 <cdk-accordion class="example-accordion">
   <cdk-accordion-item
     *ngFor="let contest of contestList | paginate: { itemsPerPage: 5, currentPage: p }; let index = index;"
-    #accordionItem="cdkAccordionItem"
-    class="example-accordion-item"
-    role="button"
-    tabindex="0"
-    [attr.id]="'accordion-header-' + index"
-    [attr.aria-expanded]="accordionItem.expanded"
+    #accordionItem="cdkAccordionItem" class="example-accordion-item" role="button" tabindex="0"
+    [attr.id]="'accordion-header-' + index" [attr.aria-expanded]="accordionItem.expanded"
     [attr.aria-controls]="'accordion-body-' + index">
 
     <!-- Header -->
     <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
       <p>
         <strong>Contest:</strong> {{ contest.name }} <br>
-        <strong>Start:</strong> {{ contest.date }}
+        <strong>Start:</strong> {{ contest.date | date: 'MMM d, y, h:mm a'}}
       </p>
       <span class="example-accordion-item-description">
         Click to {{ accordionItem.expanded ? 'close' : 'open' }}
@@ -21,65 +17,58 @@
     </div>
 
     <!-- Body -->
-    <div
-      class="example-accordion-item-body"
-      role="region"
-      [style.display]="accordionItem.expanded ? '' : 'none'"
-      [attr.id]="'accordion-body-' + index"
-      [attr.aria-labelledby]="'accordion-header-' + index">
+    <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
+      [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
 
       <mat-card class="card-list">
-        
+
         <mat-grid-list cols="4" rowHeight="100px">
-          <mat-grid-tile
-              *ngFor="let tile of tiles"
-              [colspan]="tile.cols"
-              [rowspan]="tile.rows">
+          <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows">
 
-              <div *ngIf="tile.text === 'One'" class="image-container">
-                <!-- <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" class="large-icon"></mat-icon> -->
-                <img [src]="imageUrl" alt="Image description" class="rounded-image">
-                <!-- <p class="caption">{{ imageCaption }}</p> -->
+            <div *ngIf="tile.text === 'One'" class="image-container">
+              <!-- <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" class="large-icon"></mat-icon> -->
+              <img [src]="imageUrl" alt="Image description" class="rounded-image">
+              <!-- <p class="caption">{{ imageCaption }}</p> -->
+            </div>
+
+
+            <div *ngIf="tile.text === 'Two'" class="horizontal-list-container">
+              <div class="horizontal-list-row">
+                <ul class="horizontal-list">
+                  <li><b>Name:</b> {{ contest.name }}</li>
+                  <li><b>Time:</b> {{ contest.time }}</li>
+                </ul>
               </div>
-                  
 
-              <div *ngIf="tile.text === 'Two'" class="horizontal-list-container">
-                <div class="horizontal-list-row">
-                  <ul class="horizontal-list">
-                    <li><b>Name:</b> {{ contest.name }}</li>
-                    <li><b>Time:</b> {{ contest.time }}</li>
-                  </ul>
-                </div>
-
-                <div class="horizontal-list-row">
-                  <ul class="horizontal-list">
-                    <li><b>Link:</b> {{ contest.link }}</li>
-                    <li><b>Password:</b> {{ contest.password }}</li>
-                  </ul>
-                </div>
-                <div class="horizontal-list-row">
-                  <ul class="horizontal-list">
-                    <li><b>Description:</b> {{ contest.description }}</li>
-                    <li><b>Type:</b> {{ contest.type }}</li>
-                  </ul>
-                </div>
-                
-                <div class="horizontal-list-row">
-                  <ul class="horizontal-list">
-                    <li><b>Duration:</b> {{ contest.duration }}</li>
-                    <li><b>Type:</b> {{ contest.type }}</li>
-                  </ul>
-                </div>
+              <div class="horizontal-list-row">
+                <ul class="horizontal-list">
+                  <li><b>Link:</b> {{ contest.link }}</li>
+                  <li><b>Password:</b> {{ contest.password }}</li>
+                </ul>
               </div>
-              
-              
-              
-                  
-            
+              <div class="horizontal-list-row">
+                <ul class="horizontal-list">
+                  <li><b>Description:</b> {{ contest.description }}</li>
+                  <li><b>Type:</b> {{ contest.type }}</li>
+                </ul>
+              </div>
+
+              <div class="horizontal-list-row">
+                <ul class="horizontal-list">
+                  <li><b>Duration:</b> {{ contest.duration }}</li>
+                  <li><b>Type:</b> {{ contest.type }}</li>
+                </ul>
+              </div>
+            </div>
+
+
+
+
+
           </mat-grid-tile>
         </mat-grid-list>
-        
-        
+
+
       </mat-card>
     </div>
   </cdk-accordion-item>
