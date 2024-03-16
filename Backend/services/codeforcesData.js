@@ -2,7 +2,7 @@ const axios = require('axios');
 
 async function getCodeforcesData(id) {
     try {
-        const response = await axios.get(`https://codeforces.com/api/user.info?handles=${id}`);
+        const response = await axios.get(`https://codeforces.com/api/user.info?handles=${id}&checkHistoricHandles=false`);
         const data = response.data;
 
         if (data.status === 'OK') {
@@ -27,7 +27,7 @@ async function getCodeforcesData(id) {
             throw new Error(data.comment);
         }
     } catch (err) {
-        console.error(err);
+        console.error("Codeforces API error: ");
         throw err;
     }
 }

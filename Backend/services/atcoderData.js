@@ -26,7 +26,7 @@ async function getAtcoderData(id) {
 
         return userData;
     } catch (error) {
-        console.error('Error:', error);
+        console.error("Atcoder API error.");
         return null;
     }
 }
