@@ -7,6 +7,8 @@ const contestRoutes = require('./routes/contestRoutes');
 const announcementRoutes = require('./routes/announcementRoutes');
 const userRequestRoutes = require('./routes/userRequestRoutes');
 const adminRoutes = require('./routes/adminRoutes');
+const auth = require('./routes/auth');
+
 require('dotenv').config();
 
 const app = express();
@@ -19,9 +21,11 @@ app.use(cors());
 
 app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/admins', adminRoutes);
+app.use('/api/v1/auth', auth);
 app.use('/api/v1/contests', contestRoutes);
 app.use('/api/v1/announcements', announcementRoutes);
 app.use('/api/v1/userRequests', userRequestRoutes);
+
 app.get('/', (req, res) => {
   res.send('Welcome to the Backend!');
 });
