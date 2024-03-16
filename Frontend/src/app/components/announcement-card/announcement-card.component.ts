@@ -30,7 +30,6 @@ export class AnnouncementCardComponent {
     private renderer: Renderer2, 
     private elementRef: ElementRef
     ){};
-    
     @HostListener('document:click', ['$event'])
     handleClick(event: Event): void {
       if (!this.elementRef.nativeElement.contains(event.target)) {

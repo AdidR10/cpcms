@@ -4,6 +4,7 @@ import { AnnouncementCardComponent } from 'src/app/components/announcement-card/
 import { AnnouncementFormComponent } from 'src/app/components/announcement-form/announcement-form.component';
 import { AdminService } from 'src/app/services/admin.service';
 import { Announcement } from 'src/app/models/announcementModel';
+import { SnackbarService } from 'src/app/services/snackbar.service';
 
 @Component({
   selector: 'app-announcements',
@@ -15,7 +16,8 @@ export class AnnouncementsComponent implements OnInit{
   announcements:Announcement[] = [];
 
   constructor(private _dialog:MatDialog,
-    private _adminService: AdminService
+    private _adminService: AdminService,
+    private _snackbar: SnackbarService
     ){}
 
     ngOnInit(): void{
@@ -68,7 +70,7 @@ export class AnnouncementsComponent implements OnInit{
   handleDelete(id: string): void {
     this._adminService.deleteAnnouncement(id).subscribe({
       next:(res)=>{
-        alert('Announcement Deleted!');
+        this._snackbar.showSnackbar('Announcement Deleted!',true)
         this.getAnnouncementList();
       },
       error: console.log

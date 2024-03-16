@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Announcement } from 'src/app/models/announcementModel';
 import { AdminService } from 'src/app/services/admin.service';
+import { SnackbarService } from 'src/app/services/snackbar.service';
 
 @Component({
   selector: 'app-announcement-form',
@@ -12,9 +13,11 @@ import { AdminService } from 'src/app/services/admin.service';
 export class AnnouncementFormComponent {
   postContent: string = '';
   announcementForm: FormGroup;
+
   constructor(private _fb:FormBuilder,
     private _adminService: AdminService,
     private _dialogRef:MatDialogRef<AnnouncementFormComponent>,
+    private _snackbar: SnackbarService,
     @Inject(MAT_DIALOG_DATA) public data:any
     ){
       this.announcementForm=this._fb.group({
@@ -51,7 +54,8 @@ export class AnnouncementFormComponent {
       if(this.data){
         this._adminService.updateAnnouncement(this.data._id, postData).subscribe({
           next: (val:any)=>{
-            alert('Announcement Updated Successfully');
+            this._snackbar.showSnackbar('Announcement Updated Successfully', true);
+            // alert('Announcement Updated Successfully');
             this._dialogRef.close(true);
           },
           error: (err: any)=>{
@@ -62,8 +66,10 @@ export class AnnouncementFormComponent {
       else{
         this._adminService.addAnnouncement(postData).subscribe({
           next:(val:any)=>{
-            alert('New Announcement Published');
             this._dialogRef.close(true);
+            // this._snackbar.showSnackbar('New Announcement Published', true);
+            // alert('New Announcement Published');
+            
           },
           error:(err:any)=>{
             console.log(err);
