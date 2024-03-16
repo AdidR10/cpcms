@@ -13,10 +13,10 @@ export class AdminService {
   deleteUser(id: string):Observable<any>{
     return this._http.delete(`http://localhost:3010/api/v1/users/${id}`);
   }
+
   updateUser(id: string, data: any): Observable<any> {
     return this._http.patch(`http://localhost:3010/api/v1/users/${id}`, data);
   }
-
 
   addAnnouncement(data: any): Observable<any>{
     return this._http.post('http://localhost:3010/api/v1/announcements',data);

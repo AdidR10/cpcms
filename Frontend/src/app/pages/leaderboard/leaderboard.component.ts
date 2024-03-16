@@ -20,14 +20,10 @@ export class LeaderboardComponent implements OnInit{
   displayedColumns: string[] = [
     'rank', 
     'name', 
-    'batch', 
-    'overallRating',
     'codeforcesRating',
     'codechefRating',
     'atcoderRating',
-    'solveCount',
-    'lastContestDate',
-    'lastContestDelta',
+    'overallRating',
     'action'
   ];
   dataSource!: MatTableDataSource<any>;
