@@ -1,9 +1,48 @@
 <div class="card">
-    <div class="card-header">Featured</div>
-    <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Button</a>
+    <div class="card-header">
+        <div>
+            <mat-icon>person</mat-icon>
+            {{ request.name }}
+        </div>
+        <hr />
     </div>
-    <div class="card-footer text-muted">2 days ago</div>
+    <div class="card-body">
+        <table>
+            <tr class="card-text even">
+                <td><b>Email:</b></td>
+                <td>{{ request.email }}</td>
+            </tr>
+            <tr class="card-text odd">
+                <td><b>Gender:</b> </td>
+                <td>{{ request.gender }}</td>
+            </tr>
+            <tr class="card-text even">
+                <td><b>Student ID:</b></td>
+                <td>{{ request.studentId }}</td>
+            </tr>
+            <tr class="card-text odd">
+                <td><b>Codeforces Handle:</b> </td>
+                <td class="handle-button" (click)="navigateToExternalProfile(request.codeforcesHandle, 'codeforces')">
+                    <button>{{request.codeforcesHandle }}</button>
+                </td>
+            </tr>
+            <tr class="card-text even">
+                <td><b>Codechef Handle:</b> </td>
+                <td class="handle-button" (click)="navigateToExternalProfile(request.codechefHandle , 'codechef')">
+                    <button>{{
+                        request.codechefHandle }}</button>
+                </td>
+            </tr>
+            <tr class="card-text odd">
+                <td><b>Atcoder Handle:</b></td>
+                <td class="handle-button" (click)="navigateToExternalProfile( request.atcoderHandle, 'atcoder')">
+                    <button>{{ request.atcoderHandle }}</button>
+                </td>
+            </tr>
+        </table>
+        <div class="button-row">
+            <button mat-flat-button class="accept" (click)="accept()">Accept</button>
+            <button mat-flat-button color="warn" (click)="reject(request.id)">Reject</button>
+        </div>
+    </div>
 </div>

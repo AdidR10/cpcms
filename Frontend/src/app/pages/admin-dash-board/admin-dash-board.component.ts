@@ -23,7 +23,6 @@ export class AdminDashBoardComponent {
         this.requests = res;
       },
       error: console.error
-
     })
   }
 }

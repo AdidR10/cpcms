@@ -2,6 +2,7 @@ import { Component , OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import {User} from 'src/app/models/userModel';
+import { NevigationsService } from 'src/app/services/nevigations.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -10,6 +11,7 @@ import {User} from 'src/app/models/userModel';
 export class ProfileComponent implements OnInit {
   user:User | undefined;
   constructor(
+    private _navigation: NevigationsService,
     private _route: ActivatedRoute,
     private _userService: UserService
     ){}
@@ -30,17 +32,6 @@ export class ProfileComponent implements OnInit {
       })
     }
     navigateToExternalProfile(handle: string, site: string) {
-      if(site=='codeforces'){
-        window.location.href = `https://codeforces.com/profile/${handle}`;
-      }
-      else if(site=='codechef'){
-        window.location.href = `https://www.codechef.com/users/${handle}`;
-      }
-      else if(site=='atcoder'){
-        window.location.href = `https://atcoder.jp/users/${handle}`;
-      }
-      else if(site=='vjudge'){
-        window.location.href = `https://vjudge.net/user/${handle}`;
-      }
+      this._navigation.navigateToExternalProfile(handle,site);
     }
 }

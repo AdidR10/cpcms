@@ -2,12 +2,12 @@
   
   .card {
     flex: 1 0 45%; /* Allow cards to grow, don't shrink, set initial width */
-    max-width: 350px; 
-    max-height: 500px;/* Set minimum width for cards */
+    min-width: 350px; 
+    min-height: 260px;/* Set minimum width for cards */
     background-color: #fff; /* White background */
     border-radius: 10px; /* Rounded borders */
-    padding: 20px; /* Padding for card content */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    // padding: 20px; /* Padding for card content */
+    box-shadow: 0 4px 6px rgba(0.1, 0, 0, 0.1); /* Add shadow for depth */
     transition: all 0.3s ease; /* Smooth transition effect */
     
     &:hover {
@@ -15,15 +15,54 @@
     }
     
     &-header {
-      background-color: #007bff; /* Blue header background */
-      color: #fff; /* White text */
-      padding: 1rem; /* Padding for the header */
       font-size: 1.5rem; /* Larger font size */
-      font-weight: bold; /* Bold text */
+      font-weight:500; /* Bold text */
       border-top-left-radius: 10px; /* Top left corner rounded */
       border-top-right-radius: 10px; /* Top right corner rounded */
+      color:#fff;
+      background-color:cornflowerblue;
+      div{
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        mat-icon{
+          font-size:larger;
+          margin-right:20px ;
+        }
+      }
     }
+    .card-body{
+      padding-bottom: 5px;
+      padding-left: 5px;
+      padding-right: 5px;
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        padding: 20px;
+        td {
+          border: 1px solid #ccc;
+          padding: 8px;
+          button{
+            padding: 0px;
+            border: none;
+            background: none;
+            cursor: pointer;
+          }
+        }
+        .handle-button{
+          cursor: pointer;
+         }
+  
     
+        .even {
+          background-color: #f2f2f2;
+        }
+        .odd {
+          background-color: #fff;
+        }
+      }
+  
+    }
     &-footer {
       background-color: #f8f9fa; /* Light gray footer background */
       padding: 0.5rem; /* Padding for the footer */
@@ -32,5 +71,19 @@
       border-bottom-left-radius: 10px; /* Bottom left corner rounded */
       border-bottom-right-radius: 10px; /* Bottom right corner rounded */
     }
+    .button-row{
+      display: flex;
+      justify-content:end;
+      max-width: 600px;
+      button{
+        margin: 10px;
+      }
+      .accept {
+        background-color: #53a653;
+        color: white;
+      }
+    }
+    
+    
   }
   

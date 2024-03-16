@@ -1,14 +1,14 @@
 {
   "posts": [
     {
-      "id": 1,
+      "id": "1",
       "title": "json-server",
       "author": "typicode"
     }
   ],
   "comments": [
     {
-      "id": 1,
+      "id": "1",
       "body": "some comment",
       "postId": 1
     }
@@ -22,40 +22,10 @@
       "email": "abc@gmail.com",
       "gender": "female",
       "studentId": "1804057",
-      "codeforcesHandle": "meem",
-      "codechefHandle": "mnbnm",
-      "atcoderHandle": "hi",
-      "id": 1
-    },
-    {
-      "name": "ABC",
-      "email": "asdas@gmail.com",
-      "gender": "female",
-      "studentId": "1804057",
-      "codeforcesHandle": "fsfsf",
-      "codechefHandle": "wwr",
-      "atcoderHandle": "klklj",
-      "id": 2
-    },
-    {
-      "name": "Meem",
-      "email": "abc@gmail.com",
-      "gender": "female",
-      "studentId": "1804057",
       "codeforcesHandle": "Raven__78",
       "codechefHandle": "zerin_shaima",
       "atcoderHandle": "Meem",
-      "id": 3
-    },
-    {
-      "name": "efg",
-      "email": "wge@gmail.com",
-      "gender": "female",
-      "studentId": "1804057",
-      "codeforcesHandle": "bjhbj",
-      "codechefHandle": "nbnbjm",
-      "atcoderHandle": "mnm",
-      "id": 4
+      "id": "3"
     },
     {
       "name": "tripti",
@@ -65,7 +35,7 @@
       "codeforcesHandle": "knkj",
       "codechefHandle": "lkjl",
       "atcoderHandle": "nm",
-      "id": 5
+      "id": "5"
     }
   ],
   "users": [
@@ -128,7 +98,53 @@
       "universityId": "60d6c7e1100f5c6c476fabc6",
       "email": "janesmith@example.com",
       "gender": "female",
-      "__v": 0
+      "__v": 0,
+      "id": "ad2d"
+    },
+    {
+      "id": "a15d",
+      "name": "Meem",
+      "email": "abc@gmail.com",
+      "gender": "female",
+      "codeforces": {
+        "handle": "meem"
+      },
+      "codechef": {
+        "handle": "mnbnm"
+      },
+      "atcoder": {
+        "handle": "hi"
+      }
+    },
+    {
+      "id": "9cf6",
+      "name": "Meem",
+      "email": "abc@gmail.com",
+      "gender": "female",
+      "codeforces": {
+        "handle": "Raven__78"
+      },
+      "codechef": {
+        "handle": "zerin_shaima"
+      },
+      "atcoder": {
+        "handle": "Meem"
+      }
+    },
+    {
+      "id": "42a7",
+      "name": "ABC",
+      "email": "asdas@gmail.com",
+      "gender": "female",
+      "codeforces": {
+        "handle": "fsfsf"
+      },
+      "codechef": {
+        "handle": "wwr"
+      },
+      "atcoder": {
+        "handle": "klklj"
+      }
     }
   ],
   "users_Not_used": [
@@ -140,10 +156,10 @@
       "codeforcesHandle": "Raven__87",
       "codechefHandle": "zerin_shaima",
       "atcoderHandle": "Meem",
-      "id": 1804057
+      "id": "1804057"
     },
     {
-      "id": 1804055,
+      "id": "1804055",
       "firstName": "Ashfaqur Rahman",
       "lastName": "Adib",
       "email": "abd@gmail.com",
@@ -153,7 +169,7 @@
       "atcoderHandle": "adibur6"
     },
     {
-      "id": 1804041,
+      "id": "1804041",
       "firstName": "Tawsifur Rahman",
       "lastName": "Akash",
       "email": "axd@gmail.com",
@@ -163,7 +179,7 @@
       "atcoderHandle": "u1804041"
     },
     {
-      "id": 1704055,
+      "id": "1704055",
       "firstName": "Ahasan",
       "lastName": "Kabir",
       "email": "abo@gmail.com",
@@ -175,7 +191,7 @@
   ],
   "onlineAPI": [
     {
-      "id": 1804057,
+      "id": "1804057",
       "name": "Zerin Shaima Meem",
       "batch": 18,
       "overallRating": 1000,
@@ -191,7 +207,7 @@
       "vjudgeHandle": "Meem"
     },
     {
-      "id": 1804055,
+      "id": "1804055",
       "name": "Ashfaqur Rahman",
       "batch": 18,
       "overallRating": 2000,
@@ -203,7 +219,7 @@
       "lastContestDelta": 10
     },
     {
-      "id": 1804041,
+      "id": "1804041",
       "name": "Md. Tawsiful Islam",
       "batch": 18,
       "overallRating": 1500,
@@ -215,7 +231,7 @@
       "lastContestDelta": 45
     },
     {
-      "id": 1704055,
+      "id": "1704055",
       "name": "Ahasan Kabir",
       "batch": 17,
       "overallRating": 2000,
@@ -227,7 +243,7 @@
       "lastContestDelta": 25
     },
     {
-      "id": 1704057,
+      "id": "1704057",
       "name": "Shawly Ahsan",
       "batch": 17,
       "overallRating": 1900,
@@ -245,49 +261,49 @@
       "down_vote": 0,
       "upvote": 0,
       "post": "nahian is a big frog",
-      "id": 7
+      "id": "7"
     },
     {
       "admin_id": 1804057,
       "down_vote": 0,
       "upvote": 0,
       "post": "Shima is a frog",
-      "id": 8
+      "id": "8"
     },
     {
       "admin_id": 1804057,
       "down_vote": 0,
       "upvote": 0,
       "post": "adib is a frog",
-      "id": 9
+      "id": "9"
     },
     {
       "admin_id": 1804057,
       "down_vote": 0,
       "upvote": 0,
       "post": "Akash is a frog",
-      "id": 10
+      "id": "10"
     },
     {
       "admin_id": 1804057,
       "down_vote": 0,
       "upvote": 0,
       "post": "Shima is afrog",
-      "id": 11
+      "id": "11"
     },
     {
       "admin_id": 1804057,
       "down_vote": 0,
       "upvote": 0,
       "post": "I am a frog",
-      "id": 12
+      "id": "12"
     },
     {
       "admin_id": 1804057,
       "down_vote": 0,
       "upvote": 0,
       "post": "jjjjjjj",
-      "id": 13
+      "id": "13"
     }
   ],
   "upcoming-contests": [
@@ -299,7 +315,7 @@
       "contestTime": "01:59",
       "contestDuration": "sssssssss",
       "contestType": "",
-      "id": 1
+      "id": "1"
     }
   ]
 }

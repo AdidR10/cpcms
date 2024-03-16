@@ -1,6 +1,6 @@
 <h2>User Requests</h2>
 <div class="card-container text-center">
     <div *ngFor="let request of requests">
-        <app-request-card [request]="request"></app-request-card>
+        <app-request-card [request]="request" (getRequests)="getRequests()"></app-request-card>
     </div>
 </div>

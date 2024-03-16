@@ -14,7 +14,7 @@
                 </div>
                 <div class="user-data">
                     <div class="data-label" matListItemIcon>ID :</div>
-                    <span>{{user._id}}</span>
+                    <span>{{user.universityId}}</span>
                 </div>
                 <div class="user-data">
                     <div class="data-label" matListItemIcon>Gender :</div>
@@ -31,7 +31,7 @@
             </div>
             <hr>
             <div class="handle-list">
-                <div class="handle-button" (click)="navigateToExternalProfile('Raven__57', 'codeforces')">
+                <div class="handle-button" (click)="navigateToExternalProfile(user.codeforces.handle, 'codeforces')">
                     <div class="handle-logo">
                         <img
                             src="https://store-images.s-microsoft.com/image/apps.48094.14504742535903781.aedbca21-113a-48f4-b001-4204e73b22fc.503f883f-8339-4dc5-8609-81713a59281f" />
@@ -40,7 +40,7 @@
                         {{user.codeforces.handle}}
                     </div>
                 </div>
-                <div class="handle-button" (click)="navigateToExternalProfile('zerin_shaima', 'codechef')">
+                <div class="handle-button" (click)="navigateToExternalProfile(user.codechef.handle, 'codechef')">
                     <div class="handle-logo">
                         <img
                             src="https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/zruiknbedz8yqafxbazb" />
@@ -49,7 +49,7 @@
                         {{user.codechef.handle}}
                     </div>
                 </div>
-                <div class="handle-button" (click)="navigateToExternalProfile('Meem', 'atcoder')">
+                <div class="handle-button" (click)="navigateToExternalProfile(user.atcoder.handle, 'atcoder')">
                     <div class="handle-logo">
                         <img src="https://img.atcoder.jp/logo/atcoder/logo_transparent.png" />
                     </div>

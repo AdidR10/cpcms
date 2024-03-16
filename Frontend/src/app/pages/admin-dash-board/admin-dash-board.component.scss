@@ -1,6 +1,6 @@
 .card-container {
     display: flex;
-    justify-content: space-between;
+    justify-content:safe;
     flex-wrap: wrap;
-    gap: 20px; /* Adjust the gap between cards */
+    gap: 50px; /* Adjust the gap between cards */
   }
