@@ -29,8 +29,8 @@ export class RequestsService {
       );
   }
 
-  approveRequest(data: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}users/`, data, { headers: this.getHeaders() })
+  approveRequest(id: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}userRequests/${id}`, { headers: this.getHeaders() })
       .pipe(
         catchError((error: HttpErrorResponse) => {
           return throwError(error);

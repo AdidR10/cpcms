@@ -73,7 +73,6 @@ export class RegistrationComponent implements OnInit{
         this._adminService.updateUser(this.data._id, postData).subscribe({
           next: (val:any)=>{
             this._snackbar.showSnackbar('User Updated Successfully', true)
-            // alert('User Updated Successfully');
             this._dialogRef.close(true);
           },
           error: (err: any)=>{
