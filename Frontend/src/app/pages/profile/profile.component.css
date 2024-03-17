@@ -2,43 +2,34 @@
   display: flex;
   flex-wrap: wrap;
 }
-
-.user-details {
-  flex: 1 1 20%; /* Initially takes up 30% of space */
+.profile-container .user-details {
+  flex: 1 1 20%;
   padding: 20px;
-  box-sizing: border-box; /* Include padding in the width calculation */
+  box-sizing: border-box;
 }
-
-.user-card {
+.profile-container .user-details .user-card {
   padding: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-}
-
-.user-data {
   display: flex;
-  font-size: medium;
-  padding: 5px;
+  align-items: center;
 }
-
-.user-info > h1 {
-  font-weight: 500;
-}
-
-.data-label {
-  font-weight: 500;
-}
-
-.user-details img {
+.profile-container .user-details .user-card img {
   width: 100%;
   max-width: 150px; /* Adjust as needed */
   border-radius: 50%;
   margin-bottom: 10px;
 }
-
-.oj-details {
+.profile-container .user-details .user-card h1 {
+  font-weight: 500;
+  margin-bottom: 0 !important;
+}
+.profile-container .user-details .user-card .user-data {
+  margin-top: 0 !important;
+}
+.profile-container .oj-details {
   flex: 1 1 70%;
   padding: 20px;
-  box-sizing: border-box; /* Include padding in the width calculation */
+  box-sizing: border-box;
 }
 
 .handles,
