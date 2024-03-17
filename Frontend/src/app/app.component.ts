@@ -1,6 +1,8 @@
 import { Component, computed, signal } from '@angular/core';
-import { RegistrationComponent } from './components/registration/registration.component';
 import { MatDialog } from '@angular/material/dialog';
+
+import { RegistrationComponent } from './components/registration/registration.component';
+import { AuthenticationService } from './services/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class AppComponent {
   title = 'cpcms';
 
-  constructor(private _dialog: MatDialog){}
+  constructor(private _dialog: MatDialog, public authService: AuthenticationService){}
 
   openAddEditForm(){
     this._dialog.open(RegistrationComponent);

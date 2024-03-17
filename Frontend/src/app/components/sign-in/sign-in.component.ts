@@ -1,9 +1,11 @@
-import { AuthenticationService } from './../../services/authentication.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 import { MatDialog } from '@angular/material/dialog';
+
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
+import { AuthenticationService } from './../../services/authentication.service';
 
 
 @Component({
@@ -21,6 +23,7 @@ export class SignInComponent implements OnInit {
     ) {}
 
   ngOnInit() {
+    this.checkAuthentication();
     this.initForm();
   }
 
@@ -68,4 +71,12 @@ export class SignInComponent implements OnInit {
       }
     });
   }
+  checkAuthentication() {
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['/admin-dash-board']);
+    } 
+  }
+  
+
+  
 }

@@ -1,0 +1,40 @@
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.action-cell {
+  margin: 0.5%;
+  display: flex;
+  width: 70%;
+  justify-content: center;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.search-field {
+  width: 50%;
+}
+
+.custom-link {
+  font-size: medium;
+  color: cornflowerblue;
+  font-weight: 500;
+}
+.custom-link > a {
+  color: inherit; /* Use the default text color */
+  text-decoration: none; /* Remove underline */
+  cursor: pointer; /* Show cursor as pointer on hover */
+}/*# sourceMappingURL=leaderboard.component.css.map */

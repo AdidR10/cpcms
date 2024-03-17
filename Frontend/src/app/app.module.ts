@@ -49,7 +49,13 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { LoginDialogComponent } from './components/login-dialog/login-dialog.component';
 import { AdminDashBoardComponent } from './pages/admin-dash-board/admin-dash-board.component';
 import { RequestCardComponent } from './components/request-card/request-card.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
+import { AuthenticationService } from './services/authentication.service';
+import { TokenInterceptorService } from './services/token-intercepter.service';
+
+import { AuthGuard } from './guards/auth.guard';
+import { contestGuard } from './guards/contest.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +76,8 @@ import { RequestCardComponent } from './components/request-card/request-card.com
     LoginDialogComponent,
     AdminDashBoardComponent,
     RequestCardComponent,
-    RequestCardComponent
+    RequestCardComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -102,9 +109,15 @@ import { RequestCardComponent } from './components/request-card/request-card.com
     MatSnackBarModule
   ],
   providers: [
+    [AuthGuard, AuthenticationService, contestGuard],
     {
       provide: HTTP_INTERCEPTORS,
       useClass:LoadingInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass:TokenInterceptorService,
       multi: true
     }
   ],

@@ -1,14 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { AuthenticationService } from './authentication.service'; 
+
 @Injectable({
   providedIn: 'root'
 })
 export class RequestsService {
 
-  constructor(private _http:HttpClient) { }
-  getRequests():Observable<any>{
-    return this._http.get('http://localhost:3010/api/v1/userRequests')
+  constructor(
+    private _http:HttpClient, 
+    private authService: AuthenticationService
+  ) { }
+
+  getRequests(): Observable<any> {
+    const token = this.authService.getAuthToken();
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
+    return this._http.get('http://localhost:3010/api/v1/userRequests', { headers });
   }
   approveRequest(id: string):Observable<any>{
     return this._http.get(`http://localhost:3010/api/v1/userRequests/${id}`);

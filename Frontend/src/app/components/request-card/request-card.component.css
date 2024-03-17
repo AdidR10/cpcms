@@ -1,0 +1,78 @@
+.card {
+  flex: 1 0 45%; /* Allow cards to grow, don't shrink, set initial width */
+  min-width: 350px;
+  min-height: 260px; /* Set minimum width for cards */
+  background-color: #fff; /* White background */
+  border-radius: 10px; /* Rounded borders */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  transition: all 0.3s ease; /* Smooth transition effect */
+}
+.card:hover {
+  transform: translateY(-2.5px); /* Move card up on hover */
+}
+.card-header {
+  font-size: 1.5rem; /* Larger font size */
+  font-weight: 500; /* Bold text */
+  border-top-left-radius: 10px; /* Top left corner rounded */
+  border-top-right-radius: 10px; /* Top right corner rounded */
+  color: #fff;
+  background-color: cornflowerblue;
+}
+.card-header div {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.card-header div mat-icon {
+  font-size: larger;
+  margin-right: 20px;
+}
+.card .card-body {
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.card .card-body table {
+  width: 100%;
+  border-collapse: collapse;
+  padding: 20px;
+}
+.card .card-body table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+.card .card-body table td button {
+  padding: 0px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.card .card-body table .handle-button {
+  cursor: pointer;
+}
+.card .card-body table .even {
+  background-color: #f2f2f2;
+}
+.card .card-body table .odd {
+  background-color: #fff;
+}
+.card-footer {
+  background-color: #f8f9fa; /* Light gray footer background */
+  padding: 0.5rem; /* Padding for the footer */
+  font-size: 0.875rem; /* Smaller font size */
+  color: #6c757d; /* Gray text color */
+  border-bottom-left-radius: 10px; /* Bottom left corner rounded */
+  border-bottom-right-radius: 10px; /* Bottom right corner rounded */
+}
+.card .button-row {
+  display: flex;
+  justify-content: end;
+  max-width: 600px;
+}
+.card .button-row button {
+  margin: 10px;
+}
+.card .button-row .accept {
+  background-color: #53a653;
+  color: white;
+}/*# sourceMappingURL=request-card.component.css.map */
