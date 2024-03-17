@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { RegistrationComponent } from '../../components/registration/registration.component';
 import { UserService } from '../../services/user.service';
 import { AdminService } from 'src/app/services/admin.service';
+import { SnackbarService } from 'src/app/services/snackbar.service';
 
 
 @Component({
@@ -34,6 +35,7 @@ export class LeaderboardComponent implements OnInit{
   constructor(private _userService:UserService,
     private _adminService:AdminService,
     private _dialog: MatDialog,
+    private _snackbar: SnackbarService
     ){}
 
   ngOnInit(): void {
@@ -61,7 +63,7 @@ export class LeaderboardComponent implements OnInit{
   deleteUser(id: string){
     this._adminService.deleteUser(id).subscribe({
       next:(res)=>{
-        alert('User Deleted!');
+        this._snackbar.showSnackbar('User Deleted!', true)
         this.getUserList();
       },
       error: console.log

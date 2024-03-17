@@ -22,26 +22,26 @@
             </tr>
             <tr class="card-text odd">
                 <td><b>Codeforces Handle:</b> </td>
-                <td class="handle-button" (click)="navigateToExternalProfile(request.codeforcesHandle, 'codeforces')">
+                <td class="handle-button" (click)="navigateToExternalProfile(request.CodeforcesID, 'codeforces')">
                     <button>{{request.CodeforcesID }}</button>
                 </td>
             </tr>
             <tr class="card-text even">
                 <td><b>Codechef Handle:</b> </td>
-                <td class="handle-button" (click)="navigateToExternalProfile(request.codechefHandle , 'codechef')">
+                <td class="handle-button" (click)="navigateToExternalProfile(request.CodechefID , 'codechef')">
                     <button>{{
                         request.CodechefID }}</button>
                 </td>
             </tr>
             <tr class="card-text odd">
                 <td><b>Atcoder Handle:</b></td>
-                <td class="handle-button" (click)="navigateToExternalProfile( request.atcoderHandle, 'atcoder')">
+                <td class="handle-button" (click)="navigateToExternalProfile( request.AtcoderID, 'atcoder')">
                     <button>{{ request.AtcoderID }}</button>
                 </td>
             </tr>
         </table>
         <div class="button-row">
-            <button mat-flat-button class="accept" (click)="accept()">Accept</button>
+            <button mat-flat-button class="accept" (click)="accept(request._id)">Accept</button>
             <button mat-flat-button color="warn" (click)="reject(request._id)">Reject</button>
         </div>
     </div>

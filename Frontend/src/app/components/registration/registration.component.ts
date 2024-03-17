@@ -4,6 +4,7 @@ import { MAT_DIALOG_DATA,MatDialogRef } from '@angular/material/dialog';
 import { UserService } from '../../services/user.service';
 import { AdminService } from 'src/app/services/admin.service';
 import { RequestsService } from 'src/app/services/requests.service';
+import { SnackbarService } from 'src/app/services/snackbar.service';
 
 @Component({
   selector: 'app-registration',
@@ -18,6 +19,7 @@ export class RegistrationComponent implements OnInit{
     private _adminService:AdminService,
     private _requestService: RequestsService,
     private _dialogRef: MatDialogRef<RegistrationComponent>,
+    private _snackbar: SnackbarService,
     @Inject(MAT_DIALOG_DATA) public data:any 
     ){
     this.registerForm = this._fb.group({
@@ -70,7 +72,8 @@ export class RegistrationComponent implements OnInit{
       if(this.data){
         this._adminService.updateUser(this.data._id, postData).subscribe({
           next: (val:any)=>{
-            alert('User Updated Successfully');
+            this._snackbar.showSnackbar('User Updated Successfully', true)
+            // alert('User Updated Successfully');
             this._dialogRef.close(true);
           },
           error: (err: any)=>{
@@ -83,7 +86,7 @@ export class RegistrationComponent implements OnInit{
       else{
         this._requestService.sendRequest(formData).subscribe({
           next: (val:any)=>{
-            alert('User Registration Request Sent');
+            this._snackbar.showSnackbar('User Registration Request Sent', true)
             this._dialogRef.close(true);
           },
           error: (err: any)=>{

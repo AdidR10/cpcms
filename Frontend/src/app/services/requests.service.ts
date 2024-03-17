@@ -18,9 +18,8 @@ export class RequestsService {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
     return this._http.get('http://localhost:3010/api/v1/userRequests', { headers });
   }
-
-  approveRequest(data: any):Observable<any>{
-    return this._http.post('http://localhost:3010/api/v1/users/',data);
+  approveRequest(id: string):Observable<any>{
+    return this._http.get(`http://localhost:3010/api/v1/userRequests/${id}`);
   }
   deleteRequest(id: string):Observable<any>{
     return this._http.delete(`http://localhost:3010/api/v1/userRequests/${id}`);
