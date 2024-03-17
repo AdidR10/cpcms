@@ -40,7 +40,7 @@ export class SidenavbarComponent implements OnInit {
     { icon: 'campaign', label:'Announcements', route:'announcements' },
     // { icon: 'verified_user', label:'LogIn as Admin', route:'sign-in' },
     { icon: 'admin_panel_settings', label:'Admin Dashboard', route:'admin-dash-board' },
-    { icon: 'campaign', label:'Log Out', route:'log-out' }
+    { icon: 'accessibility', label:'Log Out', route:'log-out' }
   ]);
 
 

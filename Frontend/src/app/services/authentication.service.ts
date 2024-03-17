@@ -19,7 +19,7 @@ export class AuthenticationService {
         map(response => {
           // Check if the response contains a token
           if (response && response.token) {
-            // Store token in sessionStorage instead of localStorage
+            // Store token in sessionStorage instead of sessionStorage
             sessionStorage.setItem('token', response.token);
           }
           // console.log(response);
@@ -40,6 +40,7 @@ export class AuthenticationService {
     // Check if token exists in sessionStorage
     return !!sessionStorage.getItem('token');
   }
+  
   getAuthToken(): string | null {
     return sessionStorage.getItem('token');
   }

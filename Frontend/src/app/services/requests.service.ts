@@ -1,31 +1,58 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { AuthenticationService } from './authentication.service'; 
 
 @Injectable({
   providedIn: 'root'
 })
 export class RequestsService {
+  private baseUrl = 'http://localhost:3010/api/v1/';
 
   constructor(
-    private _http:HttpClient, 
+    private http: HttpClient,
     private authService: AuthenticationService
   ) { }
 
-  getRequests(): Observable<any> {
+  private getHeaders(): HttpHeaders {
     const token = this.authService.getAuthToken();
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${token}`);
-    return this._http.get('http://localhost:3010/api/v1/userRequests', { headers });
+    return new HttpHeaders().set('x-auth-token', token ? token : '');
   }
 
-  approveRequest(data: any):Observable<any>{
-    return this._http.post('http://localhost:3010/api/v1/users/',data);
+  getRequests(): Observable<any> {
+    return this.http.get(`${this.baseUrl}userRequests`, { headers: this.getHeaders() })
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          return throwError(error);
+        })
+      );
   }
-  deleteRequest(id: string):Observable<any>{
-    return this._http.delete(`http://localhost:3010/api/v1/userRequests/${id}`);
+
+  approveRequest(data: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}users/`, data, { headers: this.getHeaders() })
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          return throwError(error);
+        })
+      );
   }
-  sendRequest(data: any):Observable<any>{
-    return this._http.post('http://localhost:3010/api/v1/userRequests/signup',data);
+
+  deleteRequest(id: string): Observable<any> {
+    return this.http.delete(`${this.baseUrl}userRequests/${id}`, { headers: this.getHeaders() })
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          return throwError(error);
+        })
+      );
+  }
+
+  sendRequest(data: any): Observable<any> {
+    return this.http.post(`${this.baseUrl}userRequests/signup`, data, { headers: this.getHeaders() })
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          return throwError(error);
+        })
+      );
   }
 }
