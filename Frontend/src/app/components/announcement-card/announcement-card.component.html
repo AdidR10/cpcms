@@ -10,7 +10,7 @@
                 <h5>{{announcement.date | date}}</h5>
             </div>
         </div>
-        <button mat-icon-button (click)="toggleDropdown()">
+        <button mat-icon-button (click)="toggleDropdown()" *ngIf="this.checkAuthentication()">
             <mat-icon>more_horizon</mat-icon>
             <div *ngIf="isDropdownOpen" class="dropdown">
                 <button (click)="edit(announcement._id)">

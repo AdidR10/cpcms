@@ -9,6 +9,7 @@ import { RegistrationComponent } from '../../components/registration/registratio
 import { UserService } from '../../services/user.service';
 import { AdminService } from 'src/app/services/admin.service';
 import { SnackbarService } from 'src/app/services/snackbar.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 
 @Component({
@@ -25,8 +26,8 @@ export class LeaderboardComponent implements OnInit{
     'codechefRating',
     'atcoderRating',
     'overallRating',
-    'action'
   ];
+  
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -35,11 +36,17 @@ export class LeaderboardComponent implements OnInit{
   constructor(private _userService:UserService,
     private _adminService:AdminService,
     private _dialog: MatDialog,
-    private _snackbar: SnackbarService
+    private _snackbar: SnackbarService,
+    private authService: AuthenticationService
+
     ){}
 
   ngOnInit(): void {
+    if (this.checkAuthentication()) {
+      this.displayedColumns.push('action')
+    }
     this.getUserList();
+
   }
   getUserList(){
     this._userService.getUserList().subscribe({
@@ -82,6 +89,9 @@ export class LeaderboardComponent implements OnInit{
         console.error('Error fetching user data:', error);
       }
     );
+  }
+  checkAuthentication(){
+    return this.authService.isAuthenticated();
   }
 }
 
