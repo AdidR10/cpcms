@@ -19,7 +19,7 @@ async function getAtcoderData(id) {
             birthYear: $(`#main-container > div.row > div.col-md-3.col-sm-12 > table > tbody > tr:nth-child(2) > td`).text(),
             country: $(`#main-container > div.row > div.col-md-3.col-sm-12 > table > tbody > tr:nth-child(1) > td`).text(),
             rank: $(`#main-container > div.row > div.col-md-9.col-sm-12 > table > tbody > tr:nth-child(1) > td`).text(),
-            rating: $(`#main-container > div.row > div.col-md-9.col-sm-12 > table > tbody > tr:nth-child(2) > td > span.user-green`).text(),
+            rating: $(`#main-container > div.row > div.col-md-9.col-sm-12 > table > tbody > tr:nth-child(2) > td > span`).text(),
             highestRating: $(`#main-container > div.row > div.col-md-9.col-sm-12 > table > tbody > tr:nth-child(3) > td > span.user-green`).text(),
             ratedMatches: $(`#main-container > div.row > div.col-md-9.col-sm-12 > table > tbody > tr:nth-child(4) > td`).text()
         };
