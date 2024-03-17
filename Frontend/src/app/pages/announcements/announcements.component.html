@@ -1,4 +1,6 @@
-<app-admin-post [page]="pagename" (click)="openAnnouncementForm()"></app-admin-post>
+<ng-container *ngIf="this.authService.isAuthenticated()">
+    <app-admin-post [page]="pagename" (click)="openAnnouncementForm()"></app-admin-post>
+</ng-container>
 <div class="container">
     <div *ngFor="let announcement of announcements">
         <app-announcement-card [announcement]="announcement" (editClicked)="handleEdit($event)"

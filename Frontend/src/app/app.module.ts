@@ -51,9 +51,11 @@ import { AdminDashBoardComponent } from './pages/admin-dash-board/admin-dash-boa
 import { RequestCardComponent } from './components/request-card/request-card.component';
 import { LogoutComponent } from './components/logout/logout.component';
 
-import { AuthGuard } from './guards/auth.guard';
-import { TokenInterceptorService } from './services/token-intercepter.service';
 import { AuthenticationService } from './services/authentication.service';
+import { TokenInterceptorService } from './services/token-intercepter.service';
+
+import { AuthGuard } from './guards/auth.guard';
+import { contestGuard } from './guards/contest.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -107,7 +109,7 @@ import { AuthenticationService } from './services/authentication.service';
     MatSnackBarModule
   ],
   providers: [
-    [AuthGuard, AuthenticationService],
+    [AuthGuard, AuthenticationService, contestGuard],
     {
       provide: HTTP_INTERCEPTORS,
       useClass:LoadingInterceptor,

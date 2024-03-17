@@ -1,10 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { AnnouncementCardComponent } from 'src/app/components/announcement-card/announcement-card.component';
+// import { AnnouncementCardComponent } from 'src/app/components/announcement-card/announcement-card.component';
 import { AnnouncementFormComponent } from 'src/app/components/announcement-form/announcement-form.component';
 import { AdminService } from 'src/app/services/admin.service';
 import { Announcement } from 'src/app/models/announcementModel';
 import { SnackbarService } from 'src/app/services/snackbar.service';
+import { AuthenticationService } from './../../services/authentication.service';
+
 
 @Component({
   selector: 'app-announcements',
@@ -17,7 +19,8 @@ export class AnnouncementsComponent implements OnInit{
 
   constructor(private _dialog:MatDialog,
     private _adminService: AdminService,
-    private _snackbar: SnackbarService
+    private _snackbar: SnackbarService,
+    public authService: AuthenticationService
     ){}
 
     ngOnInit(): void{

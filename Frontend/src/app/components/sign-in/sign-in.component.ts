@@ -23,8 +23,8 @@ export class SignInComponent implements OnInit {
     ) {}
 
   ngOnInit() {
+    this.checkAuthentication();
     this.initForm();
-    // this.checkAuthentication();
   }
 
   initForm() {
@@ -70,6 +70,11 @@ export class SignInComponent implements OnInit {
         // Proceed with login process (navigate to announcement page, for example)
       }
     });
+  }
+  checkAuthentication() {
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['/admin-dash-board']);
+    } 
   }
   
 

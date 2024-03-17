@@ -12,11 +12,12 @@ import {AdminDashBoardComponent } from './pages/admin-dash-board/admin-dash-boar
 import { LogoutComponent } from './components/logout/logout.component';
 
 import { AuthGuard } from './guards/auth.guard';
+import { contestGuard } from './guards/contest.guard';
 
 const routes: Routes = [
   {path: '', component: LeaderboardComponent},
   {path: 'leaderboard', component: LeaderboardComponent},
-  {path: 'contests', component: ContestsComponent},
+  {path: 'contests', component: ContestsComponent, canActivate: [contestGuard]},
   {path: 'announcements', component: AnnouncementsComponent},
   {path: 'profile/:id', component: ProfileComponent},
   {path: 'upcoming-contest', component: UpcomingContestComponent},

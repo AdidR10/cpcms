@@ -4,11 +4,14 @@
     <mat-icon>menu</mat-icon>
   </button>
   <span>CUET CPCMS</span>
-  <span class="example-spacer"></span>
-  <button mat-raised-button (click)="openAddEditForm()">
-    Register
-  </button>
+  <ng-container *ngIf="!this.authService.isAuthenticated()">
+    <span class="example-spacer"></span>
+    <button mat-raised-button (click)="openAddEditForm()">
+      Register
+    </button>
+  </ng-container>
 </mat-toolbar>
+  
 <mat-sidenav-container>
   <mat-sidenav opened mode="side" [style.width]="sidenavWidth()">
     <app-sidenavbar [collapsed]="collapsed()"></app-sidenavbar>
