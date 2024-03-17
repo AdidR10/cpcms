@@ -16,15 +16,14 @@ export class RequestCardComponent {
     private _snackbar: SnackbarService
   ){}
   
-  accept() {
+  accept(id: string) {
 
-    const request_id = this.request._id
 
-    this._request.approveRequest(this.request).subscribe({
+    this._request.approveRequest(id).subscribe({
       next:(val:any)=>{
         this._snackbar.showSnackbar('User Added to Leaderboard',true);
         
-        this._request.deleteRequest(request_id).subscribe({
+        this._request.deleteRequest(id).subscribe({
           next:(res)=>{
             this.getRequests.emit();
           },
@@ -44,6 +43,7 @@ export class RequestCardComponent {
       error: console.log
     })
   }
+  
   navigateToExternalProfile(handle: string, site: string){
     this.nevigation.navigateToExternalProfile(handle,site);
   }

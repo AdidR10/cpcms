@@ -149,3 +149,54 @@
     }
   }
   
+
+// .row1, .row2 {
+//   margin: 10px;
+//   display: flex;
+// }
+// .col1, .col2{
+//   margin: 10px;
+// }
+// .row1 .col1 {
+//   background-color: red;
+//   flex: 1;
+// }
+
+// .row1 .col2 {
+//   background-color: blue;
+//   flex: 2;
+// }
+
+// .row2 .col1 {
+//   background-color: yellow;
+//   flex: 1;
+//   height: 200px; /* Adjust height as needed */
+// }
+
+// .row2 .col2 {
+//   background-color: pink;
+//   flex: 2;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+// .row2 .col2 .row1 {
+//   margin-bottom: 10px; /* Adjust spacing between cards */
+//   margin: 0 !important;
+//   width: 100%;
+// }
+
+// .row2 .col2 .same-sized-cols {
+//   flex: 1;
+//   margin-right: 50px; /* Adjust spacing between cards */
+//   background-color: purple;
+// }
+
+// /* Optional: Example styles for cards */
+// .card {
+//   background-color: #fff;
+//   border: 1px solid #ccc;
+//   padding: 10px;
+//   border-radius: 4px;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+// }

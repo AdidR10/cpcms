@@ -10,8 +10,8 @@ export class RequestsService {
   getRequests():Observable<any>{
     return this._http.get('http://localhost:3010/api/v1/userRequests')
   }
-  approveRequest(data: any):Observable<any>{
-    return this._http.post('http://localhost:3010/api/v1/users/',data);
+  approveRequest(id: string):Observable<any>{
+    return this._http.get(`http://localhost:3010/api/v1/userRequests/${id}`);
   }
   deleteRequest(id: string):Observable<any>{
     return this._http.delete(`http://localhost:3010/api/v1/userRequests/${id}`);
