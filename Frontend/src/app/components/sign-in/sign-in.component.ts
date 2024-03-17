@@ -24,7 +24,7 @@ export class SignInComponent implements OnInit {
 
   ngOnInit() {
     this.initForm();
-    this.checkAuthentication();
+    // this.checkAuthentication();
   }
 
   initForm() {
@@ -71,18 +71,7 @@ export class SignInComponent implements OnInit {
       }
     });
   }
-  token:any;
-  checkAuthentication() {
-    if (this.authService.isAuthenticated()) {
-      // User is authenticated, proceed with authorized actions
-      console.log("User is authenticated.");
-      this.token='yes';
-    } else {
-      // User is not authenticated, handle unauthorized actions
-      console.log("User is not authenticated.");
-      this.token='no';
-    }
-  }
+  
 
   
 }

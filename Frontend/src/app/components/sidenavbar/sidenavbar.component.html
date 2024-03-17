@@ -6,10 +6,28 @@
     </div>
 </div>
 
-<mat-nav-list>
-    <a mat-list-item *ngFor="let item of menuItems()" [routerLink]="item.route" routerLinkActive #rla="routerLinkActive"
+<!-- <mat-nav-list>
+    <a mat-list-item *ngFor="let item of menuItemsUsers()" [routerLink]="item.route" routerLinkActive #rla="routerLinkActive"
         [activated]="rla.isActive">
         <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
         <span matListItemTitle>{{item.label}}</span>
     </a>
+</mat-nav-list> -->
+<mat-nav-list>
+    <!-- Render menu items based on the token value -->
+    <ng-container *ngIf="this.authService.isAuthenticated()">
+        <a mat-list-item *ngFor="let item of menuItemsAdmins()" [routerLink]="item.route" routerLinkActive #rla="routerLinkActive"
+            [activated]="rla.isActive">
+            <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+            <span matListItemTitle>{{item.label}}</span>
+        </a>
+    </ng-container>
+
+    <ng-container *ngIf="!this.authService.isAuthenticated()">
+        <a mat-list-item *ngFor="let item of menuItemsUsers()" [routerLink]="item.route" routerLinkActive #rla="routerLinkActive"
+            [activated]="rla.isActive">
+            <mat-icon matListItemIcon>{{item.icon}}</mat-icon>
+            <span matListItemTitle>{{item.label}}</span>
+        </a>
+    </ng-container>
 </mat-nav-list>
