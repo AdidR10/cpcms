@@ -1,9 +1,11 @@
-import { AuthenticationService } from './../../services/authentication.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
 import { MatDialog } from '@angular/material/dialog';
+
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
+import { AuthenticationService } from './../../services/authentication.service';
 
 
 @Component({
@@ -22,6 +24,7 @@ export class SignInComponent implements OnInit {
 
   ngOnInit() {
     this.initForm();
+    this.checkAuthentication();
   }
 
   initForm() {
@@ -68,4 +71,18 @@ export class SignInComponent implements OnInit {
       }
     });
   }
+  token:any;
+  checkAuthentication() {
+    if (this.authService.isAuthenticated()) {
+      // User is authenticated, proceed with authorized actions
+      console.log("User is authenticated.");
+      this.token='yes';
+    } else {
+      // User is not authenticated, handle unauthorized actions
+      console.log("User is not authenticated.");
+      this.token='no';
+    }
+  }
+
+  
 }

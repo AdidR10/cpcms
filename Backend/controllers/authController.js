@@ -18,7 +18,7 @@ exports.authAdmin = async (req, res) => {
     if (!validPassword) return res.status(400).send("Invalid username or password.");
 
     // Generate JWT token
-    const token = jwt.sign({ _id: admin._id }, process.env.CPCMS_jwtPrivateKey);
+    const token = admin.generateAuthToken();
 
     // Send token in response
     res.send({ token });

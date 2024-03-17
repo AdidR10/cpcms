@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
@@ -7,6 +7,8 @@ import { catchError, map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthenticationService {
+
+
   private apiUrl = 'http://localhost:3010/api/v1/auth'; // Update with your API endpoint
 
   constructor(private http: HttpClient) {}
@@ -20,7 +22,7 @@ export class AuthenticationService {
             // Store token in sessionStorage instead of localStorage
             sessionStorage.setItem('token', response.token);
           }
-          console.log(response);
+          // console.log(response);
           return response;
         }),
         catchError(error => {
@@ -38,4 +40,9 @@ export class AuthenticationService {
     // Check if token exists in sessionStorage
     return !!sessionStorage.getItem('token');
   }
+  getAuthToken(): string | null {
+    return sessionStorage.getItem('token');
+  }
+
+
 }

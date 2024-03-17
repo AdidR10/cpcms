@@ -1,0 +1,8 @@
+.announcement-post {
+  background-color: aqua;
+  padding: 20px;
+}
+
+.container {
+  overflow: auto; /* or overflow: scroll; */
+}/*# sourceMappingURL=announcements.component.css.map */

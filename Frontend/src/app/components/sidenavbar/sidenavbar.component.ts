@@ -43,6 +43,11 @@ export class SidenavbarComponent {
       icon: 'admin_panel_settings',  
       label:'Admin Dashboard',
       route:'admin-dash-board',
+    },
+    {
+      icon: 'campaign',  
+      label:'Log Out',
+      route:'log-out',
     }
   ]);
 

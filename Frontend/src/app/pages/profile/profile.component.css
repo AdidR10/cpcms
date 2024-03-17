@@ -1,0 +1,147 @@
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.user-details {
+  flex: 1 1 20%; /* Initially takes up 30% of space */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+.user-card {
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.user-data {
+  display: flex;
+  font-size: medium;
+  padding: 5px;
+}
+
+.user-info > h1 {
+  font-weight: 500;
+}
+
+.data-label {
+  font-weight: 500;
+}
+
+.user-details img {
+  width: 100%;
+  max-width: 150px; /* Adjust as needed */
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.oj-details {
+  flex: 1 1 70%;
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+.handles,
+.solve-count {
+  padding: 10px 0;
+}
+
+.handles {
+  background-color: wheat;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  margin: 10px;
+  margin-top: 0;
+}
+.handles .handle-list {
+  display: flex;
+  justify-content: center;
+}
+.handles .handle-list .handle-button {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  border-radius: 20%;
+  padding: 10px;
+  margin: 20px;
+  width: 110px;
+  transition: background-color 0.3s ease;
+}
+.handles .handle-list .handle-button .handle-logo {
+  display: flex;
+  justify-content: center;
+}
+.handles .handle-list .handle-button .handle-logo > img {
+  width: 80px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 20%;
+  border: 1.5px solid black;
+}
+.handles .handle-list .handle-button .handle-name {
+  display: flex;
+  justify-content: center;
+  font-size: medium;
+  font-weight: 500;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.handles .handle-list .handle-button:hover {
+  background-color: #f0f0f0; /* Change background color on hover */
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  padding-bottom: 0;
+}
+
+hr {
+  border: none; /* Remove the default border */
+  height: 1px; /* Set the height of the line */
+  background-color: black; /* Set the color of the line */
+  margin: 0 0; /* Adjust margin as needed */
+  padding: 0 0;
+}
+
+.solve-count {
+  background-color: pink;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  margin: 10px;
+  padding: 20px;
+}
+.solve-count > hr {
+  border: none; /* Remove the default border */
+  height: 0.5px; /* Set the height of the line */
+  background-color: black; /* Set the color of the line */
+  margin: 0 0; /* Adjust margin as needed */
+  padding: 0 0;
+}
+.solve-count .stat-table {
+  background-color: white;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+.solve-count .stat-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.solve-count .stat-table th, .solve-count .stat-table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+.solve-count .stat-table th {
+  background-color: #f2f2f2;
+  color: #333;
+}
+.solve-count .stat-table tr:hover {
+  background-color: #ddd;
+}
+
+@media (max-width: 768px) {
+  .user-details,
+  .oj-details {
+    flex: 1 1 100%; /* Take up 100% width on smaller screens */
+  }
+}/*# sourceMappingURL=profile.component.css.map */
