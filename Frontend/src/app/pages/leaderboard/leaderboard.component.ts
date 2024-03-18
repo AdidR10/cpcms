@@ -1,6 +1,6 @@
 import { Component, Inject, InjectionToken, OnInit, ViewChild } from '@angular/core';
 import {MatPaginator } from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
+import {MatSort, Sort, MatSortModule} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -12,11 +12,42 @@ import { SnackbarService } from 'src/app/services/snackbar.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 
+interface User {
+  id: string;
+  rank: string;
+  name: string;
+  codeforcesRating: number;
+  codechefRating: number;
+  atcoderRating: number;
+  overallRating: number;
+}
+
+function convertToUserObjects(res: any[]): User[] {
+  return res.map(item => {
+    let codeforcesRating = parseInt(item.codeforces.data.rating);
+    let codechefRating = parseInt(item.codechef.data.currentRating);
+    let atcoderRating = parseInt(item.atcoder.data.rating);
+    let overallRating = Math.floor((codeforcesRating + codechefRating + atcoderRating) / 3);
+
+    return {
+      id: item._id,
+      rank: item.codeforces.data.rank,
+      name: item.name,
+      codeforcesRating: codeforcesRating,
+      codechefRating: codechefRating,
+      atcoderRating: atcoderRating,
+      overallRating: overallRating
+    };
+  });
+}
+
 @Component({
   selector: 'app-leaderboard',
   templateUrl: './leaderboard.component.html',
   styleUrls: ['./leaderboard.component.scss']
 })
+
+
 export class LeaderboardComponent implements OnInit{
   
   displayedColumns: string[] = [
@@ -39,6 +70,7 @@ export class LeaderboardComponent implements OnInit{
     private _snackbar: SnackbarService,
     private authService: AuthenticationService
 
+
     ){}
 
   ngOnInit(): void {
@@ -48,10 +80,16 @@ export class LeaderboardComponent implements OnInit{
     this.getUserList();
 
   }
+   ngAfterViewInit() {
+    this.dataSource.sort = this.sort;
+  }
   getUserList(){
     this._userService.getUserList().subscribe({
       next:(res)=>{
-        this.dataSource = new MatTableDataSource(res);
+
+        let users = convertToUserObjects(res);
+        console.log(users);
+        this.dataSource = new MatTableDataSource(users);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
         console.log(this.dataSource)
@@ -93,6 +131,7 @@ export class LeaderboardComponent implements OnInit{
   checkAuthentication(){
     return this.authService.isAuthenticated();
   }
+ 
 }
 
 
