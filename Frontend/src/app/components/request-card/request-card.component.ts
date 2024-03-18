@@ -29,6 +29,7 @@ export class RequestCardComponent {
           },
           error: console.log
         })
+        this.getRequests.emit();
       },
       error:console.error
     })
