@@ -106,3 +106,23 @@ mat-grid-tile {
   object-fit: cover; /* Ensures the image covers the entire space */
 }
 
+.menu-button {
+  color: #fff; /* Text color of the button */
+  background-color: #007bff; /* Background color of the button */
+}
+
+.menu-button:hover {
+  background-color: #0056b3; /* Background color of the button on hover */
+}
+
+.custom-menu {
+  background-color: #f8f9fa; /* Background color of the menu */
+}
+
+.menu-item {
+  color: #212529; /* Text color of the menu items */
+}
+
+.menu-item:hover {
+  background-color: #e9ecef; /* Background color of the menu items on hover */
+}

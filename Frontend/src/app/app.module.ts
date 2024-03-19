@@ -28,6 +28,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 import { AnnouncementsComponent } from './pages/announcements/announcements.component';
@@ -106,7 +107,8 @@ import { contestGuard } from './guards/contest.guard';
     MatProgressBarModule,
     CdkAccordionModule,
     MatGridListModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatMenuModule
   ],
   providers: [
     [AuthGuard, AuthenticationService, contestGuard],

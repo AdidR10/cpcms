@@ -13,6 +13,7 @@
                 <h2>Admin Name</h2>
             </div>
         </div>
+        
         <div class="row">
             <div class="row-field">
                 <label for="contestName">Contest Name:</label>
@@ -23,14 +24,15 @@
         <div class="row">
             <div class="row-field">
                 <label for="contestLink">Contest Link:</label>
-                <input type="text" id="contestLink" formControlName="contestLink">
+                <input type="link" id="contestLink" formControlName="contestLink">
             </div>
         </div>
+        
         <div class="row">
             <div class="row-field">
                 <label for="contestType">Contest Type:</label>
                 <mat-radio-group aria-label="Select an option" formControlName="contestType">
-                    <mat-radio-button value="solo">Solo</mat-radio-button>
+                    <mat-radio-button value="individual">Solo</mat-radio-button>
                     <mat-radio-button value="team">Team</mat-radio-button>
                 </mat-radio-group>
             </div>
@@ -62,3 +64,4 @@
         </div>
     </form>
 </div>
+

@@ -9,7 +9,7 @@ exports.contestValidation = (data) => {
     time: Joi.string().required(),
     duration: Joi.string().required(),
     type: Joi.string().valid('team', 'individual').required(),
-    description: Joi.string().optional(),
+    description: Joi.string().optional()
   });
 
   return schema.validate(data);

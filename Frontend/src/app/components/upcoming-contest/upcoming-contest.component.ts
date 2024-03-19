@@ -54,20 +54,28 @@ export class UpcomingContestComponent {
     this.currentpage = event.pageIndex;
   }
 
-  convertToHoursMinutes(seconds: number): string {
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    return `${hours}h ${minutes}m`;
+
+  tiles: Tile[] = [
+    {text: 'One', cols: 1, rows: 3},
+    {text: 'Two', cols: 3, rows: 3},
+  ];
+
+  deleteContest(contest: any): void {
+    const contestId = contest._id; // Assuming contest object has an id property
+    this.contestService.deleteContest(contestId).subscribe(
+      () => {
+        // Remove the deleted contest from the contestList
+        this.contestList = this.contestList.filter(c => c.id !== contestId);
+        alert('Contest deleted successfully');
+        this.getContestList();
+      },
+      (error: any) => {
+        console.error('Error deleting contest:', error);
+        alert('Failed to delete contest');
+      }
+    );
   }
 
-  convertToDate(seconds: number): string {
-    const date = new Date(seconds * 1000); // Convert seconds to milliseconds
-    return date.toLocaleString();
-  }
-  tiles: Tile[] = [
-    {text: 'One', cols: 1, rows: 2},
-    {text: 'Two', cols: 3, rows: 2},
-  ];
 
 
 }

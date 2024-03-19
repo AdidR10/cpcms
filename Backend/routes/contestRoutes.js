@@ -6,7 +6,7 @@ const auth = require('../middleware/auth');
 
 
 router.get('/', contestController.getAllContests);
-router.post('/', auth, contestController.createContest);
+router.post('/',  auth, contestController.createContest);
 router.get('/:contestId', contestController.getContest);
 router.delete('/:contestId', auth, contestController.deleteContest);
 router.put('/:contestId', auth, contestController.updateContest);

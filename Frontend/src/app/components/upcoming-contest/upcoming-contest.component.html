@@ -26,11 +26,8 @@
           <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows">
 
             <div *ngIf="tile.text === 'One'" class="image-container">
-              <!-- <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home" class="large-icon"></mat-icon> -->
               <img [src]="imageUrl" alt="Image description" class="rounded-image">
-              <!-- <p class="caption">{{ imageCaption }}</p> -->
             </div>
-
 
             <div *ngIf="tile.text === 'Two'" class="horizontal-list-container">
               <div class="horizontal-list-row">
@@ -59,15 +56,16 @@
                   <li><b>Type:</b> {{ contest.type }}</li>
                 </ul>
               </div>
+              <div>
+                <button mat-button [matMenuTriggerFor]="menu" class="menu-button">Edit</button>
+                <mat-menu #menu="matMenu">
+                  <button mat-menu-item (click)="deleteContest(contest)">Delete</button>
+                </mat-menu>
+              </div>
             </div>
-
-
-
-
 
           </mat-grid-tile>
         </mat-grid-list>
-
 
       </mat-card>
     </div>

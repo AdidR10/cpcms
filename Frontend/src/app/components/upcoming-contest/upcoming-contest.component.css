@@ -104,3 +104,25 @@ mat-grid-tile {
   -o-object-fit: cover;
      object-fit: cover; /* Ensures the image covers the entire space */
 }/*# sourceMappingURL=upcoming-contest.component.css.map */
+
+
+.menu-button {
+  color: #5e3a3a; /* Text color of the button */
+  background-color: #007bff; /* Background color of the button */
+}
+
+.menu-button:hover {
+  background-color: #0056b3; /* Background color of the button on hover */
+}
+
+.custom-menu {
+  background-color: #152230; /* Background color of the menu */
+}
+
+.menu-item {
+  color: #212529; /* Text color of the menu items */
+}
+
+.menu-item:hover {
+  background-color: #000000; /* Background color of the menu items on hover */
+}

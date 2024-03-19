@@ -17,7 +17,7 @@ exports.createContest = async (req, res) => {
     time: req.body.time,
     duration: req.body.duration,
     type: req.body.type,
-    description: req.body.description,
+    description: req.body.description
   });
 
   try {
