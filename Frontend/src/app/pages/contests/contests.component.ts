@@ -100,7 +100,7 @@ export class ContestsComponent implements OnInit {
 
 
   tiles: Tile[] = [
-    {text: 'One', cols: 1, rows: 2},
-    {text: 'Two', cols: 3, rows: 2},
+    {text: 'One', cols: 1, rows: 2.5},
+    {text: 'Two', cols: 3, rows: 2.5},
   ];
 }

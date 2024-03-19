@@ -1,4 +1,8 @@
 .example-spacer {
+<<<<<<< HEAD
+  flex: 1 1 auto;
+}
+=======
     flex: 1 1 auto;
   }
   .main-body {
@@ -17,8 +21,54 @@
     position: relative;
     z-index: 5;
   }
+>>>>>>> 0c7e72e7a2330213539f5144d9fa2f9470dcb085
 
-  mat-sidenav-container{
-    height: calc(100vh - 64px);
+.main-body {
+  padding: 30px;
+  padding-top: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  max-width: 100%;
+  mat-form-field {
+    width: 100%;
   }
-  
+}
+
+mat-toolbar {
+  position: relative;
+  z-index: 5;
+}
+
+mat-sidenav-container {
+  height: calc(100vh - 64px);
+}
+
+/* Typewriter animation */
+.typewriter {
+  overflow: hidden; /* Hide overflowing text */
+  border-right: .15em solid orange; /* Add a blinking cursor */
+  white-space: nowrap; /* Keep text on a single line */
+  margin: 0; /* Remove any margin */
+  letter-spacing: .15em; /* Adjust spacing between letters */
+  animation: typing 3.5s steps(40, end) infinite, blink-caret .75s step-end infinite; /* Animation settings */
+}
+
+/* Typing animation */
+@keyframes typing {
+  from {
+    width: 0; /* Start with no width */
+  }
+  to {
+    width: 100%; /* End with full width */
+  }
+}
+
+/* Blinking cursor animation */
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent; /* Start and end with transparent color */
+  }
+  50% {
+    border-color: orange; /* Show cursor color halfway through animation */
+  }
+}
