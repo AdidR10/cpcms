@@ -3,7 +3,9 @@
   <button mat-icon-button (click)="collapsed.set(!collapsed())">
     <mat-icon>menu</mat-icon>
   </button>
-  <span>CUET CPCMS</span>
+  <div>
+    <span class="typewriter">CUET CPCMS</span>
+  </div>
   <ng-container *ngIf="!this.authService.isAuthenticated()">
     <span class="example-spacer"></span>
     <button mat-raised-button (click)="openAddEditForm()">
