@@ -1,7 +1,7 @@
 <div *ngIf="user" class="profile-container">
     <div class="user-details">
         <mat-card class="user-card">
-            <img src="../../assets/cp-logo.png" />
+            <img src={{user.codeforces.data.titlePhoto}} />
             <h1>{{user.name}}</h1>
             <span>{{user.email}}</span>
             <span>ID: {{user.universityId}}</span>

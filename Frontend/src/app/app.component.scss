@@ -1,6 +1,27 @@
 .example-spacer {
+<<<<<<< HEAD
   flex: 1 1 auto;
 }
+=======
+    flex: 1 1 auto;
+  }
+  .main-body {
+    padding: 30px;
+    padding-top: 20px;
+    padding-left:50px;
+    padding-right: 50px;
+    max-width: 100%;
+    background: #eff9ff;
+    mat-form-field {
+      width: 100%;
+    }
+  }
+  
+  mat-toolbar{
+    position: relative;
+    z-index: 5;
+  }
+>>>>>>> 0c7e72e7a2330213539f5144d9fa2f9470dcb085
 
 .main-body {
   padding: 30px;
