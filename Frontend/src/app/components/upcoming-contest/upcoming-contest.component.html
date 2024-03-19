@@ -56,12 +56,6 @@
                   <li><b>Type:</b> {{ contest.type }}</li>
                 </ul>
               </div>
-              <div>
-                <button mat-button [matMenuTriggerFor]="menu" class="menu-button">Edit</button>
-                <mat-menu #menu="matMenu">
-                  <button mat-menu-item (click)="deleteContest(contest)">Delete</button>
-                </mat-menu>
-              </div>
             </div>
 
           </mat-grid-tile>

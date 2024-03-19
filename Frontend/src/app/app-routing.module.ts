@@ -17,7 +17,7 @@ import { contestGuard } from './guards/contest.guard';
 const routes: Routes = [
   {path: '', component: LeaderboardComponent},
   {path: 'leaderboard', component: LeaderboardComponent},
-  {path: 'contests', component: ContestsComponent, canActivate: [contestGuard]},
+  {path: 'contests', component: ContestsComponent},
   {path: 'announcements', component: AnnouncementsComponent},
   {path: 'profile/:id', component: ProfileComponent},
   {path: 'upcoming-contest', component: UpcomingContestComponent},

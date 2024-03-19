@@ -56,8 +56,8 @@ export class UpcomingContestComponent {
 
 
   tiles: Tile[] = [
-    {text: 'One', cols: 1, rows: 3},
-    {text: 'Two', cols: 3, rows: 3},
+    {text: 'One', cols: 1, rows: 2},
+    {text: 'Two', cols: 3, rows: 2},
   ];
 
   deleteContest(contest: any): void {
