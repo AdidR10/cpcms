@@ -1,107 +1,82 @@
-<div *ngIf="user" class="profile-container">
-    <div class="user-details">
-        <mat-card class="user-card">
-            <img src="../../assets/cp-logo.png" />
-            <h1>{{user.name}}</h1>
-            <span>{{user.email}}</span>
-            <span>ID: {{user.universityId}}</span>
-        </mat-card>
-    </div>
-    <div class="oj-details">
-        <div class="handles">
-            <div class="heading">
-                <h2>Online Judge Handles</h2>
+<div class="card-holder" *ngIf="user">
+    <div class="card">
+        <div class="card-data">
+            <img src={{user.codeforces.data.titlePhoto}} />
+            <div>
+                <h2>{{user.name}}</h2>
+                <h3>{{user.email}} | ID: {{user.universityId}}</h3>
+
+                <ul class="stats">
+                    <li>
+                        <var style="text-transform: capitalize;">{{user.codeforces.data.rank}}</var>
+                        <label>Codeforces</label>
+                    </li>
+                    <li>
+                        <var style="text-transform: capitalize;">
+                            {{ user.codechef.data.stars }}
+                            <mat-icon matSuffix>star</mat-icon>
+                        </var>
+                        <label>Codechef</label>
+                    </li>
+                    <li>
+                        <var style="text-transform: capitalize;">{{this.atcoderColor}}</var>
+                        <label>Atcoder</label>
+                    </li>
+                </ul>
             </div>
-            <hr>
-            <div class="handle-list">
-                <div class="handle-button" (click)="navigateToExternalProfile(user.codeforces.handle, 'codeforces')">
-                    <div class="handle-logo">
-                        <img
-                            src="https://store-images.s-microsoft.com/image/apps.48094.14504742535903781.aedbca21-113a-48f4-b001-4204e73b22fc.503f883f-8339-4dc5-8609-81713a59281f" />
-                    </div>
-                    <div class="handle-name">
-                        {{user.codeforces.handle}}
-                    </div>
+        </div>
+        <nav class="buttons">
+            <div class="handle-button">
+                <div class="handle-logo" (click)="navigateToExternalProfile(user.codeforces.handle, 'codeforces')">
+                    <img
+                        src="https://store-images.s-microsoft.com/image/apps.48094.14504742535903781.aedbca21-113a-48f4-b001-4204e73b22fc.503f883f-8339-4dc5-8609-81713a59281f" />
                 </div>
-                <div class="handle-button" (click)="navigateToExternalProfile(user.codechef.handle, 'codechef')">
-                    <div class="handle-logo">
-                        <img
-                            src="https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/zruiknbedz8yqafxbazb" />
-                    </div>
+                <div class="handle-name-button">
                     <div class="handle-name">
-                        {{user.codechef.handle}}
-                    </div>
-                </div>
-                <div class="handle-button" (click)="navigateToExternalProfile(user.atcoder.handle, 'atcoder')">
-                    <div class="handle-logo">
-                        <img src="https://img.atcoder.jp/logo/atcoder/logo_transparent.png" />
-                    </div>
-                    <div class="handle-name">
-                        {{user.atcoder.handle}}
+                        <div class="handle-data">{{user.codeforces.handle}}</div>
+                        <div class="handle-data-header"> Current Rating: </div>
+                        <div class="handle-data">{{user.codeforces.data.rating}}</div>
+                        <div class="handle-data-header"> Max Rating: </div>
+                        <div class="handle-data">{{user.codeforces.data.maxRating}}</div>
                     </div>
                 </div>
 
             </div>
-        </div>
+            <div class="handle-button">
+                <div class="handle-logo" (click)="navigateToExternalProfile(user.codechef.handle, 'codechef')">
+                    <img
+                        src="https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/zruiknbedz8yqafxbazb" />
+                </div>
+                <div class="handle-name-button">
+                    <div class="handle-name">
+                        <div class="handle-data">
+                            {{user.codechef.handle}}
+                        </div>
+                        <div class="handle-data-header">Current Rating: </div>
+                        <div class="handle-data">{{user.codechef.data.currentRating}}</div>
+                        <div class="handle-data-header">Max Rating: </div>
+                        <div class="handle-data">{{user.codechef.data.highestRating}}</div>
+                    </div>
+                </div>
 
-        <div class="solve-count">
-            <div class="heading">
-                <h2>Statistics</h2>
             </div>
-            <hr>
-            <div class="stat-table">
-                <table>
-                    <tr>
-                        <th style="background-color: rgb(215, 245, 245);">#</th>
-                        <th>Codeforces</th>
-                        <th>Codechef</th>
-                        <th>Atcoder</th>
-                    </tr>
-                    <tr>
-                        <td style="background-color:azure;">Current Rating</td>
-                        <td>{{user.codeforces.data.rating}}</td>
-                        <td>{{user.codechef.data.currentRating}}</td>
-                        <td>{{user.atcoder.data.rating}}</td>
-                    </tr>
-                    <tr>
-                        <td style="background-color:azure;">Max Rating</td>
-                        <td>{{user.codeforces.data.maxRating}}</td>
-                        <td>{{user.codechef.data.highestRating}}</td>
-                        <td>{{user.atcoder.data.highestRating}}</td>
-                    </tr>
-                </table>
+            <div class="handle-button">
+                <div class="handle-logo" (click)="navigateToExternalProfile(user.atcoder.handle, 'atcoder')">
+                    <img src="https://img.atcoder.jp/logo/atcoder/logo_transparent.png" />
+                </div>
+                <div class="handle-name-button">
+                    <div class="handle-name">
+                        <div class="handle-data">
+                            {{user.atcoder.handle}}
+                        </div>
+                        <div class="handle-data-header">Current Rating: </div>
+                        <div class="handle-data">{{user.atcoder.data.rating}}</div>
+                        <div class="handle-data-header">Max Rating: </div>
+                        <div class="handle-data">{{user.atcoder.data.highestRating}}</div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </nav>
     </div>
+
 </div>
-<!-- <div fluid>
-    <div class="row1">
-        <div class="col1 card">
-            left 1/3
-        </div>
-        <div class="col2 card">
-            right 2/3
-        </div>
-    </div>
-    <div class="row2">
-        <div class="col1 card">
-            1/3 widht and height 2 row
-        </div>
-        <div class="col2">
-            <div class="row1 card">
-                flat card
-            </div>
-            <div class="row2">
-                <div class="same-sized-cols card">
-                    small card1
-                </div>
-                <div class="same-sized-cols card">
-                    small card2
-                </div>
-                <div class="same-sized-cols card">
-                    small card3
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->

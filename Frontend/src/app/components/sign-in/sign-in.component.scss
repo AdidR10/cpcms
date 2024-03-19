@@ -11,9 +11,9 @@
   }
   
   body {
-    display: grid;
-    place-items: center;
-    gap: 50px;
+    display: flex;
+    justify-content: center;
+    // gap: 50px;
     margin: 0;
     padding: 0 0px;
     background: #eff9ff;
@@ -29,7 +29,7 @@
   .background {
     position: fixed;
     top: -50vmin;
-    left: -50vmin;
+    left: -20vmin;
     width: 100vmin;
     height: 100vmin;
     border-radius: 47% 53% 61% 39% / 45% 51% 49% 55%;
