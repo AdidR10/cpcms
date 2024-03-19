@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ContestsService } from 'src/app/services/contests.service';
+import { Contest } from 'src/app/models/contestModel';
+
 
 @Component({
   selector: 'app-contest-form',
@@ -16,7 +18,9 @@ export class ContestFormComponent implements OnInit {
   constructor(
     private _fb: FormBuilder,
     private _contestService: ContestsService,
-    private _dialogRef: MatDialogRef<ContestFormComponent>
+    private _dialogRef: MatDialogRef<ContestFormComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: { contest: Contest, isEdit: boolean }
+    
   ) {
     this.contestForm = this._fb.group({
       contestLink: '',
@@ -27,6 +31,11 @@ export class ContestFormComponent implements OnInit {
       contestDuration: '',
       contestType: ''
     });
+    this.isEdit = this.data.isEdit;
+    if (this.isEdit) {
+      this.contestForm.patchValue(this.data.contest);
+    }
+
   }
 
   ngOnInit(): void {
@@ -78,7 +87,6 @@ export class ContestFormComponent implements OnInit {
           next: (val: any) => {
             alert('New Contest Published');
             this._dialogRef.close(true);
-            this._contestService.getContestList();
           },
           error: (err: any) => {
             console.log(err);
@@ -89,20 +97,5 @@ export class ContestFormComponent implements OnInit {
     }
   }
 
-  onDeleteContest() {
-    if (this.contestId) {
-      // Delete contest
-      this._contestService.deleteContest(this.contestId).subscribe({
-        next: (val: any) => {
-          alert('Contest deleted successfully');
-          this._dialogRef.close(true);
-          this._contestService.getContestList();
-        },
-        error: (err: any) => {
-          console.log(err);
-          alert('Failed to delete contest');
-        }
-      });
-    }
-  }
+  
 }
