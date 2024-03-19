@@ -69,6 +69,7 @@ const userSchema = new mongoose.Schema({
       rating: String,
       highestRating: String,
       ratedMatches: String,
+      color: String,
     },
   },
 });

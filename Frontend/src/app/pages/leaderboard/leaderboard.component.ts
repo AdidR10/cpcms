@@ -16,10 +16,25 @@ interface User {
   id: string;
   rank: string;
   name: string;
+  gender: string;
+  universityID: string;
   codeforcesRating: number;
   codechefRating: number;
   atcoderRating: number;
   overallRating: number;
+  tags: string[];
+}
+function getTags(item: any): string[] {
+
+  let tags = [];
+  
+  tags.push("Cf max "+item.codeforces.data.maxRank);
+  tags.push("Batch "+item.universityId.slice(0, 2));
+  tags.push(item.gender);
+  tags.push('Codechef cur '+String(item.codechef.data.stars));
+  tags.push('Atcoder cur '+item.atcoder.data.color);
+
+  return tags;
 }
 
 function convertToUserObjects(res: any[]): User[] {
@@ -28,15 +43,18 @@ function convertToUserObjects(res: any[]): User[] {
     let codechefRating = parseInt(item.codechef.data.currentRating);
     let atcoderRating = parseInt(item.atcoder.data.rating);
     let overallRating = Math.floor((codeforcesRating + codechefRating + atcoderRating) / 3);
-
+    let tags = getTags(item);
     return {
       id: item._id,
+      universityID: item.universityId,
       rank: item.codeforces.data.rank,
       name: item.name,
+      gender: item.gender,
       codeforcesRating: codeforcesRating,
       codechefRating: codechefRating,
       atcoderRating: atcoderRating,
-      overallRating: overallRating
+      overallRating: overallRating,
+      tags: tags,
     };
   });
 }
@@ -60,6 +78,7 @@ export class LeaderboardComponent implements OnInit{
   ];
   
   dataSource!: MatTableDataSource<any>;
+  data: any;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -87,8 +106,10 @@ export class LeaderboardComponent implements OnInit{
     this._userService.getUserList().subscribe({
       next:(res)=>{
 
+        console.log(res);
         let users = convertToUserObjects(res);
-        console.log(users);
+        this.data = users;
+        
         this.dataSource = new MatTableDataSource(users);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
