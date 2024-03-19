@@ -4,6 +4,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Announcement } from 'src/app/models/announcementModel';
 import { AdminService } from 'src/app/services/admin.service';
 import { SnackbarService } from 'src/app/services/snackbar.service';
+import { DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-announcement-form',
@@ -18,6 +19,7 @@ export class AnnouncementFormComponent {
     private _adminService: AdminService,
     private _dialogRef:MatDialogRef<AnnouncementFormComponent>,
     private _snackbar: SnackbarService,
+    private sanitizer: DomSanitizer,
     @Inject(MAT_DIALOG_DATA) public data:any
     ){
       this.announcementForm=this._fb.group({
@@ -28,6 +30,12 @@ export class AnnouncementFormComponent {
         date: [new Date()]
       })
     };
+
+    // encodeText(text: string | null): string {
+    //   return this.sanitizer.sanitize(SecurityContext.HTML, text);
+    // }
+    
+
     ngOnInit(): void {
       if(this.data){
         this.postContent=this.data.body;
@@ -67,9 +75,6 @@ export class AnnouncementFormComponent {
         this._adminService.addAnnouncement(postData).subscribe({
           next:(val:any)=>{
             this._dialogRef.close(true);
-            // this._snackbar.showSnackbar('New Announcement Published', true);
-            // alert('New Announcement Published');
-            
           },
           error:(err:any)=>{
             console.log(err);
