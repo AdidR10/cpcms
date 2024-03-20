@@ -1,5 +1,10 @@
+.example-additional-selection {
+  opacity: 0.75;
+  font-size: 0.75em;
+}
+
 table {
-    width: 100%;
+  width: 100%;
 }
 
 .mat-mdc-form-field {
@@ -7,8 +12,9 @@ table {
   width: 100%;
 }
 
-td, th {
-  width:fit-content;
+td,
+th {
+  width: fit-content;
 }
 
 .action-cell {
@@ -17,22 +23,45 @@ td, th {
   width: 70%;
   justify-content: center;
 }
-.search-bar{
+.search-bar {
   display: flex;
   justify-content: center;
 }
-.search-field{
+.search-field {
   width: 50%;
   // border-radius: 100px !important;
 }
-  
+
 .custom-link {
-  font-size:medium;
+  font-size: medium;
   color: cornflowerblue;
   font-weight: 500;
->a{
-  color:inherit; /* Use the default text color */
-  text-decoration: none; /* Remove underline */
-  cursor: pointer; /* Show cursor as pointer on hover */
+  > a {
+    color: inherit; /* Use the default text color */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Show cursor as pointer on hover */
+  }
 }
+
+.upper-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.search-bar-container {
+  flex-basis: 68%; /* Adjust the width for desktop view */
+  margin-bottom: 16px;
+}
+
+.filter-container {
+  flex-basis: 30%; /* Adjust the width for desktop view */
+  margin-bottom: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .search-bar-container,
+  .filter-container {
+    flex-basis: 100%; /* Reset width for mobile view */
+  }
 }

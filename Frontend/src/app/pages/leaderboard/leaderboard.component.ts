@@ -10,6 +10,7 @@ import { UserService } from '../../services/user.service';
 import { AdminService } from 'src/app/services/admin.service';
 import { SnackbarService } from 'src/app/services/snackbar.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { FormControl } from '@angular/forms';
 
 
 interface User {
@@ -76,6 +77,10 @@ export class LeaderboardComponent implements OnInit{
     'atcoderRating',
     'overallRating',
   ];
+
+  filters = new FormControl('');
+
+  filterList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
   
   dataSource!: MatTableDataSource<any>;
   data: any;

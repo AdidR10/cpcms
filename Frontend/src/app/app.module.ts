@@ -11,7 +11,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatRadioModule} from '@angular/material/radio';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -58,6 +58,7 @@ import { TokenInterceptorService } from './services/token-intercepter.service';
 import { AuthGuard } from './guards/auth.guard';
 import { contestGuard } from './guards/contest.guard';
 import { NameComponent } from './components/name/name.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,7 +81,8 @@ import { NameComponent } from './components/name/name.component';
     RequestCardComponent,
     RequestCardComponent,
     LogoutComponent,
-    NameComponent
+    NameComponent,
+    SearchbarComponent
   ],
   imports: [
     BrowserModule,
@@ -110,7 +112,8 @@ import { NameComponent } from './components/name/name.component';
     CdkAccordionModule,
     MatGridListModule,
     MatSnackBarModule,
-    MatMenuModule
+    MatMenuModule,
+    FormsModule
   ],
   providers: [
     [AuthGuard, AuthenticationService, contestGuard],
