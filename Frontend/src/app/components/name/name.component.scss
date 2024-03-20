@@ -1,0 +1,31 @@
+/* Typewriter animation */
+.typewriter {
+  overflow: hidden; /* Hide overflowing text */
+  border-right: 0.15em solid orange; /* Add a blinking cursor */
+  white-space: nowrap; /* Keep text on a single line */
+  margin: 0; /* Remove any margin */
+  letter-spacing: 0.15em; /* Adjust spacing between letters */
+  animation: typing 3.5s steps(40, end) infinite,
+    blink-caret 0.75s step-end infinite; /* Animation settings */
+}
+
+/* Typing animation */
+@keyframes typing {
+  from {
+    width: 0; /* Start with no width */
+  }
+  to {
+    width: 100%; /* End with full width */
+  }
+}
+
+/* Blinking cursor animation */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent; /* Start and end with transparent color */
+  }
+  50% {
+    border-color: orange; /* Show cursor color halfway through animation */
+  }
+}
