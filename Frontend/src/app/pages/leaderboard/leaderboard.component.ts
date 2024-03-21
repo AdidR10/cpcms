@@ -80,7 +80,7 @@ export class LeaderboardComponent implements OnInit{
 
   filters = new FormControl('');
 
-  filterList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
+  filterList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni'];
   
   dataSource!: MatTableDataSource<any>;
   data: any;

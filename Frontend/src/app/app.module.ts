@@ -29,7 +29,7 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatMenuModule} from '@angular/material/menu';
-
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 import { AnnouncementsComponent } from './pages/announcements/announcements.component';
 import { ContestsComponent } from './pages/contests/contests.component';
@@ -113,7 +113,8 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
     MatGridListModule,
     MatSnackBarModule,
     MatMenuModule,
-    FormsModule
+    FormsModule,
+    AngularEditorModule
   ],
   providers: [
     [AuthGuard, AuthenticationService, contestGuard],

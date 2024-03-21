@@ -1,3 +1,13 @@
+div {
+  display: flex;
+  justify-content: flex-end;
+  img {
+    border-radius: 0 !important;
+    height: 35px;
+    margin-bottom: 0 !important;
+  }
+}
+
 /* Typewriter animation */
 .typewriter {
   overflow: hidden; /* Hide overflowing text */

@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Announcement } from 'src/app/models/announcementModel';
+import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { AdminService } from 'src/app/services/admin.service';
 import { SnackbarService } from 'src/app/services/snackbar.service';
 import { DomSanitizer} from '@angular/platform-browser';
@@ -14,6 +14,20 @@ import { DomSanitizer} from '@angular/platform-browser';
 export class AnnouncementFormComponent {
   postContent: string = '';
   announcementForm: FormGroup;
+  htmlContent ='';
+  config: AngularEditorConfig = {
+    editable: true,
+    spellcheck: true,
+    height: '15rem',
+    minHeight: '5rem',
+    placeholder: 'Enter text here...',
+    translate: 'no',
+    defaultParagraphSeparator: 'p',
+    defaultFontName: 'Arial',
+   
+  };
+
+  
 
   constructor(private _fb:FormBuilder,
     private _adminService: AdminService,
@@ -30,11 +44,6 @@ export class AnnouncementFormComponent {
         date: [new Date()]
       })
     };
-
-    // encodeText(text: string | null): string {
-    //   return this.sanitizer.sanitize(SecurityContext.HTML, text);
-    // }
-    
 
     ngOnInit(): void {
       if(this.data){
