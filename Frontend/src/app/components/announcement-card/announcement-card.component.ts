@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, Output, ElementRef, HostListener, Rende
 import { MatDialog } from '@angular/material/dialog';
 import { AdminService } from 'src/app/services/admin.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
-import {htmlToText} from 'html-to-text';
 
 @Component({
   selector: 'app-announcement-card',
@@ -45,20 +44,4 @@ export class AnnouncementCardComponent {
     checkAuthentication(){
       return this.authService.isAuthenticated();
     }
-
-    // convertHtmlToPlainText(html: string): string {
-    //   // Remove HTML tags using regex
-    //   return html ? html.replace(/<[^>]*>/g, '') : '';
-    // }
-    convertHtmlToPlainText(html: string): string {
-      return htmlToText(html, {
-          wordwrap: false, // Disable word wrapping
-          tags: {
-              a: { options: { noLinkBrackets: true } }, // Disable brackets around links
-              p: { format: 'block' }, // Treat <p> tags as block elements
-              ul: { format: 'open' }, // Preserve <b> tags as opening tags
-              // Add more tag definitions as needed
-          }
-      });
-  }
 }

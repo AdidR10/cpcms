@@ -24,6 +24,6 @@
             </div>
         </button>
     </div>
-    <mat-card-content class="post-content">{{announcement.body}}
+    <mat-card-content [innerHTML]="announcement.body">
     </mat-card-content>
 </div>

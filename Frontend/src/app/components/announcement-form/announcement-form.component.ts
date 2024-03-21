@@ -24,7 +24,26 @@ export class AnnouncementFormComponent {
     translate: 'no',
     defaultParagraphSeparator: 'p',
     defaultFontName: 'Arial',
-   
+    toolbarHiddenButtons: [
+      ['undo',
+      'redo',
+      'strikeThrough',
+      'indent',
+      'outdent',
+      'fontName'], // Customize the toolbar buttons here
+      [ 'fontSize',
+        'textColor',
+        'backgroundColor',
+        'customClasses',
+        'link',
+        'unlink',
+        'insertImage',
+        'insertVideo',
+        'insertHorizontalRule',
+        'removeFormat',
+        'toggleEditorMode'
+      ] // You can add/remove buttons as needed
+    ]
   };
 
   
