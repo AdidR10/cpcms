@@ -13,7 +13,7 @@ app-upcoming-contest {
 .example-accordion-item {
   display: block;
   border: solid 1px #ccc;
-  
+
   border-radius: 4px;
   overflow: hidden; /* Hide overflow content */
   margin-bottom: 10px; /* Add some spacing between items */
@@ -63,8 +63,8 @@ app-upcoming-contest {
   border-bottom-right-radius: 4px;
 }
 
-.card-list{
-  background-color: #000000; 
+.card-list {
+  background-color: #000000;
 }
 
 mat-grid-tile {
@@ -100,7 +100,6 @@ mat-grid-tile {
   margin-bottom: 10px; /* Add spacing between items */
 }
 
-
 /* your-component.component.scss */
 .rounded-image {
   border-radius: 50%; /* Creates a round border */
@@ -130,21 +129,11 @@ mat-grid-tile {
 .menu-item:hover {
   background-color: #e9ecef; /* Background color of the menu items on hover */
 }
-
-
 body {
-  display: grid;
-  place-items: center;
-  gap: 50px;
-  margin: 0;
-  padding: 0 0px;
-  background: #eff9ff;
-  font-family: "Euclid Circular A", "Poppins";
-}
-
-@media (width >= 500px) {
-  body {
-    padding: 0;
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 

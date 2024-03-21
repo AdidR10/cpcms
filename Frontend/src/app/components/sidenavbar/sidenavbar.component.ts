@@ -30,8 +30,6 @@ export class SidenavbarComponent implements OnInit {
     { icon: 'dashboard', label:'Contests', route:'contests' },
     { icon: 'campaign', label:'Announcements', route:'announcements' },
     { icon: 'verified_user', label:'LogIn as Admin', route:'sign-in' }
-    // { icon: 'admin_panel_settings', label:'Admin Dashboard', route:'admin-dash-board' },
-    // { icon: 'campaign', label:'Log Out', route:'log-out' }
   ]);
 
   menuItemsAdmins = signal<MenuItems[]>([
