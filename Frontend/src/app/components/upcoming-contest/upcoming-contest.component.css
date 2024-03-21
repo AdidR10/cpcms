@@ -1,101 +1,22 @@
-/* Style the container */
-.example-accordion {
-  display: block;
-  max-width: 1000px;
-  margin: 20px auto; /* Center the container horizontally */
-}
-
-/* Style each accordion item */
-.example-accordion-item {
-  display: block;
-  border: solid 1px #ccc;
-  border-radius: 4px;
-  overflow: hidden; /* Hide overflow content */
-  margin-bottom: 10px; /* Add some spacing between items */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow effect */
-}
-
-/* Remove border top for all items except the first one */
-.example-accordion-item + .example-accordion-item {
-  border-top: none;
-}
-
-/* Style the accordion item header */
-.example-accordion-item-header {
+.example-card {
+  max-width: 400px; /* Adjust max-width as needed */
+  margin: 1rem; /* Add margin for spacing between cards */
   display: flex;
-  align-items: center; /* Center vertically */
-  justify-content: space-between;
-  padding: 16px;
-  background-color: #f7f7f7; /* Light background color */
-  cursor: pointer;
-  transition: background-color 0.3s ease; /* Add transition effect */
+  flex-direction: column;
 }
 
-/* Hover effect for item header */
-.example-accordion-item-header:hover {
-  background-color: #888dd1; /* Darker background color on hover */
+.mat-card-header {
+  background-color: #f5f5f5; /* Change header background color */
+  border-bottom: 1px solid #ddd; /* Add border bottom */
+  text-align: center;
+  justify-content: center;
 }
 
-/* Style the accordion item description */
-.example-accordion-item-description {
-  font-size: 0.85em;
-  color: #fdfdfd;
+.mat-card-title,
+.mat-card-subtitle {
+  font-weight: bold; /* Make title and subtitle bold */
 }
 
-/* Style the accordion item body */
-.example-accordion-item-body {
-  padding: 16px;
-}
-
-/* Add border radius to first and last items */
-.example-accordion-item:first-child {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-}
-
-.example-accordion-item:last-child {
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-}
-
-.card-list {
-  background-color: #000000;
-}
-
-mat-grid-tile {
-  background: rgb(255, 255, 255);
-}
-
-.image-container {
-  text-align: center; /* Center-align the content */
-}
-
-.caption {
-  font-style: italic; /* Italicize the caption */
-  margin-top: 5px; /* Add some space between the image and the caption */
-}
-
-.horizontal-list-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; /* Adjust alignment between rows */
-}
-
-.horizontal-list-row {
-  flex-basis: 48%; /* Adjust the width of each row */
-  margin-bottom: 20px; /* Add spacing between rows */
-}
-
-.horizontal-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.horizontal-list li {
-  margin-bottom: 10px; /* Add spacing between items */
-}
-
-/* your-component.component.scss */
 .rounded-image {
   border-radius: 50%; /* Creates a round border */
   border: 2px solid #ccc; /* Adds a border */
@@ -103,26 +24,20 @@ mat-grid-tile {
   height: 150px; /* Adjust the height of the image */
   -o-object-fit: cover;
      object-fit: cover; /* Ensures the image covers the entire space */
+}
+
+mat-grid-tile {
+  background: lightblue;
+  display: flex;
+  justify-content: column;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.header {
+  background-color: rebeccapurple;
+}
+
+.contest-description {
+  background-color: red;
 }/*# sourceMappingURL=upcoming-contest.component.css.map */
-
-
-.menu-button {
-  color: #5e3a3a; /* Text color of the button */
-  background-color: #007bff; /* Background color of the button */
-}
-
-.menu-button:hover {
-  background-color: #0056b3; /* Background color of the button on hover */
-}
-
-.custom-menu {
-  background-color: #152230; /* Background color of the menu */
-}
-
-.menu-item {
-  color: #212529; /* Text color of the menu items */
-}
-
-.menu-item:hover {
-  background-color: #000000; /* Background color of the menu items on hover */
-}

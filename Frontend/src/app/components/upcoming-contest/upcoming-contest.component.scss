@@ -1,29 +1,61 @@
-/* Styles for typewriter animation */
-.typewriter h1 {
-  overflow: hidden; /* Hide overflowing text */
-  border-right: .15em solid orange; /* Add a blinking cursor */
-  white-space: nowrap; /* Keep text on a single line */
-  margin: 0 auto; /* Center the text horizontally */
-  letter-spacing: .15em; /* Adjust spacing between letters */
-  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite; /* Animation settings */
+.example-card {
+  width: 400px; /* Adjust max-width as needed */
+  height: 400px;
+  margin: 1rem; /* Add margin for spacing between cards */
+  border-width: 1px;
+  border-color: #000000;
 }
 
-/* Typing animation */
-@keyframes typing {
-  from {
-    width: 0; /* Start with no width */
-  }
-  to {
-    width: 100%; /* End with full width */
-  }
+.mat-card-header {
+  background-color: #f5f5f5; /* Change header background color */
+  border-bottom: 1px solid #ddd; /* Add border bottom */
+  text-align: center; 
+  justify-content: center;
 }
 
-/* Blinking cursor animation */
-@keyframes blink-caret {
-  from, to {
-    border-color: transparent; /* Start and end with transparent color */
-  }
-  50% {
-    border-color: orange; /* Show cursor color halfway through animation */
-  }
+.mat-card-title,
+.mat-card-subtitle {
+  font-weight: bold; /* Make title and subtitle bold */
+}
+
+.mat-card-content {
+  padding: 0.5rem; /* Add padding for content */
+}
+
+.image-container {
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center-align the content horizontally */
+  align-items: center; /* Center-align the content vertically */
+}
+
+
+
+.rounded-image {
+  border-radius: 50%; /* Creates a round border */
+  border: 2px solid #ccc; /* Adds a border */
+  width: 150px; /* Adjust the width of the image */
+  height: 150px; /* Adjust the height of the image */
+  object-fit: cover; /* Ensures the image covers the entire space */
+}
+
+
+
+.header{
+  text-align: center;
+}
+
+.contest-description{
+  text-align: center;
+}
+mat-grid-list{
+  column-gap: 10px;
+  row-gap: 100px;
+  margin: 1rem;
+}
+
+mat-grid-title{
+  row-gap: 100px;
+  text-align: center;
+  justify-content: center;
+  margin: 1rem;
 }
