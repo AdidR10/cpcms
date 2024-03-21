@@ -52,6 +52,10 @@ import { AdminDashBoardComponent } from './pages/admin-dash-board/admin-dash-boa
 import { RequestCardComponent } from './components/request-card/request-card.component';
 import { LogoutComponent } from './components/logout/logout.component';
 
+// import { AlertModule } from '@coreui/angular';
+// import { CardModule } from '@coreui/angular';
+
+
 import { AuthenticationService } from './services/authentication.service';
 import { TokenInterceptorService } from './services/token-intercepter.service';
 
@@ -108,7 +112,9 @@ import { contestGuard } from './guards/contest.guard';
     CdkAccordionModule,
     MatGridListModule,
     MatSnackBarModule,
-    MatMenuModule
+    MatMenuModule,
+    // AlertModule
+    // CardModule
   ],
   providers: [
     [AuthGuard, AuthenticationService, contestGuard],

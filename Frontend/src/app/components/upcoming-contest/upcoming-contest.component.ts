@@ -2,6 +2,12 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import { ContestsService } from 'src/app/services/contests.service';
 import { PageEvent } from '@angular/material/paginator';
+import { MatDialog } from '@angular/material/dialog';
+import { ContestFormComponent } from 'src/app/components/contest-form/contest-form.component';
+import { Contest } from 'src/app/models/contestModel';
+import { SnackbarService } from 'src/app/services/snackbar.service';
+import { AuthenticationService } from './../../services/authentication.service';
+
 
 
 export interface Tile {
@@ -17,55 +23,76 @@ export interface Tile {
 })
 export class UpcomingContestComponent {
   
-  data:any=[];
-  currentpage = 0;
-  pageSize = 10;
-  contestList: any[] = [];
+  pagename = 'Contests';
+  contests: Contest[] = [];
   imageUrl= '/assets/cf-logo.jpg';
+  // imageUrl= 'https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp';
   imageCaption = 'Codeforces';
 
   p:any;
-  
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
 
-  constructor(private contestService:ContestsService){
-    
-  }
-  
+  constructor(
+    private _dialog: MatDialog,
+    private _contestsService: ContestsService,
+    private _snackbar: SnackbarService,
+    public authService: AuthenticationService
+  ) {}
+
   ngOnInit(): void {
     this.getContestList();
   }
 
   getContestList(): void {
-    this.contestService.getContestList().subscribe(
-      (data: any) => {
-        // Assign the fetched contest list to the contestList property
-        this.contestList = data;
+    this._contestsService.getContestList().subscribe({
+      next: (res: Contest[]) => {
+        this.contests = res.sort((a, b) => {
+          return new Date(b.date).getTime() - new Date(a.date).getTime();
+        });
       },
-      (error: any) => {
-        // Handle error if any
-        console.error('Error fetching contest list:', error);
+      error: console.error
+    });
+  }
+
+  openContestForm(): void {
+    const dialogRef = this._dialog.open(ContestFormComponent);
+    dialogRef.afterClosed().subscribe({
+      next: (val: any) => {
+        if (val) {
+          this.getContestList();
+        }
+      }
+    });
+  }
+
+  handleEdit(contest: any): void {
+    const id = contest._id;
+    this._contestsService.getContestById(id).subscribe(
+      (contestData) => {
+        const dialogRef = this._dialog.open(ContestFormComponent, {
+          data: { contest: contest, isEdit: true }
+
+        });
+        dialogRef.afterClosed().subscribe({
+          next: (val) => {
+            if (val) {
+              this.getContestList();
+            }
+          }
+        });
+      },
+      (error) => {
+        console.error('Error fetching contest data:', error);
       }
     );
   }
 
-  handlePageEvent(event: PageEvent): void {
-    this.currentpage = event.pageIndex;
-  }
-
-
-  tiles: Tile[] = [
-    {text: 'One', cols: 1, rows: 2},
-    {text: 'Two', cols: 3, rows: 2},
-  ];
-
   deleteContest(contest: any): void {
     const contestId = contest._id; // Assuming contest object has an id property
-    this.contestService.deleteContest(contestId).subscribe(
+    this._contestsService.deleteContest(contestId).subscribe(
       () => {
         // Remove the deleted contest from the contestList
-        this.contestList = this.contestList.filter(c => c.id !== contestId);
+        this.contests = this.contests.filter(c => c.id !== contestId);
         alert('Contest deleted successfully');
         this.getContestList();
       },
@@ -76,6 +103,14 @@ export class UpcomingContestComponent {
     );
   }
 
+  // rowSize =5;
+  // colSize =2;
 
 
+  // tiles: Tile[] = [
+  //   {text: 'One', cols: this.colSize, rows: this.rowSize},
+  //   {text: 'Two', cols: this.colSize, rows: this.rowSize},
+  //   {text: 'three', cols: this.colSize, rows: this.rowSize},
+  //   // {text: 'four', cols: 2, rows: 7},
+  // ];
 }

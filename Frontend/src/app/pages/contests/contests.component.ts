@@ -88,12 +88,14 @@ export class ContestsComponent implements OnInit {
       () => {
         // Remove the deleted contest from the contestList
         this.contests = this.contests.filter(c => c.id !== contestId);
-        alert('Contest deleted successfully');
+        // alert('Contest deleted successfully');
+        this._snackbar.showSnackbar("Contest deleted successfully", true)
         this.getContestList();
       },
       (error: any) => {
         console.error('Error deleting contest:', error);
-        alert('Failed to delete contest');
+        // alert('Failed to delete contest');
+        this._snackbar.showSnackbar("Failed to delete contest",false)
       }
     );
   }
