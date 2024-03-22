@@ -81,7 +81,9 @@ export class LeaderboardComponent implements OnInit{
   filters = new FormControl('');
 
   filterList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni'];
-  
+  selectedFilters: string[] = []; // Array to store selected filters
+  unselectedFilters: string[] = []; // Array to store unselected filters
+
   dataSource!: MatTableDataSource<any>;
   data: any;
 
@@ -93,8 +95,6 @@ export class LeaderboardComponent implements OnInit{
     private _dialog: MatDialog,
     private _snackbar: SnackbarService,
     private authService: AuthenticationService
-
-
     ){}
 
   ngOnInit(): void {
@@ -102,7 +102,6 @@ export class LeaderboardComponent implements OnInit{
       this.displayedColumns.push('action')
     }
     this.getUserList();
-
   }
    ngAfterViewInit() {
     this.dataSource.sort = this.sort;

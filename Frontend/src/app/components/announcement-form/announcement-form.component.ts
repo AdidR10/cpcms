@@ -28,14 +28,16 @@ export class AnnouncementFormComponent {
       ['undo',
       'redo',
       'strikeThrough',
+      'justifyLeft',
+      'justifyCenter',
+      'justifyRight',
+      'justifyFull',
       'indent',
-      'outdent',
-      'fontName'], // Customize the toolbar buttons here
+      'outdent'], // Customize the toolbar buttons here
       [ 'fontSize',
         'textColor',
         'backgroundColor',
         'customClasses',
-        'link',
         'unlink',
         'insertImage',
         'insertVideo',
@@ -67,6 +69,7 @@ export class AnnouncementFormComponent {
     ngOnInit(): void {
       if(this.data){
         this.postContent=this.data.body;
+        this.htmlContent=this.data.body;
         const announcementDataForForm = {
           admin_id:this.data.userId,
           down_vote:0,

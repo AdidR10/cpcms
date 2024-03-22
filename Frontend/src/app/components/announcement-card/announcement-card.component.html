@@ -1,29 +1,32 @@
-<div class="announcement-card">
-    <div class="announcement-header">
-        <div class="admin-details">
-            <div class="admin-image">
-                <!-- Replace 'admin-image.jpg' with the path to your admin image -->
-                <img src="../../../assets/admin.png" alt="Admin Image">
+<div class="card-holder">
+    <div class="announcement-card">
+        <div class="announcement-header">
+            <div class="admin-details">
+                <div class="admin-image">
+                    <!-- Replace 'admin-image.jpg' with the path to your admin image -->
+                    <img src="../../../assets/admin.png" alt="Admin Image">
+                </div>
+                <div class="admin-name">
+                    <h4><b>Admin</b></h4>
+                    <h5>{{announcement.date | date}}</h5>
+                </div>
             </div>
-            <div class="admin-name">
-                <h4>Admin</h4>
-                <h5>{{announcement.date | date}}</h5>
-            </div>
+            <button mat-icon-button (click)="toggleDropdown()" *ngIf="this.checkAuthentication()">
+                <mat-icon>more_horizon</mat-icon>
+                <div *ngIf="isDropdownOpen" class="dropdown">
+                    <button (click)="edit(announcement._id)">
+                        <mat-icon>edit</mat-icon>
+                        <span>Edit</span>
+                    </button>
+                    <button (click)="delete(announcement._id)">
+                        <mat-icon>delete</mat-icon>
+                        <span>Delete</span>
+                    </button>
+                </div>
+            </button>
         </div>
-        <button mat-icon-button (click)="toggleDropdown()" *ngIf="this.checkAuthentication()">
-            <mat-icon>more_horizon</mat-icon>
-            <div *ngIf="isDropdownOpen" class="dropdown">
-                <button (click)="edit(announcement._id)">
-                    <mat-icon>edit</mat-icon>
-                    <span>Edit</span>
-                </button>
-                <button (click)="delete(announcement._id)">
-                    <mat-icon>delete</mat-icon>
-                    <span>Delete</span>
-                </button>
-            </div>
-        </button>
+        <mat-card-content>
+            <div [innerHTML]="announcement.body"></div>
+        </mat-card-content>
     </div>
-    <mat-card-content [innerHTML]="announcement.body">
-    </mat-card-content>
 </div>
