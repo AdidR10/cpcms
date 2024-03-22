@@ -81,9 +81,10 @@ export class LeaderboardComponent implements OnInit{
   filters = new FormControl('');
 
   filterList: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni'];
-  selectedFilters: string[] = []; // Array to store selected filters
-  unselectedFilters: string[] = []; // Array to store unselected filters
-
+  
+  handleSelectedFilters() {
+    console.log('Selected filters:', this.filters.value);
+  }
   dataSource!: MatTableDataSource<any>;
   data: any;
 

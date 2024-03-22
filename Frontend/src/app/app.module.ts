@@ -59,7 +59,6 @@ import { TokenInterceptorService } from './services/token-intercepter.service';
 import { AuthGuard } from './guards/auth.guard';
 import { contestGuard } from './guards/contest.guard';
 import { NameComponent } from './components/name/name.component';
-import { SearchbarComponent } from './components/searchbar/searchbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,8 +81,7 @@ import { SearchbarComponent } from './components/searchbar/searchbar.component';
     RequestCardComponent,
     RequestCardComponent,
     LogoutComponent,
-    NameComponent,
-    SearchbarComponent
+    NameComponent
   ],
   imports: [
     BrowserModule,

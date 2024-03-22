@@ -18,7 +18,9 @@
                         </span>
                     </ng-container>
                 </mat-select-trigger>
-                <mat-option *ngFor="let filter of filterList" [value]="filter">{{ filter }}</mat-option>
+                <mat-option *ngFor="let filter of filterList" [value]="filter" (click)="handleSelectedFilters()">{{
+                    filter
+                    }}</mat-option>
             </mat-select>
         </mat-form-field>
     </div>
