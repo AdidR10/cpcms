@@ -1,61 +1,81 @@
-.example-card {
-  width: 400px; /* Adjust max-width as needed */
-  height: 400px;
-  margin: 1rem; /* Add margin for spacing between cards */
-  border-width: 1px;
-  border-color: #000000;
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  margin: 20px;
+}
+@media (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(300px, 1fr)
+    ); /* Adjust column width for larger screens */
+  }
 }
 
-.mat-card-header {
-  background-color: #f5f5f5; /* Change header background color */
-  border-bottom: 1px solid #ddd; /* Add border bottom */
-  text-align: center; 
+.card {
+  // border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+
+  background-color: #0093e9;
+  background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 100px;
+}
+
+.card-details {
+  padding: 10px 0;
+}
+
+.card-details h2,
+mat-card-subtitle {
+  margin: 0 0 10px;
+}
+
+.card-details ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-details ul li {
+  margin-bottom: 5px;
+}
+.pagination {
+  display: flex;
   justify-content: center;
+  margin-top: 20px; /* Adjust margin as needed */
+}
+.header-image {
+  background-image: url("/assets/cp-logo.png"); /* Use an absolute path */
+  background-size: cover;
+  height: 40px; /* Set a specific height */
+  width: 40px; /* Set a specific width */
+  border-radius: 50%; /* Optional: makes the avatar circular */
+}
+.header {
+  display: flex;
 }
 
-.mat-card-title,
-.mat-card-subtitle {
-  font-weight: bold; /* Make title and subtitle bold */
+.title {
+  width: 100%; /* Adjust to leave space for actions */
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  mat-card-title {
+    font-size: 18px;
+    padding-top: 10px;
+  }
 }
 
-.mat-card-content {
-  padding: 0.5rem; /* Add padding for content */
-}
-
-.image-container {
-  display: flex; /* Use flexbox */
-  justify-content: center; /* Center-align the content horizontally */
-  align-items: center; /* Center-align the content vertically */
-}
-
-
-
-.rounded-image {
-  border-radius: 50%; /* Creates a round border */
-  border: 2px solid #ccc; /* Adds a border */
-  width: 150px; /* Adjust the width of the image */
-  height: 150px; /* Adjust the height of the image */
-  object-fit: cover; /* Ensures the image covers the entire space */
-}
-
-
-
-.header{
-  text-align: center;
-}
-
-.contest-description{
-  text-align: center;
-}
-mat-grid-list{
-  column-gap: 10px;
-  row-gap: 100px;
-  margin: 1rem;
-}
-
-mat-grid-title{
-  row-gap: 100px;
-  text-align: center;
-  justify-content: center;
-  margin: 1rem;
+.actions {
+  width: 30px; /* Adjust as needed */
 }

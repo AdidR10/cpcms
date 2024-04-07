@@ -1,84 +1,68 @@
-<ng-container *ngIf="this.authService.isAuthenticated()">
-  <app-admin-post [page]="pagename" (click)="openContestForm()"></app-admin-post>
+<ng-container *ngIf="authService.isAuthenticated()">
+  <app-admin-post
+    [page]="pagename"
+    (click)="openContestForm()"
+  ></app-admin-post>
 </ng-container>
 
-<body>
-  <cdk-accordion class="example-accordion">
-    <cdk-accordion-item
-      *ngFor="let contest of contests | paginate: { itemsPerPage: 5, currentPage: p }; let index = index;"
-      #accordionItem="cdkAccordionItem" class="example-accordion-item" role="button" tabindex="0"
-      [attr.id]="'accordion-header-' + index" [attr.aria-expanded]="accordionItem.expanded"
-      [attr.aria-controls]="'accordion-body-' + index">
-
-      <!-- Header -->
-      <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
-        <p>
-          <strong>Contest:</strong> {{ contest.name }} <br>
-          <strong>Start:</strong> {{ contest.date | date: 'MMM d, y, h:mm a'}}
-        </p>
-        <span class="example-accordion-item-description">
-          Click to {{ accordionItem.expanded ? 'close' : 'open' }}
-        </span>
+<div class="grid-container">
+  <div
+    *ngFor="
+      let contest of contests | paginate : { itemsPerPage: 6, currentPage: p }
+    "
+    class="card"
+  >
+    <div class="card-details">
+      <div class="upper">
+        <mat-card-header class="header">
+          <div class="title">
+            <mat-card-title style="font-family: Andalé Mono, monospace"
+              ><b>{{ contest.name }}</b></mat-card-title
+            >
+            <br />
+            <mat-card-subtitle
+              >{{ contest.date | date : "mediumDate" }} at
+              {{ contest.time }}</mat-card-subtitle
+            >
+            <br />
+          </div>
+          <div class="actions" *ngIf="authService.isAuthenticated()">
+            <button
+              mat-icon-button
+              [matMenuTriggerFor]="menu"
+              class="menu-button"
+            >
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="deleteContest(contest)">
+                Delete
+              </button>
+              <button mat-menu-item (click)="handleEdit(contest)">Edit</button>
+            </mat-menu>
+          </div>
+        </mat-card-header>
       </div>
-
-      <!-- Body -->
-      <div class="example-accordion-item-body" role="region" [style.display]="accordionItem.expanded ? '' : 'none'"
-        [attr.id]="'accordion-body-' + index" [attr.aria-labelledby]="'accordion-header-' + index">
-
-        <mat-card class="card-list">
-
-          <mat-grid-list cols="4" rowHeight="100px">
-            <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows">
-
-              <div *ngIf="tile.text === 'One'" class="image-container">
-                <img [src]="imageUrl" alt="Image description" class="rounded-image">
-              </div>
-
-              <div *ngIf="tile.text === 'Two'" class="horizontal-list-container">
-                <div class="horizontal-list-row">
-                  <ul class="horizontal-list">
-                    <li><b>Name:</b> {{ contest.name }}</li>
-                    <li><b>Time:</b> {{ contest.time }}</li>
-                  </ul>
-                </div>
-
-                <div class="horizontal-list-row">
-                  <ul class="horizontal-list">
-                    <li><b>Link:</b> {{ contest.link }}</li>
-                    <li><b>Password:</b> {{ contest.password }}</li>
-                  </ul>
-                </div>
-                <div class="horizontal-list-row">
-                  <ul class="horizontal-list">
-                    <li><b>Description:</b> {{ contest.description }}</li>
-                    <li><b>Type:</b> {{ contest.type }}</li>
-                  </ul>
-                </div>
-
-                <div class="horizontal-list-row">
-                  <ul class="horizontal-list">
-                    <li><b>Duration:</b> {{ contest.duration }}</li>
-                    <li><b>Type:</b> {{ contest.type }}</li>
-                  </ul>
-                </div>
-                <ng-container *ngIf="this.authService.isAuthenticated()">
-
-                  <button mat-button [matMenuTriggerFor]="menu" class="menu-button">Edit</button>
-                  <mat-menu #menu="matMenu">
-                    <button mat-menu-item (click)="deleteContest(contest)">Delete</button>
-                    <button mat-menu-item (click)="handleEdit(contest)">Edit</button>
-                  </mat-menu>
-                </ng-container>
-
-              </div>
-
-            </mat-grid-tile>
-          </mat-grid-list>
-
-        </mat-card>
+      <div class="content">
+        <mat-card-content>
+          <p><b>Time left:</b> {{ calculateTimeLeftForContest(contest) }}</p>
+          <p>
+            <b>Link:</b>
+            <a mat-button href="{{ contest.link }}" target="_blank"
+              >Go to contest link</a
+            >
+          </p>
+          <p><b>Password:</b> {{ contest.password }}</p>
+          <!-- <p><b>Description:</b> {{ contest.description }}</p> -->
+          <p><b>Type:</b> {{ contest.type }}</p>
+          <p><b>Duration:</b> {{ contest.duration }}</p>
+        </mat-card-content>
       </div>
-    </cdk-accordion-item>
-  </cdk-accordion>
+    </div>
+  </div>
+</div>
 
-  <div class="pagination"><pagination-controls (pageChange)="p = $event"></pagination-controls></div>
-</body>
+<!-- Pagination controls -->
+<div class="pagination">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

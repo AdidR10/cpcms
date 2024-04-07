@@ -1,68 +1,79 @@
 <div class="dialog-box">
-    <div class="title">
-        <h2>Post Contest</h2>
-        <mat-icon matSuffix [mat-dialog-close]="false">close</mat-icon>
+  <div class="title">
+    <h2>Post Contest</h2>
+    <mat-icon matSuffix [mat-dialog-close]="false">close</mat-icon>
+  </div>
+  <hr />
+  <form
+    class="content"
+    [formGroup]="contestForm"
+    (ngSubmit)="onContestSubmit()"
+  >
+    <div class="admin-details">
+      <div class="admin-image">
+        <img src="../../../assets/cp-logo.png" alt="Admin Image" />
+      </div>
+      <div class="admin-name">
+        <h2>Admin Name</h2>
+      </div>
     </div>
-    <hr>
-    <form class="content" [formGroup]="contestForm" (ngSubmit)="onContestSubmit()">
-        <div class="admin-details">
-            <div class="admin-image">
-                <img src="../../../assets/cp-logo.png" alt="Admin Image">
-            </div>
-            <div class="admin-name">
-                <h2>Admin Name</h2>
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="row-field">
-                <label for="contestName">Contest Name:</label>
-                <input type="text" id="contestName" formControlName="contestName">
-            </div>
 
-        </div>
-        <div class="row">
-            <div class="row-field">
-                <label for="contestLink">Contest Link:</label>
-                <input type="link" id="contestLink" formControlName="contestLink">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="row-field">
-                <label for="contestType">Contest Type:</label>
-                <mat-radio-group aria-label="Select an option" formControlName="contestType">
-                    <mat-radio-button value="individual">Solo</mat-radio-button>
-                    <mat-radio-button value="team">Team</mat-radio-button>
-                </mat-radio-group>
-            </div>
-        </div>
-        <div class="row">
-            <div class="row-field">
-                <label for="contestPassword">Contest Password:</label>
-                <input type="password" id="contestPassword" formControlName="contestPassword">
-            </div>
-            <div class="row-field" style="margin-left: 20px;">
-                <label for="contestDuration">Contest Duration:</label>
-                <input type="text" id="contestDuration" formControlName="contestDuration">
-            </div>
-        </div>
-        <div class="row">
-            <div class="row-field">
-                <label for="contestDate">Contest Date:</label>
-                <input type="date" id="contestDate" formControlName="contestDate">
-            </div>
-            <div appearance="outline" class="row-field" style="margin-left: 20px;">
-                <label for="contestTime">Contest Time:</label>
-                <input type="time" id="contestTime" formControlName="contestTime">
-            </div>
+    <div class="row">
+      <div class="row-field">
+        <label for="contestName">Contest Name:</label>
+        <input type="text" id="contestName" formControlName="contestName" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="row-field">
+        <label for="contestLink">Contest Link:</label>
+        <input type="link" id="contestLink" formControlName="contestLink" />
+      </div>
+    </div>
 
-        </div>
+    <div class="row">
+      <div class="row-field">
+        <label for="contestType">Contest Type:</label>
+        <mat-radio-group
+          aria-label="Select an option"
+          formControlName="contestType"
+        >
+          <mat-radio-button value="individual">Solo</mat-radio-button>
+          <mat-radio-button value="team">Team</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row-field">
+        <label for="contestPassword">Contest Password:</label>
+        <input
+          type="password"
+          id="contestPassword"
+          formControlName="contestPassword"
+        />
+      </div>
+      <div class="row-field" style="margin-left: 20px">
+        <label for="contestDuration">Contest Duration:</label>
+        <input
+          type="text"
+          id="contestDuration"
+          formControlName="contestDuration"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="row-field">
+        <label for="contestDate">Contest Date:</label>
+        <input type="date" id="contestDate" formControlName="contestDate" />
+      </div>
+      <div appearance="outline" class="row-field" style="margin-left: 20px">
+        <label for="contestTime">Contest Time:</label>
+        <input type="time" id="contestTime" formControlName="contestTime" />
+      </div>
+    </div>
 
-        <div mat-dialog-actions class="action">
-            <button mat-raised-button color="primary" type="submit">post</button>
-        </div>
-    </form>
+    <div mat-dialog-actions class="action">
+      <button mat-raised-button color="primary" type="submit">post</button>
+    </div>
+  </form>
 </div>
-
-
