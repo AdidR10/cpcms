@@ -1,6 +1,6 @@
-const UserRequest = require('../models/UserRequest');
+const UserRequest = require('../models/userRequest');
 const { userRequestValidation } = require('../validators/userRequestValidation');
-const User = require('../models/User');
+const User = require('../models/user');
 const  getCodeforcesData  = require('../services/codeforcesData');
 const  getCodechefData  = require('../services/codechefData');
 const  getAtcoderData  = require('../services/atcoderData');

@@ -2,7 +2,7 @@ const _ = require('lodash');
 const bcrypt = require('bcrypt');
 
 
-const Admin = require('../models/Admin');
+const Admin = require('../models/admin');
 const { adminValidation } = require('../validators/adminValidation');
 
 
