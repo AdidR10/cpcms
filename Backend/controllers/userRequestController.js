@@ -9,6 +9,7 @@ const { assert } = require('joi');
 
 exports.signupUserRequests = async (req, res) => {
   // Validate the user request data
+  console.log("RECEIVED!!!")
   const { error } = userRequestValidation(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
@@ -27,6 +28,7 @@ exports.signupUserRequests = async (req, res) => {
     // Save the user request to the database
     const savedUserRequest = await userRequest.save();
     res.send(savedUserRequest);
+    console.log("RECEIVEDddd!!!");
   } catch (err) {
     res.status(400).send(err);
   }

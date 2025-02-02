@@ -48,6 +48,8 @@ export class RequestsService {
   }
 
   sendRequest(data: any): Observable<any> {
+    console.log("REACHED sendRequest");
+    console.log("data", data);  
     return this.http.post(`${this.baseUrl}userRequests/signup`, data, { headers: this.getHeaders() })
       .pipe(
         catchError((error: HttpErrorResponse) => {

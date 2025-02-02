@@ -83,6 +83,8 @@ export class RegistrationComponent implements OnInit{
         });
       }
       else{
+        console.log("this.data", this.data)
+        console.log("form data",formData);
         this._requestService.sendRequest(formData).subscribe({
           next: (val:any)=>{
             this._snackbar.showSnackbar('User Registration Request Sent', true)
